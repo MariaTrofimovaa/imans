@@ -40,133 +40,7 @@ body .popup_background {
       -ms-flex-align: center;
           align-items: center;
 }
-body .popup_menu {
-  display: none;
-  vertical-align: middle;
-  position: fixed;
-  top: 10%;
-  margin: 0 auto;
-  z-index: 25;
-  max-width: 590px;
-  width: 90%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #141414;
-  color: #EDEDED;
-  padding: 77px 30px;
-}
-body .popup_menu .logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 50px;
-}
-body .popup_menu .popup-title {
-  text-align: center;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 140%;
-  margin-bottom: 38px;
-}
-body .popup_menu .popup-text {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 147%;
-  text-align: center;
-  color: #EDEDED;
-}
-body .popup_menu .btn-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-}
-body .popup_menu .btn-close:hover {
-  cursor: pointer;
-}
-body .popup_menu .download-modal_inputs {
-  margin: auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  -webkit-column-gap: 40px;
-     -moz-column-gap: 40px;
-          column-gap: 40px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-body .popup_menu .download-modal_inputs label {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin-top: 30px;
-  position: relative;
-  width: 100%;
-  color: #EDEDED;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 147%;
-}
-body .popup_menu .download-modal_inputs .input-title {
-  color: #F2F2F2;
-  margin-bottom: 5px;
-}
-body .popup_menu .download-modal_inputs input {
-  width: 100%;
-  max-width: 250px;
-  height: 50px;
-  color: #F2F2F2;
-  border: 1px solid #F2F2F2;
-  padding: 0px 0px 1px 20px;
-  border-radius: 300px;
-  background: transparent;
-}
-body .popup_menu .download-modal_inputs .download-modal-btn {
-  width: 100%;
-  max-width: 250px;
-  height: 50px;
-  margin-top: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #141414;
-  background: #D6FE43;
-  border: 1px solid #D6FE43;
-  border-radius: 300px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-body .popup_menu .download-modal_inputs .download-modal-btn:hover {
-  cursor: pointer;
-}
-body .popup_menu .download-modal_inputs .private-info-text {
-  margin-top: 16px;
-  text-align: center;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 11px;
-  line-height: 147%;
-  color: #EDEDED;
-  opacity: 0.5;
-}
-body .popup_menu .download-modal_inputs .private-info-text a {
-  text-decoration: underline;
-  color: #EDEDED;
-}
+body .popup_menu,
 body .popup_menu-gratitude {
   display: none;
   vertical-align: middle;
@@ -182,6 +56,7 @@ body .popup_menu-gratitude {
   color: #EDEDED;
   padding: 77px 30px;
 }
+body .popup_menu .logo,
 body .popup_menu-gratitude .logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -191,6 +66,7 @@ body .popup_menu-gratitude .logo {
           justify-content: center;
   margin-bottom: 50px;
 }
+body .popup_menu .popup-title,
 body .popup_menu-gratitude .popup-title {
   text-align: center;
   font-weight: 500;
@@ -198,6 +74,7 @@ body .popup_menu-gratitude .popup-title {
   line-height: 140%;
   margin-bottom: 38px;
 }
+body .popup_menu .popup-text,
 body .popup_menu-gratitude .popup-text {
   font-style: normal;
   font-weight: 400;
@@ -206,14 +83,17 @@ body .popup_menu-gratitude .popup-text {
   text-align: center;
   color: #EDEDED;
 }
+body .popup_menu .btn-close,
 body .popup_menu-gratitude .btn-close {
   position: absolute;
   top: 16px;
   right: 16px;
 }
+body .popup_menu .btn-close:hover,
 body .popup_menu-gratitude .btn-close:hover {
   cursor: pointer;
 }
+body .popup_menu .download-modal_inputs,
 body .popup_menu-gratitude .download-modal_inputs {
   margin: auto;
   width: 100%;
@@ -226,10 +106,11 @@ body .popup_menu-gratitude .download-modal_inputs {
       -ms-flex-align: center;
           align-items: center;
 }
+body .popup_menu .download-modal_inputs label,
 body .popup_menu-gratitude .download-modal_inputs label {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  margin-top: 30px;
+  margin-bottom: 33px;
   position: relative;
   width: 100%;
   color: #EDEDED;
@@ -237,10 +118,12 @@ body .popup_menu-gratitude .download-modal_inputs label {
   font-size: 14px;
   line-height: 147%;
 }
+body .popup_menu .download-modal_inputs .input-title,
 body .popup_menu-gratitude .download-modal_inputs .input-title {
   color: #F2F2F2;
   margin-bottom: 5px;
 }
+body .popup_menu .download-modal_inputs input,
 body .popup_menu-gratitude .download-modal_inputs input {
   width: 100%;
   max-width: 250px;
@@ -251,11 +134,12 @@ body .popup_menu-gratitude .download-modal_inputs input {
   border-radius: 300px;
   background: transparent;
 }
+body .popup_menu .download-modal_inputs .download-modal-btn,
 body .popup_menu-gratitude .download-modal_inputs .download-modal-btn {
   width: 100%;
   max-width: 250px;
   height: 50px;
-  margin-top: 50px;
+  margin-top: -17px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,11 +161,12 @@ body .popup_menu-gratitude .download-modal_inputs .download-modal-btn {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+body .popup_menu .download-modal_inputs .download-modal-btn:hover,
 body .popup_menu-gratitude .download-modal_inputs .download-modal-btn:hover {
   cursor: pointer;
 }
+body .popup_menu .download-modal_inputs .private-info-text,
 body .popup_menu-gratitude .download-modal_inputs .private-info-text {
-  margin-top: 16px;
   text-align: center;
   font-style: normal;
   font-weight: 400;
@@ -290,6 +175,7 @@ body .popup_menu-gratitude .download-modal_inputs .private-info-text {
   color: #EDEDED;
   opacity: 0.5;
 }
+body .popup_menu .download-modal_inputs .private-info-text a,
 body .popup_menu-gratitude .download-modal_inputs .private-info-text a {
   text-decoration: underline;
   color: #EDEDED;
@@ -432,7 +318,6 @@ body .main .main-info .container {
   border-bottom: 1px solid #EDEDED;
 }
 body .main .main-info .about {
-  width: 1150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
