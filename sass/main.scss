@@ -1,3 +1,4 @@
+@import "fonts";
 
 $background-color: rgba(0, 0, 0, 0.4);
 $primary-text-color: #EDEDED;
@@ -22,7 +23,7 @@ $popup-color: #F2F2F2;
   }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter-Regular', sans-serif;
 
     .overlay {
         position: fixed;
@@ -60,8 +61,6 @@ body {
         .logo {
             display: flex;
             justify-content: center;
-            // width: 190px;
-            // height: 37px;
             margin-bottom: 50px;
         }
 
@@ -74,8 +73,6 @@ body {
         }
 
         .popup-text {
-            font-style: normal;
-            font-weight: 400;
             font-size: 14px;
             line-height: 147%;
             text-align: center;
@@ -114,7 +111,6 @@ body {
 
             .input-title {
                 color: $popup-color;
-                margin-bottom: 5px;
             }
 
             input {
@@ -126,13 +122,14 @@ body {
                 padding: 0px 0px 1px 20px;
                 border-radius: 300px;
                 background: transparent;
+                margin-top: 5px;
             }
 
             .download-modal-btn {
                 width: 100%;
                 max-width: 250px;
                 height: 50px;
-                margin-top: -17px;
+                margin-top: -9px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -169,56 +166,6 @@ body {
             }
         }     
     }
-
-    // .popup_menu-gratitude {
-    //     display: none;
-    //     vertical-align: middle;
-    //     position: fixed;
-    //     top: 10%;
-    //     margin: 0 auto;
-    //     z-index: 25;
-    //     max-width: 590px;
-    //     width: 90%;
-    //     box-sizing: border-box;
-    //     background-color: $popup-bg-color;
-    //     color: $primary-text-color;
-    //     padding: 77px 30px;
-
-    //     .logo {
-    //         display: flex;
-    //         justify-content: center;
-    //         // width: 190px;
-    //         // height: 37px;
-    //         margin-bottom: 50px;
-    //     }
-
-    //     .popup-title {
-    //         text-align: center;
-    //         font-weight: 500;
-    //         font-size: 24px;
-    //         line-height: 140%;
-    //         margin-bottom: 38px;
-    //     }
-
-    //     .popup-text {
-    //         font-style: normal;
-    //         font-weight: 400;
-    //         font-size: 14px;
-    //         line-height: 147%;
-    //         text-align: center;
-    //         color: $primary-text-color;
-    //     }
-
-    //     .btn-close {
-    //         position: absolute;
-    //         top: 16px;
-    //         right: 16px;
-
-    //         &:hover {
-    //             cursor: pointer;
-    //         }
-    //     }   
-    // }
 
     .container {
         max-width: 1200px;
@@ -268,6 +215,7 @@ body {
             left: 0;
             z-index: 2;
         }
+
         .block_video {
             video {
                 position: absolute;
@@ -336,6 +284,7 @@ body {
                 }
 
                 .contact_us {
+                    font-family: "'Inter-Medium", sans-serif;
                     display: block;
                     // max-width: 144px;
                     padding: 20px 26px 16px 26px;
@@ -344,7 +293,6 @@ body {
                     color: $accent-color;
                     background: transparent;
                     text-decoration: none;
-                    font-weight: normal;
                     font-size: 12px;
                     line-height: 15px;
                     letter-spacing: 0.05em;
@@ -375,8 +323,7 @@ body {
                 
             &-title {
                 width: 694px;
-                font-style: normal;
-                font-weight: 500;
+                font-family: 'Asimov', sans-serif;
                 font-size: 38px;
                 line-height: 140%;
                 color: $primary-text-color;
@@ -434,8 +381,7 @@ body {
                     width: 380px;
     
                     &-title {
-                        font-style: normal;
-                        font-weight: 500;
+                        font-family: 'Inter-Medium', sans-serif;
                         font-size: 14px;
                         line-height: 120%;
                         color: $primary-text-color;
@@ -506,8 +452,7 @@ body {
                         flex-direction: column;
     
                         &-title {
-                            font-style: normal;
-                            font-weight: 500;
+                            font-family: 'Inter-Medium', sans-serif;
                             font-size: 14px;
                             line-height: 120%;
                             color: $primary-text-color;
@@ -529,8 +474,7 @@ body {
                             justify-content: space-between;
     
                             .region-name {
-                                font-style: normal;
-                                font-weight: 500;
+                                font-family: 'Inter-Medium', sans-serif;
                                 font-size: 14px;
                                 line-height: 140%;
                                 color: $primary-text-color;
@@ -563,41 +507,24 @@ body {
             }
             
             &-title {
-                font-style: normal;
-                font-weight: 400;
                 font-size: 12px;
                 line-height: 147%;
+                opacity: 0.5;
             }
         }
     }
 
-// @media screen and (max-width:1280px) {
-//     body .main .block_video video {
-//         left: -19%;
-//     }
+// @media screen and (max-width:1530px) {
 // }
 
-// @media screen and (max-width:1200px) {
-//     .container {
-//         padding: 0 15px;
-//     }
+// @media screen and (max-width:1280px) {
 // }
+
 
 // @media screen and (max-width: 1024px) {
-//     body .main .block_video video {
-//         left: -40%;
-//     }
 // }
 
 // @media screen and (max-width: 850px) {
-//     body {
-//         .main {
-//             &::after {
-//                 background-size: cover;
-//                 background-position: right 100% bottom 0%;
-//             }
-//         }
-//     }
 // }
 
 // @media screen and (max-width: 800px) {
@@ -606,59 +533,102 @@ body {
 //     }
 // }
 
-// @media screen and (max-width: 680px) {
-//     .brands_info {
-//         flex-direction: column;
-//     }
-//     body .main .bands_block .brands_info .contacts_block {
-//     margin-left: 0;
-//     margin-top: 10px;
-//     }
-// }
 
-// @media screen and (max-width:768px) {
-//     body {
-//         .main {
-//             .main-info{
-//                 h1 {
-//                     font-size: 34px;
-//                     line-height: auto;
-//                 }
-//             }
-//         }
-//     }  
+@media screen and (max-width:768px) {
+    .main {
+        .content_block {
+            background-color: rgb(185, 240, 237);
+            padding: 0 50px 0 50px;
+
+            header {
+              .container {
+                padding: 48px 0 20px 0;
+                .lang_block{
+                    ul {
+                        margin-right: 12px;
+                    }
+                }
+              }
+            }
+
+            .main-info {
+                .container {
+                    width: 760px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .about {
+                        // flex-direction: column;
+                        width: 668px;
+                        margin-left: 0;
+                        margin-bottom: 70px;
+
+                        &-title {
+                            width: 340px;
+                            font-size: 28px;
+                            margin-bottom: 35px;
+                        }
+
+                        &-text {
+                            width: 340px;
+                            margin-bottom: 44px;
+                        }
+
+                        .primary-button {
+                            width: 340px;
+                            height: 50px;
+                        }
+                    }
+                }
+
+                .hero-section {
+                    width: 668px;
+                    
+                    .brand-info {
+                        width: 668px;
+
+                        &-about {
+                            .logo-africa {
+                                width: 133px;
+                                height: 23px;
+                                margin-right: 16px;
+                            } 
+                        }
+
+                        .about-clients {
+                            width: 340px;
+                        }
+                    }
+
+                    .contacts-block {
+                        width: 330px;
+                        .contacts-info {
+                            .block-social {                      
+                                 .social-links-icon{
+                                    width: 23px;
+                                    height: 23px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @media screen and (max-width: 680px) {
 // }
 
 // @media screen and (max-width:576px) {
-//     body {
-//         .main {
-//             .main-info{
-//                 h1 {
-//                     font-size: 26px;
-//                     line-height: 34px;
-//                 }
-//                 h3 {
-//                     font-size: 18px;
-//                 }
-//             }
-//         }
-//     }  
 // }
 
-// @media screen and (max-width: 475px) {
-//     body .main .block_video video {
-//         left: 0;
-//         top: 0;
-//         min-width: auto;
-//         min-height: auto;
-//         height: 100%;
-//     }
-// }
 
-@media screen and (max-width:420px) {
+@media screen and (max-width: 475px) {
     .main {
         .block_video video {
-            left: 0;
+            left: -90%;
             top: 0;
             min-width: auto;
             min-height: auto;
