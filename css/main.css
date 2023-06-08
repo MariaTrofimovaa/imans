@@ -239,7 +239,6 @@ body .popup_menu-gratitude .download-modal_inputs .private-info-text a {
   color: #EDEDED;
 }
 body .container {
-  max-width: 1200px;
   margin: 0 auto;
 }
 body .main {
@@ -286,7 +285,6 @@ body .main header {
   z-index: 5;
 }
 body .main header .container {
-  max-width: 1200px;
   padding: 22px 0 23px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -603,6 +601,12 @@ body .main .company-info-title {
   font-size: 12px;
   line-height: 147%;
   opacity: 0.5;
+}
+@media screen and (max-width: 1600px) {
+  body .main .content_block {
+    background-color: rgb(185, 240, 237);
+    padding: 0 150px 0 150px;
+  }
 }
 @media screen and (max-width: 768px) {
   body .main .content_block {
