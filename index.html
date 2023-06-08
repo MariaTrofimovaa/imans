@@ -277,18 +277,20 @@
         <h2 class="popup-title">
           Leave your information <br />and we will contact you
         </h2>
-        <form class="form">
+        <form class="form" name="myForm" onSubmit="gratitudePopupShow()">
           <div class="download-modal_inputs">
-            <label for="name" required>
+            <label>
               <span class="input-title">Name</span>
               <input
                 type="text"
                 name="name"
                 autocomplete="off"
                 placeholder="Jack"
+                minlength="2"
+                required
               />
             </label>
-            <label for="second-name" required>
+            <label for="second-name">
               <span class="input-title">Surname</span>
               <input
                 type="text"
@@ -297,25 +299,29 @@
                 placeholder="Black"
               />
             </label>
-            <label for="email" required>
+            <label>
               <span class="input-title">Email</span>
               <input
-                type="text"
+                type="email"
                 name="email"
                 autocomplete="off"
                 placeholder="black@gmail.com"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                required
               />
             </label>
-            <label for="phone" required>
+            <label>
               <span class="input-title">Phone number</span>
               <input
                 type="text"
                 name="phone"
                 autocomplete="off"
                 placeholder="+7 (999) 99-99-99"
+                pattern="[0-9]*"
+                required
               />
             </label>
-            <label for="company" required>
+            <label>
               <span class="input-title">Your company</span>
               <input
                 type="text"
@@ -324,7 +330,8 @@
                 placeholder="IMANS"
               />
             </label>
-            <button class="download-modal-btn" onclick="gratitudePopupShow()">
+            <!-- <button class="download-modal-btn" type="submit" onClick="gratitudePopupShow()"> -->
+            <button class="download-modal-btn" type="submit">
               Submit
             </button>
             <div></div>
@@ -336,7 +343,7 @@
             </div>
           </div>
         </form>
-        <span class="btn-close" onclick="closePopup()">
+        <span class="btn-close" onClick="closePopup()">
           <svg
             width="24"
             height="24"
@@ -372,7 +379,7 @@
           answer all your questions and provide you with all the information you
           need
         </p>
-        <span class="btn-close" onclick="gratitudeClosePopup()">
+        <span class="btn-close" onClick="gratitudeClosePopup()">
           <svg
             width="24"
             height="24"
