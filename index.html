@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="./css/main.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section class="main">
+      <div class="block_video">
+        <video
+          src="./assets/video/background-video.mp4"
+          autoplay
+          muted
+          playsinline
+          loop
+        ></video>
+      </div>
+      <div class="content_block">
+        <header>
+          <div class="container">
+            <img
+              class="logo"
+              src="./assets/img/logo-imans.svg"
+              alt="Imans-logo"
+            />
+            <div class="lang_block">
+              <ul class="dropdown-lang">
+                <li class="dropdown-li">
+                  <div class="active_langs dropdown-li">
+                    <span class="lang-title">en</span>
+                    <img
+                      class="_doun"
+                      src="https://agartaltd.com/data/common/assets/img/arrow-down.svg"
+                      alt="arrow-down"
+                    />
+                  </div>
+                  <div
+                    class="disabled_langs main-dropdown-menu"
+                    style="display: none"
+                  >
+                    <div>
+                      <a href="https://agartaltd.com/en/"
+                        ><span class="lang-title">ru</span></a
+                      >
+                    </div>
+                    <div>
+                      <a href="https://agartaltd.com/tr/"
+                        ><span class="lang-title">fr</span></a
+                      >
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <a class="contact_us" href="http://www.helloafrica.io/">
+                Hello Africa
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <main class="main-info">
+          <div class="container">
+            <div class="about">
+              <h1 class="about-title">
+                We generate, buy <br />and receive traffic
+              </h1>
+              <div class="about-block">
+                <p class="about-text">
+                  We are engaged in marketing, consulting, management,
+                  optimization and automation, as well as business integration
+                  in the African market
+                </p>
+                <button
+                  type="button"
+                  class="primary-button"
+                  onClick="popupShow()"
+                >
+                  Towards new opportunities
+                </button>
+              </div>
+            </div>
+            <div class="hero-section">
+              <div class="brand-info">
+                <h3 class="brand-info-title">Our brand</h3>
+                <div class="brand-info-about">
+                  <img
+                    class="logo-africa"
+                    src="./assets/img/logo-hello-africa.svg"
+                    alt="Hello-Africa-logo"
+                  />
+                  <p class="brand-info-text">
+                    B2B platform for bringing business to the African market
+                  </p>
+                </div>
+                <div class="about-clients">
+                  <h3 class="brand-info-title">Who do we work for</h3>
+                  <ul class="about-clients-list">
+                    <li class="about-clients-text">
+                      <img src="./assets/img/bussines/dollar.svg" />
+                      Banking and finance
+                    </li>
+                    <li class="about-clients-text">
+                      <img src="./assets/img/bussines/hospital.svg" />Medicine
+                    </li>
+                    <li class="about-clients-text">
+                      <img src="./assets/img/bussines/shop.svg" />Trading and
+                      distribution
+                    </li>
+                    <li class="about-clients-text">
+                      <img
+                        src="./assets/img/bussines/lightbulb-bolt.svg"
+                      />Energetics
+                    </li>
+                    <li class="about-clients-text">
+                      <img
+                        src="./assets/img/bussines/translation.svg"
+                      />Information services
+                    </li>
+                    <li class="about-clients-text">
+                      <img
+                        src="./assets/img/bussines/academic-cap.svg"
+                      />Education
+                    </li>
+                    <li class="about-clients-text">
+                      <img src="./assets/img/bussines/buildings.svg" />Real
+                      estate
+                    </li>
+                    <li class="about-clients-text">
+                      <img
+                        src="./assets/img/bussines/shield-check.svg"
+                      />Insurance
+                    </li>
+                    <li class="about-clients-text">
+                      <img src="./assets/img/bussines/car.svg" />Automotive
+                    </li>
+                    <li class="about-clients-text">
+                      <img src="./assets/img/bussines/monitor.svg" />IT sector
+                    </li>
+                    <li class="about-clients-text">
+                      <img
+                        src="./assets/img/bussines/diagram.svg"
+                      />Cryptocurrency projects
+                    </li>
+                    <li class="about-clients-text">
+                      <img src="./assets/img/bussines/dices.svg" />Gambling
+                    </li>
+
+                    <li class="about-clients-text">
+                      <img src="./assets/img/bussines/home.svg" />Hospitality
+                      business
+                    </li>
+                    <li class="about-clients-text">
+                      <img
+                        src="./assets/img/bussines/confetti.svg"
+                      />Entertainment
+                    </li>
+                    <li class="about-clients-text">
+                      <img src="./assets/img/bussines/chef-hat.svg" />Restaurant
+                      business
+                    </li>
+                    <li class="about-clients-text">
+                      <img
+                        src="./assets/img/bussines/suitcase-tag.svg"
+                      />Tourism
+                    </li>
+                    <li class="about-clients-text">
+                      <img src="./assets/img/bussines/users.svg" />Network
+                      Business
+                    </li>
+                    <li class="about-clients-text">
+                      <img src="./assets/img/bussines/phone.svg" />Telecom
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="contacts-block">
+                <div class="contacts-info">
+                  <h3 class="contacts-info-title">Contacts</h3>
+                  <p class="contacts-info-text">
+                    Our specialists will be happy to answer all your questions
+                    and provide you with all the information you need
+                  </p>
+                  <div class="block-social">
+                    <div class="region-social-links">
+                      <p class="region-name">Georgia:</p>
+                      <a href="whatsapp://send?phone=+995558791268">
+                        <img
+                          class="social-links-icon"
+                          src="./assets/img/whatsapp.svg"
+                          alt="whatsapp-icon"
+                        />
+                      </a>
+                      <a href="tg://resolve?phone=+995558791268">
+                        <img
+                          class="social-links-icon"
+                          src="./assets/img/telegram.svg"
+                          alt="telegram-icon"
+                        />
+                      </a>
+                      <a class="email-link" href="mailto:info@imans.io">
+                        <img
+                          class="social-links-icon"
+                          src="./assets/img/email.svg"
+                          alt="Email"
+                        />
+                      </a>
+                    </div>
+                    <div class="region-social-links">
+                      <p class="region-name">Kenya:</p>
+                      <a href="whatsapp://send?phone=+254113859445">
+                        <img
+                          class="social-links-icon"
+                          src="./assets/img/whatsapp.svg"
+                          alt="whatsapp-icon"
+                        />
+                      </a>
+                      <a href="tg://resolve?phone=tel:+254113859445">
+                        <img
+                          class="social-links-icon"
+                          src="./assets/img/telegram.svg"
+                          alt="telegram-icon"
+                        />
+                      </a>
+                      <a class="email-link" href="mailto:info@imans.io">
+                        <img
+                          class="social-links-icon"
+                          src="./assets/img/email.svg"
+                          alt="Email"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer class="company-info">
+          <div class="company-info-blocks">
+            <p class="company-info-title">Imans Technology LLC</p>
+            <p class="company-info-title">Registration number:445693330</p>
+          </div>
+          <div class="company-info-blocks">
+            <p class="company-info-title">
+              For questions of cooperation, <br />
+              please contact: hello@imans.io
+            </p>
+          </div>
+          <div class="company-info-blocks">
+            <p class="company-info-title">
+              Georgia, Batumi, Jiuli Shartava avenue 22
+            </p>
+            <p class="company-info-title">
+              Kenya, Nairobi, Westland, Muthithi Road 42
+            </p>
+          </div>
+          <div class="company-info-blocks">
+            <p class="company-info-title">Founder IMANS | Mikhail Mazanov</p>
+            <a class="company-info-title">http://www.mikhailmazanov.com/ </a>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <div class="overlay" onclick="overlayClose()"></div>
+    <div class="popup_background">
+      <div class="popup_menu">
+        <div class="logo">
+          <img src="./assets/img/logo-imans.svg" alt="Imans-logo" />
+        </div>
+        <h2 class="popup-title">
+          Leave your information <br />and we will contact you
+        </h2>
+        <form class="form" name="myForm" onSubmit="gratitudePopupShow()">
+          <div class="download-modal_inputs">
+            <label>
+              <span class="input-title">Name</span>
+              <input
+                type="text"
+                name="name"
+                autocomplete="off"
+                placeholder="Jack"
+                minlength="2"
+                required
+              />
+            </label>
+            <label for="second-name">
+              <span class="input-title">Surname</span>
+              <input
+                type="text"
+                name="second-name"
+                autocomplete="off"
+                placeholder="Black"
+              />
+            </label>
+            <label>
+              <span class="input-title">Email</span>
+              <input
+                type="email"
+                name="email"
+                autocomplete="off"
+                placeholder="black@gmail.com"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                required
+              />
+            </label>
+            <label>
+              <span class="input-title">Phone number</span>
+              <input
+                type="text"
+                name="phone"
+                autocomplete="off"
+                placeholder="+7 (999) 99-99-99"
+                pattern="[0-9]*"
+                required
+              />
+            </label>
+            <label>
+              <span class="input-title">Your company</span>
+              <input
+                type="text"
+                name="company"
+                autocomplete="off"
+                placeholder="IMANS"
+              />
+            </label>
+            <!-- <button class="download-modal-btn" type="submit" onClick="gratitudePopupShow()"> -->
+            <button class="download-modal-btn" type="submit">
+              Submit
+            </button>
+            <div></div>
+            <div class="private-info-text">
+              *By clicking Submit, you consent
+              <a href="#" target="_blank">
+                to the processing of personal data</a
+              >
+            </div>
+          </div>
+        </form>
+        <span class="btn-close" onClick="closePopup()">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="#D6FE43"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M25 1L1 25"
+              stroke="#D6FE43"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M1 1L25 25"
+              stroke="#D6FE43"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="popup_background">
+      <div class="popup_menu-gratitude">
+        <div class="logo">
+          <img src="./assets/img/logo-imans.svg" alt="Imans-logo" />
+        </div>
+        <h2 class="popup-title">Thank you for contacting our company</h2>
+        <p class="popup-text">
+          Your application has been accepted. Our specialists will be happy to
+          answer all your questions and provide you with all the information you
+          need
+        </p>
+        <span class="btn-close" onClick="gratitudeClosePopup()">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="#D6FE43"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M25 1L1 25"
+              stroke="#D6FE43"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M1 1L25 25"
+              stroke="#D6FE43"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
