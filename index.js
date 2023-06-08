@@ -24,21 +24,19 @@ function overlayClose() {
 
 function gratitudePopupShow() {
   document.querySelector('.form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Предотвращаем перезагрузку страницы
-    // Дополнительные действия после отправки формы
-    // Например, можно выполнить асинхронный запрос на сервер или изменить содержимое страницы
+    event.preventDefault();
   });
+
   let popup = document.querySelector(".popup_menu-gratitude");
   let overlay = document.querySelector(".overlay");
   popup.style.display = "block";
   overlay.style.display = "block";
+
   closePopup();
 }
 
 function gratitudeClosePopup() {
   let popup = document.querySelector(".popup_menu-gratitude");
-  // let overlay = document.querySelector(".overlay");
   popup.style.display = "none";
-  // overlay.style.display = "none";
   overlayClose()
 }
