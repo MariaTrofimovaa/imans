@@ -9,17 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link href="./css/main.min.css" rel="stylesheet" />
+
   </head>
   <body>
     <section class="main">
       <div class="block_video">
-        <video
+        <!-- <video
           src="./assets/video/background-video.mp4"
           autoplay
           muted
           playsinline
           loop
-        ></video>
+        ></video> -->
       </div>
       <div class="content_block">
         <header>
@@ -277,7 +278,7 @@
         <h2 class="popup-title">
           Leave your information <br />and we will contact you
         </h2>
-        <form class="form" name="myForm" onSubmit="gratitudePopupShow()">
+        <form class="form" name="myForm" onSubmit="handleSubmit(event)" >
           <div class="download-modal_inputs">
             <label>
               <span class="input-title">Name</span>
@@ -290,11 +291,11 @@
                 required
               />
             </label>
-            <label for="second-name">
+            <label for="lastName">
               <span class="input-title">Surname</span>
               <input
                 type="text"
-                name="second-name"
+                name="lastName"
                 autocomplete="off"
                 placeholder="Black"
               />
@@ -330,7 +331,6 @@
                 placeholder="IMANS"
               />
             </label>
-            <!-- <button class="download-modal-btn" type="submit" onClick="gratitudePopupShow()"> -->
             <button class="download-modal-btn" type="submit">
               Submit
             </button>
@@ -405,5 +405,6 @@
     </div>
 
     <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>

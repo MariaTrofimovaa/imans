@@ -23,16 +23,38 @@ function overlayClose() {
 }
 
 function gratitudePopupShow() {
-  document.querySelector('.form').addEventListener('submit', function(event) {
-    event.preventDefault();
-  });
-
   let popup = document.querySelector(".popup_menu-gratitude");
   let overlay = document.querySelector(".overlay");
   popup.style.display = "block";
   overlay.style.display = "block";
 
   closePopup();
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  let formData = {};
+  let formFields = document.getElementsByTagName("input");
+
+  for (let i = 0; i < formFields.length; i++) {
+    let fieldName = formFields[i].name;
+    let fieldValue = formFields[i].value;
+
+    formData[fieldName] = fieldValue;
+  }
+
+  axios.post('http://localhost:8080/api/v1/client', formData)
+    .then(response => {
+      console.log('Данные формы успешно отправлены на сервер');
+
+      gratitudePopupShow();
+    })
+    .catch(error => {
+      // Обработка ошибки отправки формы
+      // Например, показать сообщение об ошибке
+      console.error('Ошибка при отправке данных формы:', error.message);
+    });
 }
 
 function gratitudeClosePopup() {
