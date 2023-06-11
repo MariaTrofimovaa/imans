@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link href="./css/main.min.css" rel="stylesheet" />
-
   </head>
   <body>
     <section class="main">
@@ -197,7 +196,7 @@
                           alt="whatsapp-icon"
                         />
                       </a>
-                      <a href="tg://resolve?phone=+995558791268">
+                      <a href="tg://resolve?domain=infoimans">
                         <img
                           class="social-links-icon"
                           src="./assets/img/telegram.svg"
@@ -214,14 +213,14 @@
                     </div>
                     <div class="region-social-links">
                       <p class="region-name">Kenya:</p>
-                      <a href="whatsapp://send?phone=+254113859445">
+                      <a href="whatsapp://send?phone=+995558791268">
                         <img
                           class="social-links-icon"
                           src="./assets/img/whatsapp.svg"
                           alt="whatsapp-icon"
                         />
                       </a>
-                      <a href="tg://resolve?phone=tel:+254113859445">
+                      <a href="tg://resolve?domain=infoimans">
                         <img
                           class="social-links-icon"
                           src="./assets/img/telegram.svg"
@@ -278,7 +277,7 @@
         <h2 class="popup-title">
           Leave your information <br />and we will contact you
         </h2>
-        <form class="form" name="myForm" onSubmit="handleSubmit(event)" >
+        <form class="form" name="myForm" onSubmit="handleSubmit(event)">
           <div class="download-modal_inputs">
             <label>
               <span class="input-title">Name</span>
@@ -307,7 +306,7 @@
                 name="email"
                 autocomplete="off"
                 placeholder="black@gmail.com"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}"
                 required
               />
             </label>
@@ -331,9 +330,7 @@
                 placeholder="IMANS"
               />
             </label>
-            <button class="download-modal-btn" type="submit">
-              Submit
-            </button>
+            <button class="download-modal-btn" type="submit">Submit</button>
             <div></div>
             <div class="private-info-text">
               *By clicking Submit, you consent
@@ -403,8 +400,7 @@
         </span>
       </div>
     </div>
-
-    <script src="./index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
+  <script src="./index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

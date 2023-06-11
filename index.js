@@ -10,7 +10,6 @@ function closePopup() {
   let overlay = document.querySelector(".overlay");
   popup.style.display = "none";
   overlay.style.display = "none";
-
 }
 
 function overlayClose() {
@@ -23,12 +22,17 @@ function overlayClose() {
 }
 
 function gratitudePopupShow() {
+  closePopup();
   let popup = document.querySelector(".popup_menu-gratitude");
   let overlay = document.querySelector(".overlay");
   popup.style.display = "block";
   overlay.style.display = "block";
+}
 
-  closePopup();
+function gratitudeClosePopup() {
+  let popup = document.querySelector(".popup_menu-gratitude");
+  popup.style.display = "none";
+  overlayClose();
 }
 
 function handleSubmit(event) {
@@ -44,21 +48,15 @@ function handleSubmit(event) {
     formData[fieldName] = fieldValue;
   }
 
-  axios.post('http://localhost:8080/api/v1/client', formData)
-    .then(response => {
-      console.log('Данные формы успешно отправлены на сервер');
-
+  axios
+    .post("http://localhost:8080/api/v1/client", formData)
+    .then((response) => {
+      console.log("Данные формы успешно отправлены на сервер");
       gratitudePopupShow();
     })
-    .catch(error => {
-      // Обработка ошибки отправки формы
-      // Например, показать сообщение об ошибке
-      console.error('Ошибка при отправке данных формы:', error.message);
+    .catch((error) => {
+      console.error("Ошибка при отправке данных формы:", error.message);
     });
-}
 
-function gratitudeClosePopup() {
-  let popup = document.querySelector(".popup_menu-gratitude");
-  popup.style.display = "none";
-  overlayClose()
+  return false;
 }

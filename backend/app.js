@@ -1,14 +1,15 @@
 const express = require("express");
 const cors = require("cors");
-
 const api = require("./api");
 
+require('dotenv').config();
 const app = express();
+
+const PORT = 8080;
 
 app.use(cors());
 app.use(express.json());
 
-const PORT = 8080;
 
 app.listen(PORT, (err) => {
   if (err) {
@@ -27,15 +28,11 @@ app.use((_, res) => {
   });
 });
 
-// app.use((error, _, res, __) => {
-//   const { status = 500, message = "Server error" } = error;
-//   res.status(status).json({
-//     status: "error",
-//     code: status,
-//     message,
-//   });
-// });
-
-app.use((err, _, res, __) => {
-  res.status(err.status || 500).send({ error: err.message });
+app.use((error, _, res, __) => {
+  const { status = 500, message = "Server error" } = error;
+  res.status(status).json({
+    status: "error",
+    code: status,
+    message,
+  });
 });
