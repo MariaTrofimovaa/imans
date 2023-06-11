@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const axios = require("axios");
+require("dotenv").config();
 
 const router = express.Router();
 
@@ -10,8 +11,8 @@ router.post("/", async (req, res) => {
   try {
     const sendMessageResponse = await sendTelegramMessage(formData);
     const accessToken = await getAccessToken();
-    const sendEmaiResponce = await sendEmail(accessToken, formData);
-    const sendEmaiToClientResponce = await sendEmailToClient(
+    const sendEmailResponse = await sendInternalEmail(accessToken, formData);
+    const sendEmailToClientResponse = await sendExternalEmail(
       accessToken,
       formData
     );
@@ -23,8 +24,8 @@ router.post("/", async (req, res) => {
       data: {
         sendMessageResponse: sendMessageResponse.data,
         accessToken: accessToken,
-        sendEmaiResponce: sendEmaiResponce,
-        sendEmaiToClientResponce: sendEmaiToClientResponce,
+        sendEmailResponse: sendEmailResponse,
+        sendEmailToClientResponse: sendEmailToClientResponse,
         // saveDataResponse: saveDataResponse,
       },
     });
@@ -35,9 +36,9 @@ router.post("/", async (req, res) => {
 });
 
 async function sendTelegramMessage(formData) {
-  const botToken = "";
-  const groupId = "";
-  const url = "";
+  const botToken = process.env.BOT_TOKEN;
+  const groupId = process.env.GROUP_ID;
+  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
   let message = "";
 
   for (let prop in formData) {
@@ -83,11 +84,11 @@ async function saveDataToCSV(formData) {
   });
 }
 
-const clientId = "";
-const clientSecret = "";
-const accessTokenUrl = "";
-const grantType = "";
-const scope = "";
+const clientId = process.env.CLIENT_ID;
+const clientSecret = process.env.CLIENT_SECRET;
+const accessTokenUrl = process.env.ACCESS_TOKEN_URL;
+const grantType = process.env.GRANT_TYPE;
+const scope = process.env.SCOPE;
 
 async function getAccessToken() {
   const data = {
@@ -111,8 +112,9 @@ async function getAccessToken() {
   }
 }
 
-async function sendEmail(accessToken, formData) {
-  const apiUrl = "";
+async function sendInternalEmail(accessToken, formData) {
+  const apiUrl = process.env.GRAPH_API_URL;
+  const email = process.env.INTERNAL_EMAIL;
 
   const emailData = {
     message: {
@@ -124,14 +126,7 @@ async function sendEmail(accessToken, formData) {
       toRecipients: [
         {
           emailAddress: {
-            address: "",
-          },
-        },
-      ],
-      ccRecipients: [
-        {
-          emailAddress: {
-            address: "",
+            address: email,
           },
         },
       ],
@@ -153,8 +148,8 @@ async function sendEmail(accessToken, formData) {
   }
 }
 
-async function sendEmailToClient(accessToken, formData) {
-  const apiUrl = "";
+async function sendExternalEmail(accessToken, formData) {
+  const apiUrl = process.env.GRAPH_API_URL;
 
   const email = formData.email;
 
