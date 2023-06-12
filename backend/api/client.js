@@ -1,5 +1,6 @@
 const express = require("express");
 const fs = require("fs");
+const path = require("path");
 const axios = require("axios");
 require("dotenv").config();
 
@@ -152,14 +153,16 @@ async function sendExternalEmail(accessToken, formData) {
   const apiUrl = process.env.GRAPH_API_URL;
 
   const email = formData.email;
+  const indexHtmlPath = path.join(__dirname, "..", "index.html");
+
+  const indexHtml = fs.readFileSync(indexHtmlPath, "utf8");
 
   const emailData = {
     message: {
       subject: "Thank you for your request",
       body: {
-        contentType: "Text",
-        content:
-          "Your application has been accepted. Our specialists will be happy to answer all your questions and provide you with all the information you need",
+        contentType: "HTML",
+        content: indexHtml,
       },
       toRecipients: [
         {
