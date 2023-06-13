@@ -36,6 +36,14 @@ router.post("/", async (req, res) => {
   }
 });
 
+const propertyNames = {
+  name: "Name",
+  lastName: "Last Name",
+  email: "Email",
+  phone: "Phone",
+  company: "Company",
+};
+
 async function sendTelegramMessage(formData) {
   const botToken = process.env.BOT_TOKEN;
   const groupId = process.env.GROUP_ID;
@@ -44,13 +52,16 @@ async function sendTelegramMessage(formData) {
 
   for (let prop in formData) {
     if (formData.hasOwnProperty(prop)) {
-      message = message + prop + ": " + formData[prop] + "\n";
+      let label = propertyNames[prop] || prop;
+      message =
+        message + "<strong>" + label + "</strong>: " + formData[prop] + "\n";
     }
   }
 
   const payload = {
     chat_id: groupId,
     text: message,
+    parse_mode: "HTML",
   };
 
   return axios.post(url, payload);
@@ -116,13 +127,21 @@ async function getAccessToken() {
 async function sendInternalEmail(accessToken, formData) {
   const apiUrl = process.env.GRAPH_API_URL;
   const email = process.env.INTERNAL_EMAIL;
+  let message = "";
+
+  for (let prop in formData) {
+    if (formData.hasOwnProperty(prop)) {
+      let label = propertyNames[prop] || prop;
+      message += "<strong>" + label + "</strong>: " + formData[prop] + "<br/>";
+    }
+  }
 
   const emailData = {
     message: {
       subject: "New request",
       body: {
-        contentType: "Text",
-        content: `Name: ${formData.name}\nSurname: ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}`,
+        contentType: "HTML",
+        content: message,
       },
       toRecipients: [
         {
