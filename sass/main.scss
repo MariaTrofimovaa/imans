@@ -115,7 +115,7 @@ body {
 
             input {
                 width: 100%;
-                max-width: 250px;
+                // max-width: 250px;
                 height: 50px;
                 color: $popup-color;
                 border: 1px solid $popup-color;
@@ -150,7 +150,6 @@ body {
             }
 
             .private-info-text {
-                // margin-top: 16px;
                 text-align: center;
                 font-style: normal;
                 font-weight: 400;
@@ -168,7 +167,7 @@ body {
     }
 
     .container {
-        // max-width: 1200px;
+        max-width: 1200px;
         margin: 0 auto; 
     }
 
@@ -184,8 +183,6 @@ body {
             padding: 0 360px 0 360px;
 
             .logo {
-                // width: 100%;
-                // margin-right: 15px;
                 max-width: 102px;
                 height: 20px;
             }
@@ -230,7 +227,6 @@ body {
             position: relative;
             z-index: 5;
             .container {
-                // max-width: 1200px;
                 padding: 22px 0 23px 0;
                 display: flex;
                 justify-content: space-between;
@@ -242,6 +238,10 @@ body {
                     display: flex;
                     align-items: center;
                     color: $primary-text-color;
+                    
+                    ul {
+                        margin-right: 12px;
+                    }
 
                     .active_langs {
                         display: flex;
@@ -262,9 +262,15 @@ body {
                     
                     .disabled_langs {
                         position: absolute;
+                        top: 100%;
+                        left: 0;
+                        padding: 10px; 
+                        display: none;
+
                         div {
                             margin-top: 5px;
                         }
+
                         a {
                             text-decoration: none;
                             color: $primary-text-color;
@@ -275,18 +281,17 @@ body {
                                 cursor: pointer;
                             }
                         }
-                    }
-
-                    ul {
-                        list-style: none;
-                        margin-right: 35px;
+                    
+                        ul {
+                            list-style: none;
+                            margin-right: 35px;
+                        }
                     }
                 }
 
                 .contact_us {
                     font-family: "'Inter-Medium", sans-serif;
                     display: block;
-                    // max-width: 144px;
                     padding: 20px 26px 16px 26px;
                     border: 1px solid $accent-color;
                     border-radius: 314px;
@@ -312,145 +317,69 @@ body {
             
             .container {
                 border-bottom: 1px solid $primary-text-color;
-            }
 
-            .about {
-                // width: 1150px;
-                // height: 166px;
-                display: flex;
-                justify-content: space-between;
-
-                
-            &-title {
-                width: 694px;
-                font-family: 'Asimov', sans-serif;
-                font-size: 38px;
-                line-height: 140%;
-                color: $primary-text-color;
-                letter-spacing: 0.035em;
-                text-transform: uppercase;
-                }
-
-            &-block {
-                display: flex;
-                flex-direction: column;
-
-            }
-            &-text {
-                width: 386px;
-                margin-bottom: 40px;
-                font-style: normal;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 147%;
-                color: $primary-text-color;
-                }
-
-            .primary-button {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                float: right;
-                padding: 0px 26px;
-                width: 305px;
-                height: 50px;
-                background-color: transparent;
-                border: 1px solid $accent-color;
-                border-radius: 300px;
-                color: $accent-color;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 12px;
-                line-height: 15px;
-                letter-spacing: 0.05em;
-                text-transform: uppercase;
-                }
-
-                .primary-button:hover {
-                    cursor: pointer;
-                }
-            }
-
-            .hero-section {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 49px;
-
-                .brand-info {
-                    width: 380px;
-    
+                .about {
+                    display: flex;
+                    justify-content: space-between;
+                    
                     &-title {
-                        font-family: 'Inter-Medium', sans-serif;
-                        font-size: 14px;
-                        line-height: 120%;
+                        width: 694px;
+                        font-family: 'Asimov', sans-serif;
+                        font-size: 38px;
+                        line-height: 140%;
                         color: $primary-text-color;
-                        opacity: 0.5;
-                        margin-bottom: 30px;
-    
-                    }
-                    &-about {
-                        display: flex;
-                        justify-content: space-between;
-                        margin-bottom: 34px;
-    
-                        .logo-africa {
-                            width: 166px;
-                            height: 28px;
+                        letter-spacing: 0.035em;
+                        text-transform: uppercase;
                         }
+
+                    &-block {
+                        display: flex;
+                        flex-direction: column;
                     }
                     &-text {
-                        width: 202px;
+                        width: 386px;
+                        margin-bottom: 40px;
                         font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
                         line-height: 147%;
                         color: $primary-text-color;
-                        flex: none;
-                        order: 1;
-                        flex-grow: 0;
-                    }
-    
-                    .about-clients {
-                        width: 380px;
+                        }
+
+                    .primary-button {
                         display: flex;
                         flex-direction: column;
-                        
-                        &-list {
-                            display: grid;
-                            grid-template-columns: repeat(2,1fr);
-                            column-gap: 40px;
-    
-                            img {
-                                margin-right: 10px;
-                            }
-                        }
-                        
-                        &-text {
-                            display: flex;
-                            align-items: center;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 14px;
-                            line-height: 140%;
-                            color: $primary-text-color;
-                            margin-bottom: 14px;
-                        }
-                        &-text:nth-last-child(-n+2) {
-                            margin-bottom: 0px;
-                        }
+                        justify-content: center;
+                        align-items: center;
+                        float: right;
+                        padding: 0px 26px;
+                        width: 305px;
+                        height: 50px;
+                        background-color: transparent;
+                        border: 1px solid $accent-color;
+                        border-radius: 300px;
+                        color: $accent-color;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 15px;
+                        letter-spacing: 0.05em;
+                        text-transform: uppercase;
+                    }
+
+                    .primary-button:hover {
+                            cursor: pointer;
                     }
                 }
 
-                .contacts-block {
+                .hero-section {
                     display: flex;
-                    align-items: flex-end;
+                    justify-content: space-between;
+                    margin-bottom: 49px;
 
-                    .contacts-info {
-                        width: 434px;
-                        display: flex;
-                        flex-direction: column;
-    
+                    .brand-info {
+                        width: 380px;
+        
                         &-title {
                             font-family: 'Inter-Medium', sans-serif;
                             font-size: 14px;
@@ -458,39 +387,110 @@ body {
                             color: $primary-text-color;
                             opacity: 0.5;
                             margin-bottom: 30px;
+        
                         }
-    
+                        &-about {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 34px;
+        
+                            .logo-africa {
+                                width: 166px;
+                                height: 28px;
+                            }
+                        }
                         &-text {
+                            width: 202px;
+                            font-style: normal;
                             font-weight: 400;
                             font-size: 14px;
                             line-height: 147%;
                             color: $primary-text-color;
-                            margin-bottom: 30px;
+                            flex: none;
+                            order: 1;
+                            flex-grow: 0;
                         }
-    
-                        .block-social {
-                            // width: 369px;
+        
+                        .about-clients {
+                            width: 380px;
                             display: flex;
-                            justify-content: space-between;
-    
-                            .region-name {
-                                font-family: 'Inter-Medium', sans-serif;
+                            flex-direction: column;
+                            
+                            &-list {
+                                display: grid;
+                                grid-template-columns: repeat(2,1fr);
+                                column-gap: 40px;
+        
+                                img {
+                                    margin-right: 10px;
+                                }
+                            }
+                            
+                            &-text {
+                                display: flex;
+                                align-items: center;
+                                font-style: normal;
+                                font-weight: 400;
                                 font-size: 14px;
                                 line-height: 140%;
                                 color: $primary-text-color;
-                                margin-bottom: 18px;
+                                margin-bottom: 14px;
                             }
-    
-                          
-                            .social-links-icon{
-                                width: 40px;
-                                height: 40px;
-                                margin-right: 16px;
+                            &-text:nth-last-child(-n+2) {
+                                margin-bottom: 0px;
                             }
                         }
                     }
+
+                    .contacts-block {
+                        display: flex;
+                        align-items: flex-end;
+
+                        .contacts-info {
+                            width: 434px;
+                            display: flex;
+                            flex-direction: column;
+        
+                            &-title {
+                                font-family: 'Inter-Medium', sans-serif;
+                                font-size: 14px;
+                                line-height: 120%;
+                                color: $primary-text-color;
+                                opacity: 0.5;
+                                margin-bottom: 30px;
+                            }
+        
+                            &-text {
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 147%;
+                                color: $primary-text-color;
+                                margin-bottom: 30px;
+                            }
+        
+                            .block-social {
+                                display: flex;
+                                justify-content: space-between;
+        
+                                .region-name {
+                                    font-family: 'Inter-Medium', sans-serif;
+                                    font-size: 14px;
+                                    line-height: 140%;
+                                    color: $primary-text-color;
+                                    margin-bottom: 18px;
+                                }
+        
+                            
+                                .social-links-icon{
+                                    width: 40px;
+                                    height: 40px;
+                                    margin-right: 16px;
+                                }
+                            }
+                        }
+                    }
+                    
                 }
-                
             }
         }
 
@@ -499,7 +499,7 @@ body {
             z-index: 4;
             display: flex;
             justify-content: space-between;
-            margin: 35px 0 38.5px 0;
+            padding: 35px 0 38.5px 0;
             color: $primary-text-color;
             
             &-blocks {
@@ -517,52 +517,35 @@ body {
 @media screen and (max-width:1600px) {
     .main {
         .content_block {
-            // background-color: rgb(185, 240, 237);
             padding: 0 150px 0 150px;
         }
     }
 }
 
-
-// @media screen and (max-width: 1024px) {
-// }
-
-// @media screen and (max-width: 850px) {
-// }
-
-// @media screen and (max-width: 800px) {
+// @media screen and (max-width:1280px) {
+//    .main .block_video video {
+//         left: -19%;
+//     }
 // }
 
 
-@media screen and (max-width:768px) {
+
+@media screen and (max-width: 1024px) {
     .main {
         .content_block {
-            // background-color: rgb(185, 240, 237);
             padding: 0 50px 0 50px;
 
             header {
               .container {
                 padding: 48px 0 20px 0;
-                .lang_block{
-                    ul {
-                        margin-right: 12px;
-                    }
-                }
               }
             }
 
             .main-info {
                 .container {
-                    width: 760px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-
+                    max-width: 924px;
                     .about {
-                        // flex-direction: column;
-                        width: 668px;
-                        margin-left: 0;
-                        margin-bottom: 70px;
+                        margin-bottom: 30px;
 
                         &-title {
                             width: 340px;
@@ -580,37 +563,61 @@ body {
                             height: 50px;
                         }
                     }
-                }
-
-                .hero-section {
-                    width: 668px;
-                    
-                    .brand-info {
-                        width: 668px;
-
-                        &-about {
-                            .logo-africa {
-                                width: 133px;
-                                height: 23px;
-                                margin-right: 16px;
-                            } 
-                        }
-
-                        .about-clients {
-                            width: 340px;
-                        }
-                    }
-
-                    .contacts-block {
-                        width: 330px;
-                        .contacts-info {
-
-                            .block-social {                      
-                                 .social-links-icon{
-                                    width: 23px;
+                    .hero-section {                    
+                        .brand-info {
+                            max-width: 668px;
+    
+                            &-about {
+                                width: 340px;
+                                .logo-africa {
+                                    width: 133px;
                                     height: 23px;
+                                    margin-right: 16px;
+                                } 
+                            }
+                        }
+    
+                        .contacts-block {
+                            width: 330px;
+                            .contacts-info {
+    
+                                .block-social {                      
+                                     .social-links-icon{
+                                        width: 23px;
+                                        height: 23px;
+                                    }
                                 }
                             }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .main {
+        .content_block {
+            .main-info {
+                .container {
+                    max-width: 760px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .main {
+        .content_block {
+            .main-info {
+                .container {
+                    max-width: 668px;
+                    .hero-section {                    
+                        .contacts-block{
+                            width: 288px;
                         }
                     }
                 }
@@ -619,114 +626,109 @@ body {
     }
 }
 
-// @media screen and (max-width: 680px) {
-// }
-
-// @media screen and (max-width:576px) {
-// }
-
-
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 680px) {
     .main {
-        .block_video video {
-            left: -90%;
-            top: 0;
-            min-width: auto;
-            min-height: auto;
-            height: 100%;
-        }
-
         .content_block {
-            // background-color: rgb(185, 240, 237);
-            padding: 0 17px 0 17px;
-
-            header {
-              .container {
-                padding: 48px 0 20px 0;
-                .lang_block{
-                    ul {
-                        margin-right: 12px;
-                    }
-                }
-              }
-            }
+            padding: 0 75px 0 75px;
 
             .main-info {
+                max-width: 530px;
                 .container {
-                    width: 340px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-
                     .about {
                         flex-direction: column;
-                        width: 340px;
-                        margin-left: 0;
-                        margin-bottom: 70px;
-
                         &-title {
-                            width: 340px;
-                            font-size: 28px;
-                            margin-bottom: 35px;
+                            width: 517px;
+                            font-size: 35px;
                         }
 
                         &-text {
-                            width: 340px;
-                            margin-bottom: 44px;
+                            width: 517px;
+                            font-size: 20px;
                         }
 
                         .primary-button {
-                            width: 340px;
-                            height: 50px;
+                            margin: 0 auto;
+                            float: none;
+                        }
+                    }
+                    .hero-section {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        
+                        .brand-info {
+                            width: 517px;
+                            margin-bottom: 70px;
+    
+                            &-about {
+                                width: 450px;
+                                font-size: 20px;
+
+                                .logo-africa {
+                                    width: 140px;
+                                    height: 27px;
+                                } 
+                            }
+    
+                            &-title{
+                                font-size: 18px;
+                            }
+    
+                            .about-clients {
+                                width: 530px;
+    
+                                &-text {
+                                    font-size: 17px;
+                                }
+                            }
+                        }
+    
+                        .contacts-block{
+                            width: 530px;
                         }
                     }
                 }
 
-                .hero-section {
-                    width: 340px;
-                    display: flex;
-                    flex-direction: column;
-                    
-                    .brand-info {
-                        width: 340px;
-                        margin-bottom: 70px;
+            }
+        }
+    }
+}
 
-                        &-about {
-                            width: 340px;
-                            font-size: 14px;
-                            line-height: 147%;
-                            margin-bottom: 70px;
-
-                            .logo-africa {
-                                width: 133px;
-                                height: 23px;
-                                margin-right: 16px;
-                            } 
+@media screen and (max-width:576px) {
+    .main {
+        .content_block {
+            padding: 0 50px 0 50px;
+            .main-info {
+                max-width: 476px;
+                .container {
+                    .about {
+                        flex-direction: column;
+                        &-title {
+                            width: 476px;
+                            font-size: 35px;
                         }
 
                         &-text {
-                            width: 191px;
-                            font-size: 12px;
-                        }
-
-                        .about-clients {
-                            width: 340px;
-
-                            &-text {
-                                font-size: 12px;
-                                line-height: 140%;
-                            }
+                            width: 476px;
+                            font-size: 20px;
                         }
                     }
 
-                    .contacts-block {
-                        .contacts-info {
-                            .block-social {                      
-                                 .social-links-icon{
-                                    width: 23px;
-                                    height: 23px;
+                    .hero-section {
+                        .brand-info {
+                            width: 476px;
+                            .about-clients {
+                                width: 476px;
+    
+                                &-text {
+                                    font-size: 12px;
+                                    line-height: 140%;
                                 }
                             }
+                        }
+
+                        .contacts-block{
+                            width: 476px;
                         }
                     }
                 }
@@ -734,13 +736,196 @@ body {
 
             .company-info {
                 display: block;
-                margin: 35px 60px 42px 18px;
-
-                &-blocks:not(:last-child) {
-                    margin-bottom: 20px;
+                &-title{
+                    font-size: 18px;
                 }
             }
         }
     }
-  }
+}
+
+@media screen and (max-width: 475px) {
+    .main {
+        .content_block {
+            padding: 0 25px 0 25px;
+            
+            .main-info {
+                max-width: 425px;
+                .container {
+                    .about {
+                        &-title {
+                            width: 425px;
+                            font-size: 28px;
+                        }
+
+                        &-text {
+                            width: 425px;
+                            font-size: 20px;
+                        }
+                    }
+
+                    .hero-section {
+                        .brand-info {
+                            width: 425px;
+
+                            &-about{
+                                width: 425px;
+                            }
+                            .about-clients {
+                                width: 425px;
+    
+                                &-text {
+                                    font-size: 12px;
+                                }
+                            }
+
+                        }
+                        .contacts-block{
+                                width: 425px;
+                            }
+                    }
+                }
+            }
+
+            .company-info {
+                    width: 420px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .main {
+        .content_block {
+            padding: 0 17px 0 17px;
+            
+            .main-info {
+                max-width: 380px;
+                .container {
+                    .about {
+                        &-title {
+                            width: 380px;
+                            font-size: 28px;
+                        }
+
+                        &-text {
+                            width: 380px;
+                            font-size: 20px;
+                        }
+                    }
+
+                    .hero-section {
+                        .brand-info {
+                            width: 380px;
+
+                            &-about{
+                                width: 380px;
+                            }
+                            .about-clients {
+                                width: 380px;
+    
+                                &-text {
+                                    font-size: 12px;
+                                }
+                            }
+
+                        }
+                        .contacts-block{
+                                width: 380px;
+                            }
+                    }
+                }
+            }
+
+            .company-info {
+                    width: 380px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .main {
+        .content_block {
+            .main-info {
+                max-width: 341px;
+                .container {
+                    .about {
+                        &-title {
+                            width: 341px;
+                        }
+
+                        &-text {
+                            width: 341px;
+                        }
+                    }
+
+                    .hero-section {
+                        .brand-info {
+                            width: 341px;
+
+                            &-about{
+                                width: 341px;
+                            }
+                            .about-clients {
+                                width: 341px;
+                            }
+
+                        }
+                        .contacts-block{
+                                width: 341px;
+                            }
+                    }
+                }
+            }
+
+            .company-info {
+                    width: 341px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .main {
+        .content_block {
+            .main-info {
+                max-width: 340px;
+                .container {
+                    .about {
+                        &-title {
+                            width: 340px;
+                            }
+
+                        &-text {
+                            width: 340px;
+                            }
+                        }
+                    .hero-section {
+                        .brand-info {
+                                width: 340px;
+    
+                                &-about {
+                                    width: 340px;
+                                }
+
+                                .about-clients {
+                                    width: 340px;
+                                }
+                        }
+    
+                        .contacts-block {
+                                width: 340px;
+    
+                        }
+                    }
+                }
+            }
+
+            .company-info {
+                    width: 340px;
+                }
+            }
+        }
+    }       
 }
