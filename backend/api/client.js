@@ -1,6 +1,8 @@
 const express = require("express");
 const fs = require("fs");
+const path = require("path");
 const axios = require("axios");
+require("dotenv").config();
 
 const router = express.Router();
 
@@ -10,8 +12,8 @@ router.post("/", async (req, res) => {
   try {
     const sendMessageResponse = await sendTelegramMessage(formData);
     const accessToken = await getAccessToken();
-    const sendEmaiResponce = await sendEmail(accessToken, formData);
-    const sendEmaiToClientResponce = await sendEmailToClient(
+    const sendEmailResponse = await sendInternalEmail(accessToken, formData);
+    const sendEmailToClientResponse = await sendExternalEmail(
       accessToken,
       formData
     );
@@ -23,8 +25,8 @@ router.post("/", async (req, res) => {
       data: {
         sendMessageResponse: sendMessageResponse.data,
         accessToken: accessToken,
-        sendEmaiResponce: sendEmaiResponce,
-        sendEmaiToClientResponce: sendEmaiToClientResponce,
+        sendEmailResponse: sendEmailResponse,
+        sendEmailToClientResponse: sendEmailToClientResponse,
         // saveDataResponse: saveDataResponse,
       },
     });
@@ -34,21 +36,32 @@ router.post("/", async (req, res) => {
   }
 });
 
+const propertyNames = {
+  name: "Name",
+  lastName: "Last Name",
+  email: "Email",
+  phone: "Phone",
+  company: "Company",
+};
+
 async function sendTelegramMessage(formData) {
-  const botToken = "";
-  const groupId = "";
-  const url = "";
+  const botToken = process.env.BOT_TOKEN;
+  const groupId = process.env.GROUP_ID;
+  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
   let message = "";
 
   for (let prop in formData) {
     if (formData.hasOwnProperty(prop)) {
-      message = message + prop + ": " + formData[prop] + "\n";
+      let label = propertyNames[prop] || prop;
+      message =
+        message + "<strong>" + label + "</strong>: " + formData[prop] + "\n";
     }
   }
 
   const payload = {
     chat_id: groupId,
     text: message,
+    parse_mode: "HTML",
   };
 
   return axios.post(url, payload);
@@ -83,11 +96,11 @@ async function saveDataToCSV(formData) {
   });
 }
 
-const clientId = "";
-const clientSecret = "";
-const accessTokenUrl = "";
-const grantType = "";
-const scope = "";
+const clientId = process.env.CLIENT_ID;
+const clientSecret = process.env.CLIENT_SECRET;
+const accessTokenUrl = process.env.ACCESS_TOKEN_URL;
+const grantType = process.env.GRANT_TYPE;
+const scope = process.env.SCOPE;
 
 async function getAccessToken() {
   const data = {
@@ -111,27 +124,29 @@ async function getAccessToken() {
   }
 }
 
-async function sendEmail(accessToken, formData) {
-  const apiUrl = "";
+async function sendInternalEmail(accessToken, formData) {
+  const apiUrl = process.env.GRAPH_API_URL;
+  const email = process.env.INTERNAL_EMAIL;
+  let message = "";
+
+  for (let prop in formData) {
+    if (formData.hasOwnProperty(prop)) {
+      let label = propertyNames[prop] || prop;
+      message += "<strong>" + label + "</strong>: " + formData[prop] + "<br/>";
+    }
+  }
 
   const emailData = {
     message: {
       subject: "New request",
       body: {
-        contentType: "Text",
-        content: `Name: ${formData.name}\nSurname: ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}`,
+        contentType: "HTML",
+        content: message,
       },
       toRecipients: [
         {
           emailAddress: {
-            address: "",
-          },
-        },
-      ],
-      ccRecipients: [
-        {
-          emailAddress: {
-            address: "",
+            address: email,
           },
         },
       ],
@@ -153,18 +168,20 @@ async function sendEmail(accessToken, formData) {
   }
 }
 
-async function sendEmailToClient(accessToken, formData) {
-  const apiUrl = "";
+async function sendExternalEmail(accessToken, formData) {
+  const apiUrl = process.env.GRAPH_API_URL;
 
   const email = formData.email;
+  const indexHtmlPath = path.join(__dirname, "..", "index.html");
+
+  const indexHtml = fs.readFileSync(indexHtmlPath, "utf8");
 
   const emailData = {
     message: {
       subject: "Thank you for your request",
       body: {
-        contentType: "Text",
-        content:
-          "Your application has been accepted. Our specialists will be happy to answer all your questions and provide you with all the information you need",
+        contentType: "HTML",
+        content: indexHtml,
       },
       toRecipients: [
         {
