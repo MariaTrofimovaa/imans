@@ -13,13 +13,13 @@
   <body>
     <section class="main">
       <div class="block_video">
-        <!-- <video
+        <video
           src="./assets/video/background-video.mp4"
           autoplay
           muted
           playsinline
           loop
-        ></video> -->
+        ></video>
       </div>
       <div class="content_block">
         <header>
@@ -36,7 +36,7 @@
                     <span class="lang-title">en</span>
                     <img
                       class="_doun"
-                      src="./assets//img/selection-arrow.svg"
+                      src="./assets/img/selection-arrow.svg"
                       alt="arrow-down"
                     />
                   </div>
@@ -45,10 +45,10 @@
                     style="display: none"
                   >
                     <div>
-                      <a href=""><span class="lang-title">ru</span></a>
+                      <a href="#"><span class="lang-title">ru</span></a>
                     </div>
                     <div>
-                      <a href=""><span class="lang-title">fr</span></a>
+                      <a href="#"><span class="lang-title">fr</span></a>
                     </div>
                   </div>
                 </li>
@@ -237,7 +237,7 @@
             </div>
           </div>
         </main>
-        <footer class="company-info">
+        <footer class="company-info container">
           <div class="company-info-blocks">
             <p class="company-info-title">Imans Technology LLC</p>
             <p class="company-info-title">Registration number:445693330</p>
@@ -273,7 +273,7 @@
         <h2 class="popup-title">
           Leave your information <br />and we will contact you
         </h2>
-        <form class="form" name="myForm" onSubmit="handleSubmit(event)">
+        <form class="form" name="myForm" onSubmit="handleSubmit(event, window.location.href)">
           <div class="download-modal_inputs">
             <label>
               <span class="input-title">Name</span>
@@ -312,7 +312,7 @@
                 type="text"
                 name="phone"
                 autocomplete="off"
-                placeholder="+7 (999) 99-99-99"
+                placeholder="7 (999) 99-99-99"
                 pattern="[0-9]*"
                 required
               />
@@ -399,4 +399,5 @@
   </body>
   <script src="./index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </html>

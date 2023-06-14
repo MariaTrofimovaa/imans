@@ -183,11 +183,10 @@ body .popup_menu-gratitude .download-modal_inputs .input-title {
 body .popup_menu .download-modal_inputs input,
 body .popup_menu-gratitude .download-modal_inputs input {
   width: 100%;
-  max-width: 250px;
   height: 50px;
   color: #F2F2F2;
   border: 1px solid #F2F2F2;
-  padding: 0px 0px 1px 20px;
+  padding: 5px 10px 5px 10px;
   border-radius: 300px;
   background: transparent;
   margin-top: 5px;
@@ -239,6 +238,7 @@ body .popup_menu-gratitude .download-modal_inputs .private-info-text a {
   color: #EDEDED;
 }
 body .container {
+  max-width: 1200px;
   margin: 0 auto;
 }
 body .main {
@@ -246,6 +246,13 @@ body .main {
   height: 100vh;
   position: relative;
   overflow: hidden;
+}
+body .main .block_video video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
 }
 body .main .content_block {
   overflow-y: scroll;
@@ -260,6 +267,13 @@ body .main::after {
   content: "";
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right -10% bottom 0%;
   opacity: 0.1;
 }
 body .main::before {
@@ -272,13 +286,6 @@ body .main::before {
   top: 0;
   left: 0;
   z-index: 2;
-}
-body .main .block_video video {
-  position: absolute;
-  min-width: 100%;
-  min-height: 100%;
-  top: 0;
-  left: 0;
 }
 body .main header {
   position: relative;
@@ -307,6 +314,9 @@ body .main header .container .lang_block {
           align-items: center;
   color: #EDEDED;
 }
+body .main header .container .lang_block ul {
+  margin-right: 12px;
+}
 body .main header .container .lang_block .active_langs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -327,6 +337,10 @@ body .main header .container .lang_block .active_langs img {
 }
 body .main header .container .lang_block .disabled_langs {
   position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 10px;
+  display: none;
 }
 body .main header .container .lang_block .disabled_langs div {
   margin-top: 5px;
@@ -342,7 +356,7 @@ body .main header .container .lang_block .disabled_langs a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-body .main header .container .lang_block ul {
+body .main header .container .lang_block .disabled_langs ul {
   list-style: none;
   margin-right: 35px;
 }
@@ -373,7 +387,7 @@ body .main .main-info {
 body .main .main-info .container {
   border-bottom: 1px solid #EDEDED;
 }
-body .main .main-info .about {
+body .main .main-info .container .about {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,7 +395,7 @@ body .main .main-info .about {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-body .main .main-info .about-title {
+body .main .main-info .container .about-title {
   width: 694px;
   font-family: "Asimov", sans-serif;
   font-size: 38px;
@@ -390,7 +404,7 @@ body .main .main-info .about-title {
   letter-spacing: 0.035em;
   text-transform: uppercase;
 }
-body .main .main-info .about-block {
+body .main .main-info .container .about-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -399,7 +413,7 @@ body .main .main-info .about-block {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body .main .main-info .about-text {
+body .main .main-info .container .about-text {
   width: 386px;
   margin-bottom: 40px;
   font-style: normal;
@@ -408,7 +422,7 @@ body .main .main-info .about-text {
   line-height: 147%;
   color: #EDEDED;
 }
-body .main .main-info .about .primary-button {
+body .main .main-info .container .about .primary-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -437,10 +451,10 @@ body .main .main-info .about .primary-button {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-body .main .main-info .about .primary-button:hover {
+body .main .main-info .container .about .primary-button:hover {
   cursor: pointer;
 }
-body .main .main-info .hero-section {
+body .main .main-info .container .hero-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -449,10 +463,10 @@ body .main .main-info .hero-section {
           justify-content: space-between;
   margin-bottom: 49px;
 }
-body .main .main-info .hero-section .brand-info {
+body .main .main-info .container .hero-section .brand-info {
   width: 380px;
 }
-body .main .main-info .hero-section .brand-info-title {
+body .main .main-info .container .hero-section .brand-info-title {
   font-family: "Inter-Medium", sans-serif;
   font-size: 14px;
   line-height: 120%;
@@ -460,7 +474,7 @@ body .main .main-info .hero-section .brand-info-title {
   opacity: 0.5;
   margin-bottom: 30px;
 }
-body .main .main-info .hero-section .brand-info-about {
+body .main .main-info .container .hero-section .brand-info-about {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -469,11 +483,11 @@ body .main .main-info .hero-section .brand-info-about {
           justify-content: space-between;
   margin-bottom: 34px;
 }
-body .main .main-info .hero-section .brand-info-about .logo-africa {
+body .main .main-info .container .hero-section .brand-info-about .logo-africa {
   width: 166px;
   height: 28px;
 }
-body .main .main-info .hero-section .brand-info-text {
+body .main .main-info .container .hero-section .brand-info-text {
   width: 202px;
   font-style: normal;
   font-weight: 400;
@@ -489,7 +503,7 @@ body .main .main-info .hero-section .brand-info-text {
   -ms-flex-positive: 0;
       flex-grow: 0;
 }
-body .main .main-info .hero-section .brand-info .about-clients {
+body .main .main-info .container .hero-section .brand-info .about-clients {
   width: 380px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -499,17 +513,17 @@ body .main .main-info .hero-section .brand-info .about-clients {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body .main .main-info .hero-section .brand-info .about-clients-list {
+body .main .main-info .container .hero-section .brand-info .about-clients-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   -webkit-column-gap: 40px;
      -moz-column-gap: 40px;
           column-gap: 40px;
 }
-body .main .main-info .hero-section .brand-info .about-clients-list img {
+body .main .main-info .container .hero-section .brand-info .about-clients-list img {
   margin-right: 10px;
 }
-body .main .main-info .hero-section .brand-info .about-clients-text {
+body .main .main-info .container .hero-section .brand-info .about-clients-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -523,10 +537,10 @@ body .main .main-info .hero-section .brand-info .about-clients-text {
   color: #EDEDED;
   margin-bottom: 14px;
 }
-body .main .main-info .hero-section .brand-info .about-clients-text:nth-last-child(-n+2) {
+body .main .main-info .container .hero-section .brand-info .about-clients-text:nth-last-child(-n+2) {
   margin-bottom: 0px;
 }
-body .main .main-info .hero-section .contacts-block {
+body .main .main-info .container .hero-section .contacts-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -534,7 +548,7 @@ body .main .main-info .hero-section .contacts-block {
       -ms-flex-align: end;
           align-items: flex-end;
 }
-body .main .main-info .hero-section .contacts-block .contacts-info {
+body .main .main-info .container .hero-section .contacts-block .contacts-info {
   width: 434px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -544,7 +558,7 @@ body .main .main-info .hero-section .contacts-block .contacts-info {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body .main .main-info .hero-section .contacts-block .contacts-info-title {
+body .main .main-info .container .hero-section .contacts-block .contacts-info-title {
   font-family: "Inter-Medium", sans-serif;
   font-size: 14px;
   line-height: 120%;
@@ -552,14 +566,14 @@ body .main .main-info .hero-section .contacts-block .contacts-info-title {
   opacity: 0.5;
   margin-bottom: 30px;
 }
-body .main .main-info .hero-section .contacts-block .contacts-info-text {
+body .main .main-info .container .hero-section .contacts-block .contacts-info-text {
   font-weight: 400;
   font-size: 14px;
   line-height: 147%;
   color: #EDEDED;
   margin-bottom: 30px;
 }
-body .main .main-info .hero-section .contacts-block .contacts-info .block-social {
+body .main .main-info .container .hero-section .contacts-block .contacts-info .block-social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -567,14 +581,14 @@ body .main .main-info .hero-section .contacts-block .contacts-info .block-social
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-body .main .main-info .hero-section .contacts-block .contacts-info .block-social .region-name {
+body .main .main-info .container .hero-section .contacts-block .contacts-info .block-social .region-name {
   font-family: "Inter-Medium", sans-serif;
   font-size: 14px;
   line-height: 140%;
   color: #EDEDED;
   margin-bottom: 18px;
 }
-body .main .main-info .hero-section .contacts-block .contacts-info .block-social .social-links-icon {
+body .main .main-info .container .hero-section .contacts-block .contacts-info .block-social .social-links-icon {
   width: 40px;
   height: 40px;
   margin-right: 16px;
@@ -588,7 +602,7 @@ body .main .company-info {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 35px 0 38.5px 0;
+  padding: 35px 0 38.5px 0;
   color: #EDEDED;
 }
 body .main .company-info-blocks {
@@ -607,33 +621,26 @@ body .main .company-info-title {
     padding: 0 150px 0 150px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
+  body .main .block_video video {
+    left: -50%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body .main .block_video video {
+    left: -90%;
+  }
   body .main .content_block {
     padding: 0 50px 0 50px;
   }
   body .main .content_block header .container {
     padding: 48px 0 20px 0;
   }
-  body .main .content_block header .container .lang_block ul {
-    margin-right: 12px;
-  }
   body .main .content_block .main-info .container {
-    width: 760px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    max-width: 924px;
   }
   body .main .content_block .main-info .container .about {
-    width: 668px;
-    margin-left: 0;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
   }
   body .main .content_block .main-info .container .about-title {
     width: 340px;
@@ -648,125 +655,327 @@ body .main .company-info-title {
     width: 340px;
     height: 50px;
   }
-  body .main .content_block .main-info .hero-section {
-    width: 668px;
+  body .main .content_block .main-info .container .hero-section .brand-info {
+    max-width: 668px;
   }
-  body .main .content_block .main-info .hero-section .brand-info {
-    width: 668px;
+  body .main .content_block .main-info .container .hero-section .brand-info-about {
+    width: 340px;
   }
-  body .main .content_block .main-info .hero-section .brand-info-about .logo-africa {
+  body .main .content_block .main-info .container .hero-section .brand-info-about .logo-africa {
     width: 133px;
     height: 23px;
     margin-right: 16px;
   }
-  body .main .content_block .main-info .hero-section .brand-info .about-clients {
-    width: 340px;
-  }
-  body .main .content_block .main-info .hero-section .contacts-block {
+  body .main .content_block .main-info .container .hero-section .contacts-block {
     width: 330px;
   }
-  body .main .content_block .main-info .hero-section .contacts-block .contacts-info .block-social .social-links-icon {
+  body .main .content_block .main-info .container .hero-section .contacts-block .contacts-info .block-social .social-links-icon {
     width: 23px;
     height: 23px;
   }
 }
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 850px) {
   body .main .block_video video {
-    left: -90%;
+    left: -115%;
+  }
+  body .main .content_block .main-info .container {
+    max-width: 760px;
+  }
+}
+@media screen and (max-width: 800px) {
+  body .main .block_video video {
+    left: -130%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body .main .content_block .main-info .container {
+    max-width: 668px;
+  }
+  body .main .content_block .main-info .container .hero-section .contacts-block {
+    width: 288px;
+  }
+}
+@media screen and (max-width: 680px) {
+  body .main .content_block {
+    padding: 0 75px 0 75px;
+  }
+  body .main .content_block .main-info {
+    max-width: 530px;
+  }
+  body .main .content_block .main-info .container .about {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .main .content_block .main-info .container .about-title {
+    width: 517px;
+    font-size: 35px;
+  }
+  body .main .content_block .main-info .container .about-text {
+    width: 517px;
+    font-size: 20px;
+  }
+  body .main .content_block .main-info .container .about .primary-button {
+    margin: 0 auto;
+    float: none;
+  }
+  body .main .content_block .main-info .container .hero-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info {
+    width: 517px;
+    margin-bottom: 70px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info-about {
+    width: 450px;
+    font-size: 20px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info-about .logo-africa {
+    width: 140px;
+    height: 27px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info-title {
+    font-size: 18px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info .about-clients {
+    width: 530px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info .about-clients-text {
+    font-size: 17px;
+  }
+  body .main .content_block .main-info .container .hero-section .contacts-block {
+    width: 530px;
+  }
+}
+@media screen and (max-width: 576px) {
+  body .main .content_block {
+    padding: 0 50px 0 50px;
+  }
+  body .main .content_block .main-info {
+    max-width: 476px;
+  }
+  body .main .content_block .main-info .container .about {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .main .content_block .main-info .container .about-title {
+    width: 476px;
+    font-size: 35px;
+  }
+  body .main .content_block .main-info .container .about-text {
+    width: 476px;
+    font-size: 20px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info {
+    width: 476px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info .about-clients {
+    width: 476px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info .about-clients-text {
+    font-size: 12px;
+    line-height: 140%;
+  }
+  body .main .content_block .main-info .container .hero-section .contacts-block {
+    width: 476px;
+  }
+  body .main .content_block .company-info {
+    display: block;
+  }
+  body .main .content_block .company-info-title {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 475px) {
+  body .popup_menu .download-modal_inputs input::-webkit-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-webkit-input-placeholder {
+    font-size: 10px;
+  }
+  body .popup_menu .download-modal_inputs input::-moz-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-moz-placeholder {
+    font-size: 10px;
+  }
+  body .popup_menu .download-modal_inputs input:-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input:-ms-input-placeholder {
+    font-size: 10px;
+  }
+  body .popup_menu .download-modal_inputs input::-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-ms-input-placeholder {
+    font-size: 10px;
+  }
+  body .popup_menu .download-modal_inputs input::placeholder,
+body .popup_menu-gratitude .download-modal_inputs input::placeholder {
+    font-size: 10px;
+  }
+  body .main .block_video video {
+    left: 0;
     top: 0;
     min-width: auto;
     min-height: auto;
     height: 100%;
   }
   body .main .content_block {
+    padding: 0 25px 0 25px;
+  }
+  body .main .content_block .main-info {
+    max-width: 425px;
+  }
+  body .main .content_block .main-info .container .about-title {
+    width: 425px;
+    font-size: 28px;
+  }
+  body .main .content_block .main-info .container .about-text {
+    width: 425px;
+    font-size: 20px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info {
+    width: 425px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info-about {
+    width: 425px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info .about-clients {
+    width: 425px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info .about-clients-text {
+    font-size: 12px;
+  }
+  body .main .content_block .main-info .container .hero-section .contacts-block {
+    width: 425px;
+  }
+  body .main .content_block .company-info {
+    width: 420px;
+  }
+}
+@media screen and (max-width: 420px) {
+  body .main .content_block {
     padding: 0 17px 0 17px;
   }
-  body .main .content_block header .container {
-    padding: 48px 0 20px 0;
+  body .main .content_block .main-info {
+    max-width: 380px;
   }
-  body .main .content_block header .container .lang_block ul {
-    margin-right: 12px;
+  body .main .content_block .main-info .container .about-title {
+    width: 380px;
+    font-size: 28px;
   }
-  body .main .content_block .main-info .container {
-    width: 340px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+  body .main .content_block .main-info .container .about-text {
+    width: 380px;
+    font-size: 20px;
   }
-  body .main .content_block .main-info .container .about {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 340px;
-    margin-left: 0;
-    margin-bottom: 70px;
+  body .main .content_block .main-info .container .hero-section .brand-info {
+    width: 380px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info-about {
+    width: 380px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info .about-clients {
+    width: 380px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info .about-clients-text {
+    font-size: 12px;
+  }
+  body .main .content_block .main-info .container .hero-section .contacts-block {
+    width: 380px;
+  }
+  body .main .content_block .company-info {
+    width: 380px;
+  }
+}
+@media screen and (max-width: 390px) {
+  body .main .content_block .main-info {
+    max-width: 341px;
+  }
+  body .main .content_block .main-info .container .about-title {
+    width: 341px;
+  }
+  body .main .content_block .main-info .container .about-text {
+    width: 341px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info {
+    width: 341px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info-about {
+    width: 341px;
+  }
+  body .main .content_block .main-info .container .hero-section .brand-info .about-clients {
+    width: 341px;
+  }
+  body .main .content_block .main-info .container .hero-section .contacts-block {
+    width: 341px;
+  }
+  body .main .content_block .company-info {
+    width: 341px;
+  }
+}
+@media screen and (max-width: 375px) {
+  body .popup_menu .download-modal_inputs input::-webkit-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-webkit-input-placeholder {
+    font-size: 10px;
+  }
+  body .popup_menu .download-modal_inputs input::-moz-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-moz-placeholder {
+    font-size: 10px;
+  }
+  body .popup_menu .download-modal_inputs input:-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input:-ms-input-placeholder {
+    font-size: 10px;
+  }
+  body .popup_menu .download-modal_inputs input::-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-ms-input-placeholder {
+    font-size: 10px;
+  }
+  body .popup_menu .download-modal_inputs input::placeholder,
+body .popup_menu-gratitude .download-modal_inputs input::placeholder {
+    font-size: 10px;
+  }
+  body .main .content_block .main-info {
+    max-width: 340px;
   }
   body .main .content_block .main-info .container .about-title {
     width: 340px;
-    font-size: 28px;
-    margin-bottom: 35px;
   }
   body .main .content_block .main-info .container .about-text {
     width: 340px;
-    margin-bottom: 44px;
   }
-  body .main .content_block .main-info .container .about .primary-button {
-    width: 340px;
-    height: 50px;
-  }
-  body .main .content_block .main-info .hero-section {
-    width: 340px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  body .main .content_block .main-info .hero-section .brand-info {
-    width: 340px;
-    margin-bottom: 70px;
-  }
-  body .main .content_block .main-info .hero-section .brand-info-about {
-    width: 340px;
-    font-size: 14px;
-    line-height: 147%;
-    margin-bottom: 70px;
-  }
-  body .main .content_block .main-info .hero-section .brand-info-about .logo-africa {
-    width: 133px;
-    height: 23px;
-    margin-right: 16px;
-  }
-  body .main .content_block .main-info .hero-section .brand-info-text {
-    width: 191px;
-    font-size: 12px;
-  }
-  body .main .content_block .main-info .hero-section .brand-info .about-clients {
+  body .main .content_block .main-info .container .hero-section .brand-info {
     width: 340px;
   }
-  body .main .content_block .main-info .hero-section .brand-info .about-clients-text {
-    font-size: 12px;
-    line-height: 140%;
+  body .main .content_block .main-info .container .hero-section .brand-info-about {
+    width: 340px;
   }
-  body .main .content_block .main-info .hero-section .contacts-block .contacts-info .block-social .social-links-icon {
-    width: 23px;
-    height: 23px;
+  body .main .content_block .main-info .container .hero-section .brand-info .about-clients {
+    width: 340px;
+  }
+  body .main .content_block .main-info .container .hero-section .contacts-block {
+    width: 340px;
   }
   body .main .content_block .company-info {
-    display: block;
-    margin: 35px 60px 42px 18px;
+    width: 340px;
   }
-  body .main .content_block .company-info-blocks:not(:last-child) {
-    margin-bottom: 20px;
+}
+@media screen and (max-width: 368px) {
+  body .popup_menu .download-modal_inputs .input-title,
+body .popup_menu-gratitude .download-modal_inputs .input-title {
+    font-size: 10px;
+  }
+  body .popup_menu .download-modal_inputs input::-webkit-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-webkit-input-placeholder {
+    font-size: 8px;
+  }
+  body .popup_menu .download-modal_inputs input::-moz-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-moz-placeholder {
+    font-size: 8px;
+  }
+  body .popup_menu .download-modal_inputs input:-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input:-ms-input-placeholder {
+    font-size: 8px;
+  }
+  body .popup_menu .download-modal_inputs input::-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-ms-input-placeholder {
+    font-size: 8px;
+  }
+  body .popup_menu .download-modal_inputs input::placeholder,
+body .popup_menu-gratitude .download-modal_inputs input::placeholder {
+    font-size: 8px;
   }
 }/*# sourceMappingURL=main.css.map */

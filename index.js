@@ -1,3 +1,47 @@
+document.addEventListener("DOMContentLoaded", () => {
+  /*
+   * Multilingual dropdown list
+   */
+
+  // $(document).ready(function () {
+  //   $("a.dropdown-a").on("click", function (e) {
+  //     e.preventDefault();
+  //   });
+  //   $(".dropdown-li").hover(
+  //     function () {
+  //       clearTimeout($.data(this, "timer"));
+  //       $("ul, .disabled_langs", this).stop(true, true).slideDown(200);
+  //     },
+  //     function () {
+  //       $.data(
+  //         this,
+  //         "timer",
+  //         setTimeout(
+  //           $.proxy(function () {
+  //             $("ul, .disabled_langs", this)
+  //               .stop(true, true)
+  //               .slideUp(200);
+  //           }, this),
+  //           100
+  //         )
+  //       );
+  //     }
+  //   );
+  // });
+
+  /*
+   * Video for mobile version
+   */
+  const windowInnerWidth = window.innerWidth;
+
+  if (windowInnerWidth <= 475) {
+    let movie = document.querySelector("video");
+    // change "#" to video path
+    movie.setAttribute("src", "#");
+    document.querySelector("video").play();
+  }
+});
+
 function popupShow() {
   let popup = document.querySelector(".popup_menu");
   let overlay = document.querySelector(".overlay");
@@ -35,8 +79,10 @@ function gratitudeClosePopup() {
   overlayClose();
 }
 
-function handleSubmit(event) {
+function handleSubmit(event, url) {
   event.preventDefault();
+
+  const hostname = new URL(url).hostname;
 
   let formData = {};
   let formFields = document.getElementsByTagName("input");
@@ -47,6 +93,8 @@ function handleSubmit(event) {
 
     formData[fieldName] = fieldValue;
   }
+
+  formData["source"] = hostname;
 
   axios
     .post("http://localhost:8080/api/v1/client", formData)
