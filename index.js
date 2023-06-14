@@ -79,8 +79,10 @@ function gratitudeClosePopup() {
   overlayClose();
 }
 
-function handleSubmit(event) {
+function handleSubmit(event, url) {
   event.preventDefault();
+
+  const hostname = new URL(url).hostname;
 
   let formData = {};
   let formFields = document.getElementsByTagName("input");
@@ -91,6 +93,8 @@ function handleSubmit(event) {
 
     formData[fieldName] = fieldValue;
   }
+
+  formData["source"] = hostname;
 
   axios
     .post("http://localhost:8080/api/v1/client", formData)
