@@ -36,7 +36,7 @@
                     <span class="lang-title">en</span>
                     <img
                       class="_doun"
-                      src="https://agartaltd.com/data/common/assets/img/arrow-down.svg"
+                      src="./assets/img/selection-arrow.svg"
                       alt="arrow-down"
                     />
                   </div>
@@ -45,14 +45,10 @@
                     style="display: none"
                   >
                     <div>
-                      <a href="https://agartaltd.com/en/"
-                        ><span class="lang-title">ru</span></a
-                      >
+                      <a href="#"><span class="lang-title">ru</span></a>
                     </div>
                     <div>
-                      <a href="https://agartaltd.com/tr/"
-                        ><span class="lang-title">fr</span></a
-                      >
+                      <a href="#"><span class="lang-title">fr</span></a>
                     </div>
                   </div>
                 </li>
@@ -196,7 +192,7 @@
                           alt="whatsapp-icon"
                         />
                       </a>
-                      <a href="tg://resolve?phone=+995558791268">
+                      <a href="tg://resolve?domain=infoimans">
                         <img
                           class="social-links-icon"
                           src="./assets/img/telegram.svg"
@@ -213,14 +209,14 @@
                     </div>
                     <div class="region-social-links">
                       <p class="region-name">Kenya:</p>
-                      <a href="whatsapp://send?phone=+254113859445">
+                      <a href="whatsapp://send?phone=+995558791268">
                         <img
                           class="social-links-icon"
                           src="./assets/img/whatsapp.svg"
                           alt="whatsapp-icon"
                         />
                       </a>
-                      <a href="tg://resolve?phone=tel:+254113859445">
+                      <a href="tg://resolve?domain=infoimans">
                         <img
                           class="social-links-icon"
                           src="./assets/img/telegram.svg"
@@ -241,15 +237,15 @@
             </div>
           </div>
         </main>
-        <footer class="company-info">
+        <footer class="company-info container">
           <div class="company-info-blocks">
             <p class="company-info-title">Imans Technology LLC</p>
             <p class="company-info-title">Registration number:445693330</p>
           </div>
           <div class="company-info-blocks">
             <p class="company-info-title">
-              For questions of cooperation, <br />
-              please contact: hello@imans.io
+              For cooperation, <br />
+              please contact: info@imans.io
             </p>
           </div>
           <div class="company-info-blocks">
@@ -277,7 +273,7 @@
         <h2 class="popup-title">
           Leave your information <br />and we will contact you
         </h2>
-        <form class="form" name="myForm" onSubmit="gratitudePopupShow()">
+        <form class="form" name="myForm" onSubmit="handleSubmit(event, window.location.href)">
           <div class="download-modal_inputs">
             <label>
               <span class="input-title">Name</span>
@@ -290,11 +286,11 @@
                 required
               />
             </label>
-            <label for="second-name">
+            <label for="lastName">
               <span class="input-title">Surname</span>
               <input
                 type="text"
-                name="second-name"
+                name="lastName"
                 autocomplete="off"
                 placeholder="Black"
               />
@@ -306,7 +302,7 @@
                 name="email"
                 autocomplete="off"
                 placeholder="black@gmail.com"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}"
                 required
               />
             </label>
@@ -316,7 +312,7 @@
                 type="text"
                 name="phone"
                 autocomplete="off"
-                placeholder="+7 (999) 99-99-99"
+                placeholder="7 (999) 99-99-99"
                 pattern="[0-9]*"
                 required
               />
@@ -330,10 +326,7 @@
                 placeholder="IMANS"
               />
             </label>
-            <!-- <button class="download-modal-btn" type="submit" onClick="gratitudePopupShow()"> -->
-            <button class="download-modal-btn" type="submit">
-              Submit
-            </button>
+            <button class="download-modal-btn" type="submit">Submit</button>
             <div></div>
             <div class="private-info-text">
               *By clicking Submit, you consent
@@ -403,7 +396,8 @@
         </span>
       </div>
     </div>
-
-    <script src="./index.js"></script>
   </body>
+  <script src="./index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </html>
