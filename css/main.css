@@ -77,6 +77,7 @@ a, ul {
 
 body {
   font-family: "Inter-Regular", sans-serif;
+  color: #EDEDED;
 }
 body .overlay {
   position: fixed;
@@ -315,7 +316,7 @@ body .main header .container .lang_block {
   color: #EDEDED;
 }
 body .main header .container .lang_block ul {
-  margin-right: 12px;
+  margin-right: 39px;
 }
 body .main header .container .lang_block .active_langs {
   display: -webkit-box;
@@ -470,7 +471,6 @@ body .main .main-info .container .hero-section .brand-info-title {
   font-family: "Inter-Medium", sans-serif;
   font-size: 14px;
   line-height: 120%;
-  color: #EDEDED;
   opacity: 0.5;
   margin-bottom: 30px;
 }
@@ -493,7 +493,6 @@ body .main .main-info .container .hero-section .brand-info-text {
   font-weight: 400;
   font-size: 14px;
   line-height: 147%;
-  color: #EDEDED;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
@@ -515,7 +514,7 @@ body .main .main-info .container .hero-section .brand-info .about-clients {
 }
 body .main .main-info .container .hero-section .brand-info .about-clients-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 190px 1fr;
   -webkit-column-gap: 40px;
      -moz-column-gap: 40px;
           column-gap: 40px;
@@ -534,7 +533,6 @@ body .main .main-info .container .hero-section .brand-info .about-clients-text {
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
-  color: #EDEDED;
   margin-bottom: 14px;
 }
 body .main .main-info .container .hero-section .brand-info .about-clients-text:nth-last-child(-n+2) {
@@ -557,14 +555,6 @@ body .main .main-info .container .hero-section .contacts-block .contacts-info {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-body .main .main-info .container .hero-section .contacts-block .contacts-info-title {
-  font-family: "Inter-Medium", sans-serif;
-  font-size: 14px;
-  line-height: 120%;
-  color: #EDEDED;
-  opacity: 0.5;
-  margin-bottom: 30px;
 }
 body .main .main-info .container .hero-section .contacts-block .contacts-info-text {
   font-weight: 400;
@@ -603,7 +593,7 @@ body .main .company-info {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 35px 0 38.5px 0;
-  color: #EDEDED;
+  opacity: 0.5;
 }
 body .main .company-info-blocks {
   -webkit-box-orient: vertical;
@@ -611,10 +601,12 @@ body .main .company-info-blocks {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+body .main .company-info-blocks:not(:last-child) {
+  margin-right: 20px;
+}
 body .main .company-info-title {
   font-size: 12px;
   line-height: 147%;
-  opacity: 0.5;
 }
 @media screen and (max-width: 1600px) {
   body .main .content_block {
