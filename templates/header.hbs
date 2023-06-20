@@ -1,0 +1,34 @@
+<header>
+  <div class="container">
+    <div class="logo-block">
+      <img class="logo-block-img" src="./assets/img/logo-imans.svg" alt="Imans-logo" />
+      <p class="logo-block-title">{{logo_title}}</p>
+    </div>    
+    <div class="lang_block">
+      <ul class="dropdown-lang">
+        <li class="dropdown-li">
+          <div class="active_langs dropdown-li">
+            <span class="lang-title" >{{first_lang}}</span>
+            <img
+              class="arrow-down"
+              src="./assets/img/selection-arrow.svg"
+              alt="arrow-down"
+            />
+          </div>
+          <div class="disabled_langs main-dropdown-menu" style="display: none">
+              <a href="#" onClick="changeLanguage(event,'{{second_lang}}')">
+                <span class="lang-title">{{second_lang}}</span>
+              </a>
+          </div>
+        </li>
+      </ul>
+      <div class="buttons">
+        <a class="contact_us" href="http://www.helloafrica.io/" target="_blank">{{hello_africa}}</a>
+        <a class="contact_us" href="http://www.hellogeorgia.io/" target="_blank">{{hello_georgia}}</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
