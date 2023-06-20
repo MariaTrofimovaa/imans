@@ -24,6 +24,9 @@ $popup-color: #F2F2F2;
 
 body {
     font-family: 'Inter-Regular', sans-serif;
+    font-size: 14px;
+    line-height: 147%;
+    color: $primary-text-color;
 
     .overlay {
         position: fixed;
@@ -35,6 +38,7 @@ body {
         display: none;
         top: 0;
         left: 0;
+        overflow-y: scroll;
     }
     
     .popup_background {
@@ -43,128 +47,136 @@ body {
         align-items: center;
     }
 
-    .popup_menu,
-    .popup_menu-gratitude {
-        display: none;
-        vertical-align: middle;
-        position: fixed;
-        top: 10%;
-        margin: 0 auto;
-        z-index: 25;
-        max-width: 590px;
-        width: 90%;
-        box-sizing: border-box;
-        background-color: $popup-bg-color;
-        color: $primary-text-color;
-        padding: 77px 30px;
+  .popup_menu,
+  .popup_menu-gratitude {
+    display: none;
+    vertical-align: middle;
+    position: fixed;
+    top: 10%;
+    margin: 0 auto;
+    max-width: 590px;
+    width: 90%;
+    z-index: 25;
+    box-sizing: border-box;
+    background-color: $popup-bg-color;
+    color: $primary-text-color;
+    padding: 73px 30px 77px;
+    overflow: auto;
 
-        .logo {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 50px;
-        }
-
-        .popup-title {
-            text-align: center;
-            font-weight: 500;
-            font-size: 24px;
-            line-height: 140%;
-            margin-bottom: 38px;
-        }
-
-        .popup-text {
-            font-size: 14px;
-            line-height: 147%;
-            text-align: center;
-            color: $primary-text-color;
-        }
-
-        .btn-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
-
-        .download-modal_inputs {
-            margin: auto;
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            column-gap: 40px;
-            align-items: center;
-
-            label {
-                align-self: flex-start;
-                // margin-top: 30px;
-                margin-bottom: 33px;
-                position: relative;
-                width: 100%;
-                color: $primary-text-color;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 147%;
-            }
-
-            .input-title {
-                color: $popup-color;
-            }
-
-            input {
-                width: 100%;
-                // max-width: 250px;
-                height: 50px;
-                color: $popup-color;
-                border: 1px solid $popup-color;
-                padding: 5px 10px 5px 10px;
-                border-radius: 300px;
-                background: transparent;
-                margin-top: 5px;
-            }
-
-            .download-modal-btn {
-                width: 100%;
-                max-width: 250px;
-                height: 50px;
-                margin-top: -9px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: $popup-bg-color;
-                background: $accent-color;
-                border: 1px solid $accent-color;
-                border-radius: 300px;
-                transition: .5s;
-                font-weight: 500;
-                font-size: 12px;
-                line-height: 15px;
-                letter-spacing: 0.05em;
-                text-transform: uppercase;
-
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-
-            .private-info-text {
-                text-align: center;
-                font-style: normal;
-                font-weight: 400;
-                font-size: 11px;
-                line-height: 147%;
-                color: $primary-text-color;
-                opacity: 0.5;
-
-                a {
-                    text-decoration: underline;
-                    color: $primary-text-color;
-                }
-            }
-        }     
+    .popup_logo {
+      margin: 0 auto 48px;
+      width: 190px;
+      height: 37px;
     }
+
+    .popup-title {
+      font-family: "Nunito-ExtraBold", sans-serif;
+      text-align: center;
+      font-size: 24px;
+      line-height: 140%;
+      letter-spacing: 0.035em;
+      max-width: 344px;
+      margin: 0 auto 56px;
+    }
+
+    .popup-text {
+      font-size: 14px;
+      line-height: 147%;
+      text-align: center;
+      color: $primary-text-color;
+    }
+
+    .btn-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .download-modal_inputs {
+      margin: auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+      align-items: center;
+      position: relative;
+
+      label {
+        align-self: flex-start;
+        margin-bottom: 33px;
+        position: relative;
+        width: 100%;
+        color: $primary-text-color;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 147%;
+      }
+
+      label:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .input-title {
+        color: $popup-color;
+      }
+
+      input {
+        width: 100%;
+        height: 50px;
+        color: $popup-color;
+        border: 1px solid $popup-color;
+        padding: 5px 10px 5px 10px;
+        border-radius: 300px;
+        background: transparent;
+        margin-top: 5px;
+      }
+
+      .download-modal-btn {
+        width: 100%;
+        max-width: 250px;
+        height: 50px;
+        margin-top: 25.58px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $popup-bg-color;
+        background: $accent-color;
+        border: 1px solid $accent-color;
+        border-radius: 300px;
+        transition: 0.5s;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .private-info-text {
+        max-width: 250px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 147%;
+        color: $primary-text-color;
+        opacity: 0.5;
+        position: absolute;
+        right: 5%;
+        margin-top: 10px;
+
+        a {
+          text-decoration: underline;
+          color: $primary-text-color;
+        }
+    }
+  }
 
     .container {
         max-width: 1200px;
@@ -190,11 +202,7 @@ body {
             height: 100%;
             padding: 0 360px 0 360px;
 
-            .logo {
-                max-width: 102px;
-                height: 20px;
-            }
-        }
+            
         &::after {
             content: '';
             width: 100%;
@@ -231,13 +239,28 @@ body {
                 text-align: center;
                 border-bottom: 1px solid $primary-text-color;
 
+                .logo-block {
+                    display: flex;
+                    flex-direction: column;
+
+                    &-img {
+                        max-width: 102px;
+                        height: 20px;
+                    }
+                    &-title {
+                        margin-top: 15px;
+                        text-align: left;
+                    }
+                }
+
+
                 .lang_block {
                     display: flex;
                     align-items: center;
                     color: $primary-text-color;
                     
                     ul {
-                        margin-right: 12px;
+                        margin-right: 39px;
                     }
 
                     .active_langs {
@@ -286,44 +309,62 @@ body {
                     }
                 }
 
-                .contact_us {
-                    font-family: "'Inter-Medium", sans-serif;
-                    display: block;
-                    padding: 20px 26px 16px 26px;
-                    border: 1px solid $accent-color;
-                    border-radius: 314px;
-                    color: $accent-color;
-                    background: transparent;
-                    text-decoration: none;
-                    font-size: 12px;
-                    line-height: 15px;
-                    letter-spacing: 0.05em;
-                    text-transform: uppercase;
-                    transition: 0.5s;
-                    &:hover {
-                        cursor: pointer;
+                .buttons {
+                    display: flex;
+
+                    .contact_us {
+                        font-family: "'Inter-Medium", sans-serif;
+                        display: block;
+                        padding: 20px 26px 16px 26px;
+                        border: 1px solid $accent-color;
+                        border-radius: 314px;
+                        color: $accent-color;
+                        background: transparent;
+                        text-decoration: none;
+                        font-size: 12px;
+                        line-height: 15px;
+                        letter-spacing: 0.05em;
+                        text-transform: uppercase;
+                        transition: 0.5s;
+                        margin-right: 16px;
+                        &:hover {
+                            cursor: pointer;
+                            filter: drop-shadow(0px 0px 10px #D6FE43);
+                        }
+                    }
+                    .contact_us:last-child {
+                        margin-right: 0;
                     }
                 }
+
             }                  
         }
 
         .main-info {
             position: relative;
             z-index: 4;
-            padding-top: 26px;
+            padding-top: 35px;
             
             .container {
                 border-bottom: 1px solid $primary-text-color;
 
+                .welcome-title {
+                        line-height: 120%;
+                        opacity: 0.5;
+                        margin-bottom: 12px;
+                    }
+
                 .about {
                     display: flex;
                     justify-content: space-between;
+
                     
                     &-title {
                         width: 694px;
                         font-family: 'Asimov', sans-serif;
                         font-size: 38px;
                         line-height: 140%;
+                        // margin-top: 15px;
                         color: $primary-text-color;
                         letter-spacing: 0.035em;
                         text-transform: uppercase;
@@ -365,7 +406,8 @@ body {
                     }
 
                     .primary-button:hover {
-                            cursor: pointer;
+                        cursor: pointer;
+                        filter: drop-shadow(0px 0px 10px #D6FE43);
                     }
                 }
 
@@ -375,47 +417,44 @@ body {
                     margin-bottom: 49px;
 
                     .brand-info {
-                        width: 380px;
+                        max-width: 530px;
+                        .brand {
+                            display: flex;
+                            justify-content: space-between;
+                            max-width: 350px;
+                        }
         
                         &-title {
                             font-family: 'Inter-Medium', sans-serif;
                             font-size: 14px;
                             line-height: 120%;
-                            color: $primary-text-color;
                             opacity: 0.5;
                             margin-bottom: 30px;
-        
+                            color: $primary-text-color;
                         }
                         &-about {
                             display: flex;
                             justify-content: space-between;
+                            align-items: center;
                             margin-bottom: 34px;
+                            max-width: 530px;
         
-                            .logo-africa {
-                                width: 166px;
-                                height: 28px;
+                            .logo_gaming {
+                                width: 290px;
+                                height: 27px;
                             }
                         }
                         &-text {
-                            width: 202px;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 14px;
-                            line-height: 147%;
-                            color: $primary-text-color;
-                            flex: none;
-                            order: 1;
-                            flex-grow: 0;
+                            max-width: 198px;
                         }
         
                         .about-clients {
-                            width: 380px;
                             display: flex;
                             flex-direction: column;
                             
                             &-list {
                                 display: grid;
-                                grid-template-columns: repeat(2,1fr);
+                                grid-template-columns: 190px 1fr;
                                 column-gap: 40px;
         
                                 img {
@@ -430,7 +469,6 @@ body {
                                 font-weight: 400;
                                 font-size: 14px;
                                 line-height: 140%;
-                                color: $primary-text-color;
                                 margin-bottom: 14px;
                             }
                             &-text:nth-last-child(-n+2) {
@@ -448,14 +486,6 @@ body {
                             display: flex;
                             flex-direction: column;
         
-                            &-title {
-                                font-family: 'Inter-Medium', sans-serif;
-                                font-size: 14px;
-                                line-height: 120%;
-                                color: $primary-text-color;
-                                opacity: 0.5;
-                                margin-bottom: 30px;
-                            }
         
                             &-text {
                                 font-weight: 400;
@@ -478,10 +508,15 @@ body {
                                 }
         
                             
-                                .social-links-icon{
+                                .social-links-icon {
                                     width: 40px;
                                     height: 40px;
                                     margin-right: 16px;
+
+                                    &:hover {
+                                        width: 45px;
+                                        height: 45px;
+                                    }
                                 }
                             }
                         }
@@ -497,19 +532,23 @@ body {
             display: flex;
             justify-content: space-between;
             padding: 35px 0 38.5px 0;
-            color: $primary-text-color;
+            opacity: 0.5;
             
             &-blocks {
                 flex-direction: column;
             }
             
+            &-blocks:not(:last-child) {
+                margin-right: 20px;
+            }
+            
             &-title {
                 font-size: 12px;
                 line-height: 147%;
-                opacity: 0.5;
             }
         }
     }
+}
 
 @media screen and (max-width:1600px) {
     .main {
@@ -517,7 +556,7 @@ body {
             padding: 0 150px 0 150px;
         }
     }
-}
+    }
 
 @media screen and (max-width:1280px) {
     .main {
@@ -527,8 +566,7 @@ body {
             }
         }
     }
-}
-
+    }
 
 @media screen and (max-width: 1024px) {
     .main {
@@ -574,7 +612,7 @@ body {
     
                             &-about {
                                 width: 340px;
-                                .logo-africa {
+                                .logo_gaming {
                                     width: 133px;
                                     height: 23px;
                                     margin-right: 16px;
@@ -590,6 +628,10 @@ body {
                                      .social-links-icon{
                                         width: 23px;
                                         height: 23px;
+                                        &:hover {
+                                            width: 25px;
+                                            height: 25px;
+                                        }
                                     }
                                 }
                             }
@@ -600,7 +642,7 @@ body {
             }
         }
     }
-}
+    }
 
 @media screen and (max-width: 850px) {
     .main {
@@ -617,7 +659,7 @@ body {
             }
         }
     }
-}
+    }
 
 @media screen and (max-width: 800px) {
     .main {
@@ -627,7 +669,7 @@ body {
             }
         }
     }
-}
+    }
 
 @media screen and (max-width:768px) {
     .main {
@@ -644,7 +686,7 @@ body {
             }
         }
     }
-}
+    }
 
 @media screen and (max-width: 680px) {
     .main {
@@ -657,12 +699,10 @@ body {
                     .about {
                         flex-direction: column;
                         &-title {
-                            width: 517px;
                             font-size: 35px;
                         }
 
                         &-text {
-                            width: 517px;
                             font-size: 20px;
                         }
 
@@ -677,14 +717,11 @@ body {
                         justify-content: flex-start;
                         
                         .brand-info {
-                            width: 517px;
                             margin-bottom: 70px;
     
                             &-about {
-                                width: 450px;
-                                font-size: 20px;
 
-                                .logo-africa {
+                                .logo_gaming {
                                     width: 140px;
                                     height: 27px;
                                 } 
@@ -695,16 +732,11 @@ body {
                             }
     
                             .about-clients {
-                                width: 530px;
     
                                 &-text {
                                     font-size: 17px;
                                 }
                             }
-                        }
-    
-                        .contacts-block{
-                            width: 530px;
                         }
                     }
                 }
@@ -712,43 +744,79 @@ body {
             }
         }
     }
-}
+    }
 
 @media screen and (max-width:576px) {
     .main {
         .content_block {
             padding: 0 50px 0 50px;
-            .main-info {
-                max-width: 476px;
+            header {
                 .container {
-                    .about {
-                        flex-direction: column;
-                        &-title {
-                            width: 476px;
-                            font-size: 35px;
-                        }
-
-                        &-text {
-                            width: 476px;
-                            font-size: 20px;
+                    .logo-block {
+                        max-width: 154px;
+                        &-img {
+                            width: 96px;
+                                height: 19px;
                         }
                     }
 
-                    .hero-section {
-                        .brand-info {
-                            width: 476px;
-                            .about-clients {
+                    .lang_block {
+                        flex-direction: row-reverse;
+                        .dropdown-lang {
+                            margin-right: 0;
+                            margin-left: 16px;
+                        }
+                    }
+
+                    .buttons {
+                        display: block;
+                        .contact_us {
+                            padding: 9.5px 15px;
+                            margin-bottom: 10px;
+                            margin-right: 0;
+                           
+                           &:last-child {
+                                margin: 0;
+                            }
+                       }
+                    }
+                       
+                }
+            }
+            
+            .main-info {
+                max-width: 476px;
+                header {
+                    .container {
+                        .about {
+                            flex-direction: column;
+                            &-title {
                                 width: 476px;
-    
-                                &-text {
-                                    font-size: 12px;
-                                    line-height: 140%;
-                                }
+                                font-size: 35px;
+                            }
+
+                            &-text {
+                                width: 476px;
+                                font-size: 20px;
                             }
                         }
 
-                        .contacts-block{
-                            width: 476px;
+                        .hero-section {
+                            .brand-info {
+                                width: 476px;
+                                .about-clients {
+                                    width: 476px;
+        
+                                    &-text {
+                                        font-size: 12px;
+                                        line-height: 140%;
+                                    }
+                                }
+                            }
+
+                            .contacts-block{
+                                width: 476px;
+                            }
                         }
                     }
                 }
@@ -762,16 +830,75 @@ body {
             }
         }
     }
-}
+    }
 
 @media screen and (max-width: 475px) {
     .popup_menu,
     .popup_menu-gratitude {
-        .download-modal_inputs {
-            input::placeholder {
-                font-size: 10px;
-            }
-        }     
+       max-width: 340px;
+       padding: 45px 19px 45px 21px;
+
+      .popup_logo {
+        margin: 0 auto 35px ;
+        width: 155px;
+        height: 30px;
+      }
+
+      .popup-title {
+        font-size: 18px;
+      }
+
+      .popup-text {
+        text-align: center;
+        color: $primary-text-color;
+      }
+
+      .btn-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .download-modal_inputs {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+
+        label {
+          margin-bottom: 25px;
+          font-size: 16px;
+          line-height: 140%;
+          color: $popup-color;
+        }
+
+        label:last-of-type {
+          margin-bottom: 0;
+        }
+
+        input {
+          max-width: 300px;
+          padding: 0 20px;
+        }
+
+        input::placeholder {
+          font-size: 14px;
+        }
+
+        .download-modal-btn {
+          margin-top: 35px;
+          margin-bottom: 15px;
+          width: 100%;
+          max-width: 300px;
+        }
+
+        }
+        .private-info-text {
+            left: 5%;
+        }
     }
 
     .main {
@@ -830,12 +957,20 @@ body {
             }
         }
     }
-}
+    }
 
 @media screen and (max-width: 420px) {
     .main {
         .content_block {
             padding: 0 17px 0 17px;
+
+                        header {
+                .container {
+                    .logo-block {
+                        max-width: 140px;
+                    }                       
+                }
+            }
             
             .main-info {
                 max-width: 380px;
@@ -922,7 +1057,7 @@ body {
             }
         }
     }
-}
+    }
 
 @media screen and (max-width: 375px) {
     .popup_menu,

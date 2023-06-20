@@ -24,11 +24,16 @@
       <div class="content_block">
         <header>
           <div class="container">
-            <img
-              class="logo"
-              src="./assets/img/logo-imans.svg"
-              alt="Imans-logo"
-            />
+            <div class="logo-block">
+              <img
+                class="logo-block-img"
+                src="./assets/img/logo-imans.svg"
+                alt="Imans-logo"
+              />
+              <p class="logo-block-title">
+                International Marketing Agency New Solutions
+              </p>
+            </div>
             <div class="lang_block">
               <ul class="dropdown-lang">
                 <li class="dropdown-li">
@@ -53,19 +58,24 @@
                   </div>
                 </li>
               </ul>
-              <a class="contact_us" href="http://www.helloafrica.io/">
-                Hello Africa
-              </a>
+              <div class="buttons">
+                <a class="contact_us" href="http://www.helloafrica.io/">
+                  Hello Africa
+                </a>
+                <a class="contact_us" href="http://www.hellogeorgia.io/">
+                  Hello Georgia
+                </a>
+              </div>
             </div>
           </div>
         </header>
 
         <main class="main-info">
           <div class="container">
+            <p class="welcome-title">Welcome to our family</p>
             <div class="about">
-              <h1 class="about-title">
-                We generate, buy <br />and receive traffic
-              </h1>
+              <h1 class="about-title">We generate, buy and receive traffic</h1>
+
               <div class="about-block">
                 <p class="about-text">
                   We are engaged in marketing, consulting, management,
@@ -83,16 +93,24 @@
             </div>
             <div class="hero-section">
               <div class="brand-info">
-                <h3 class="brand-info-title">Our brand</h3>
+                <div class="brand">
+                  <h3 class="brand-info-title">Our brand</h3>
+                  <a
+                    class="brand-info-title"
+                    href="http://www.igamingmanagement.io"
+                  >
+                    igamingmanagement.io
+                  </a>
+                </div>
                 <div class="brand-info-about">
-                  <img
-                    class="logo-africa"
-                    src="./assets/img/logo-hello-africa.svg"
-                    alt="Hello-Africa-logo"
-                  />
                   <p class="brand-info-text">
-                    B2B platform for bringing business to the African market
+                    Integration of your business into the international market
                   </p>
+                  <img
+                    class="logo_gaming"
+                    src="./assets/img/logo_IGaming.svg"
+                    alt="IGaming logo"
+                  />
                 </div>
                 <div class="about-clients">
                   <h3 class="brand-info-title">Who do we work for</h3>
@@ -177,7 +195,7 @@
               </div>
               <div class="contacts-block">
                 <div class="contacts-info">
-                  <h3 class="contacts-info-title">Contacts</h3>
+                  <h3 class="brand-info-title">Contacts</h3>
                   <p class="contacts-info-text">
                     Our specialists will be happy to answer all your questions
                     and provide you with all the information you need
@@ -237,6 +255,7 @@
             </div>
           </div>
         </main>
+
         <footer class="company-info container">
           <div class="company-info-blocks">
             <p class="company-info-title">Imans Technology LLC</p>
@@ -245,7 +264,7 @@
           <div class="company-info-blocks">
             <p class="company-info-title">
               For cooperation, <br />
-              please contact: info@imans.io
+              please contact: hello@imans.io
             </p>
           </div>
           <div class="company-info-blocks">
@@ -267,13 +286,17 @@
     <div class="overlay" onclick="overlayClose()"></div>
     <div class="popup_background">
       <div class="popup_menu">
-        <div class="logo">
+        <div class="popup_logo">
           <img src="./assets/img/logo-imans.svg" alt="Imans-logo" />
         </div>
         <h2 class="popup-title">
-          Leave your information <br />and we will contact you
+          Leave your information and we will contact you
         </h2>
-        <form class="form" name="myForm" onSubmit="handleSubmit(event, window.location.href)">
+        <form
+          class="form"
+          name="myForm"
+          onSubmit="handleSubmit(event, window.location.href)"
+        >
           <div class="download-modal_inputs">
             <label>
               <span class="input-title">Name</span>
@@ -281,18 +304,18 @@
                 type="text"
                 name="name"
                 autocomplete="off"
-                placeholder="Jack"
+                placeholder="John"
                 minlength="2"
                 required
               />
             </label>
-            <label for="lastName">
+            <label>
               <span class="input-title">Surname</span>
               <input
                 type="text"
                 name="lastName"
                 autocomplete="off"
-                placeholder="Black"
+                placeholder="Smith"
               />
             </label>
             <label>
@@ -301,7 +324,7 @@
                 type="email"
                 name="email"
                 autocomplete="off"
-                placeholder="black@gmail.com"
+                placeholder="smith@gmail.com"
                 pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}"
                 required
               />
@@ -327,13 +350,10 @@
               />
             </label>
             <button class="download-modal-btn" type="submit">Submit</button>
-            <div></div>
-            <div class="private-info-text">
-              *By clicking Submit, you consent
-              <a href="#" target="_blank">
-                to the processing of personal data</a
-              >
-            </div>
+          </div>
+          <div class="private-info-text">
+            *By clicking Submit, you consent
+            <a href="#" target="_blank"> to the processing of personal data</a>
           </div>
         </form>
         <span class="btn-close" onClick="closePopup()">
@@ -363,8 +383,8 @@
 
     <div class="popup_background">
       <div class="popup_menu-gratitude">
-        <div class="logo">
-          <img src="./assets/img/logo-imans.svg" alt="Imans-logo" />
+        <div class="popup_logo">
+          <img src="./assets/img/logo_imans_popup.svg" alt="Imans-logo" />
         </div>
         <h2 class="popup-title">Thank you for contacting our company</h2>
         <p class="popup-text">

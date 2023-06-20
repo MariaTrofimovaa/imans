@@ -3,31 +3,29 @@ document.addEventListener("DOMContentLoaded", () => {
    * Multilingual dropdown list
    */
 
-  // $(document).ready(function () {
-  //   $("a.dropdown-a").on("click", function (e) {
-  //     e.preventDefault();
-  //   });
-  //   $(".dropdown-li").hover(
-  //     function () {
-  //       clearTimeout($.data(this, "timer"));
-  //       $("ul, .disabled_langs", this).stop(true, true).slideDown(200);
-  //     },
-  //     function () {
-  //       $.data(
-  //         this,
-  //         "timer",
-  //         setTimeout(
-  //           $.proxy(function () {
-  //             $("ul, .disabled_langs", this)
-  //               .stop(true, true)
-  //               .slideUp(200);
-  //           }, this),
-  //           100
-  //         )
-  //       );
-  //     }
-  //   );
-  // });
+  $(document).ready(function () {
+    $("a.dropdown-a").on("click", function (e) {
+      e.preventDefault();
+    });
+    $(".dropdown-li").hover(
+      function () {
+        clearTimeout($.data(this, "timer"));
+        $("ul, .disabled_langs", this).stop(true, true).slideDown(200);
+      },
+      function () {
+        $.data(
+          this,
+          "timer",
+          setTimeout(
+            $.proxy(function () {
+              $("ul, .disabled_langs", this).stop(true, true).slideUp(200);
+            }, this),
+            100
+          )
+        );
+      }
+    );
+  });
 
   /*
    * Video for mobile version

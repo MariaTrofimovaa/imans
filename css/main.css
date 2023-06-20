@@ -77,6 +77,9 @@ a, ul {
 
 body {
   font-family: "Inter-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 147%;
+  color: #EDEDED;
 }
 body .overlay {
   position: fixed;
@@ -88,6 +91,7 @@ body .overlay {
   display: none;
   top: 0;
   left: 0;
+  overflow-y: scroll;
 }
 body .popup_background {
   display: -webkit-box;
@@ -107,32 +111,31 @@ body .popup_menu-gratitude {
   position: fixed;
   top: 10%;
   margin: 0 auto;
-  z-index: 25;
   max-width: 590px;
   width: 90%;
+  z-index: 25;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #141414;
   color: #EDEDED;
-  padding: 77px 30px;
+  padding: 73px 30px 77px;
+  overflow: auto;
 }
-body .popup_menu .logo,
-body .popup_menu-gratitude .logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 50px;
+body .popup_menu .popup_logo,
+body .popup_menu-gratitude .popup_logo {
+  margin: 0 auto 48px;
+  width: 190px;
+  height: 37px;
 }
 body .popup_menu .popup-title,
 body .popup_menu-gratitude .popup-title {
+  font-family: "Nunito-ExtraBold", sans-serif;
   text-align: center;
-  font-weight: 500;
   font-size: 24px;
   line-height: 140%;
-  margin-bottom: 38px;
+  letter-spacing: 0.035em;
+  max-width: 344px;
+  margin: 0 auto 56px;
 }
 body .popup_menu .popup-text,
 body .popup_menu-gratitude .popup-text {
@@ -157,12 +160,13 @@ body .popup_menu-gratitude .download-modal_inputs {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  -webkit-column-gap: 40px;
-     -moz-column-gap: 40px;
-          column-gap: 40px;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 body .popup_menu .download-modal_inputs label,
 body .popup_menu-gratitude .download-modal_inputs label {
@@ -175,6 +179,10 @@ body .popup_menu-gratitude .download-modal_inputs label {
   font-weight: 400;
   font-size: 14px;
   line-height: 147%;
+}
+body .popup_menu .download-modal_inputs label:last-of-type,
+body .popup_menu-gratitude .download-modal_inputs label:last-of-type {
+  margin-bottom: 0;
 }
 body .popup_menu .download-modal_inputs .input-title,
 body .popup_menu-gratitude .download-modal_inputs .input-title {
@@ -196,7 +204,7 @@ body .popup_menu-gratitude .download-modal_inputs .download-modal-btn {
   width: 100%;
   max-width: 250px;
   height: 50px;
-  margin-top: -9px;
+  margin-top: 25.58px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,18 +230,21 @@ body .popup_menu .download-modal_inputs .download-modal-btn:hover,
 body .popup_menu-gratitude .download-modal_inputs .download-modal-btn:hover {
   cursor: pointer;
 }
-body .popup_menu .download-modal_inputs .private-info-text,
-body .popup_menu-gratitude .download-modal_inputs .private-info-text {
-  text-align: center;
+body .popup_menu .private-info-text,
+body .popup_menu-gratitude .private-info-text {
+  max-width: 250px;
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
   line-height: 147%;
   color: #EDEDED;
   opacity: 0.5;
+  position: absolute;
+  right: 5%;
+  margin-top: 10px;
 }
-body .popup_menu .download-modal_inputs .private-info-text a,
-body .popup_menu-gratitude .download-modal_inputs .private-info-text a {
+body .popup_menu .private-info-text a,
+body .popup_menu-gratitude .private-info-text a {
   text-decoration: underline;
   color: #EDEDED;
 }
@@ -259,11 +270,7 @@ body .main .content_block {
   height: 100%;
   padding: 0 360px 0 360px;
 }
-body .main .content_block .logo {
-  max-width: 102px;
-  height: 20px;
-}
-body .main::after {
+body .main .content_block::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -276,7 +283,7 @@ body .main::after {
   background-position: right -10% bottom 0%;
   opacity: 0.1;
 }
-body .main::before {
+body .main .content_block::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -287,11 +294,11 @@ body .main::before {
   left: 0;
   z-index: 2;
 }
-body .main header {
+body .main .content_block header {
   position: relative;
   z-index: 5;
 }
-body .main header .container {
+body .main .content_block header .container {
   padding: 22px 0 23px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -305,7 +312,24 @@ body .main header .container {
   text-align: center;
   border-bottom: 1px solid #EDEDED;
 }
-body .main header .container .lang_block {
+body .main .content_block header .container .logo-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body .main .content_block header .container .logo-block-img {
+  max-width: 102px;
+  height: 20px;
+}
+body .main .content_block header .container .logo-block-title {
+  margin-top: 15px;
+  text-align: left;
+}
+body .main .content_block header .container .lang_block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -314,10 +338,10 @@ body .main header .container .lang_block {
           align-items: center;
   color: #EDEDED;
 }
-body .main header .container .lang_block ul {
-  margin-right: 12px;
+body .main .content_block header .container .lang_block ul {
+  margin-right: 39px;
 }
-body .main header .container .lang_block .active_langs {
+body .main .content_block header .container .lang_block .active_langs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,41 +350,46 @@ body .main header .container .lang_block .active_langs {
           align-items: center;
   color: #EDEDED;
 }
-body .main header .container .lang_block .active_langs:hover {
+body .main .content_block header .container .lang_block .active_langs:hover {
   cursor: pointer;
 }
-body .main header .container .lang_block .active_langs .lang-title {
+body .main .content_block header .container .lang_block .active_langs .lang-title {
   text-transform: uppercase;
 }
-body .main header .container .lang_block .active_langs img {
+body .main .content_block header .container .lang_block .active_langs img {
   margin-left: 6px;
 }
-body .main header .container .lang_block .disabled_langs {
+body .main .content_block header .container .lang_block .disabled_langs {
   position: absolute;
   top: 100%;
   left: 0;
   padding: 10px;
   display: none;
 }
-body .main header .container .lang_block .disabled_langs div {
+body .main .content_block header .container .lang_block .disabled_langs div {
   margin-top: 5px;
 }
-body .main header .container .lang_block .disabled_langs a {
+body .main .content_block header .container .lang_block .disabled_langs a {
   text-decoration: none;
   color: #EDEDED;
   margin-top: 10px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-body .main header .container .lang_block .disabled_langs a:hover {
+body .main .content_block header .container .lang_block .disabled_langs a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-body .main header .container .lang_block .disabled_langs ul {
+body .main .content_block header .container .lang_block .disabled_langs ul {
   list-style: none;
   margin-right: 35px;
 }
-body .main header .container .contact_us {
+body .main .content_block header .container .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+body .main .content_block header .container .buttons .contact_us {
   font-family: "'Inter-Medium", sans-serif;
   display: block;
   padding: 20px 26px 16px 26px;
@@ -375,19 +404,30 @@ body .main header .container .contact_us {
   text-transform: uppercase;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  margin-right: 16px;
 }
-body .main header .container .contact_us:hover {
+body .main .content_block header .container .buttons .contact_us:hover {
   cursor: pointer;
+  -webkit-filter: drop-shadow(0px 0px 10px #D6FE43);
+          filter: drop-shadow(0px 0px 10px #D6FE43);
 }
-body .main .main-info {
+body .main .content_block header .container .buttons .contact_us:last-child {
+  margin-right: 0;
+}
+body .main .content_block .main-info {
   position: relative;
   z-index: 4;
-  padding-top: 26px;
+  padding-top: 35px;
 }
-body .main .main-info .container {
+body .main .content_block .main-info .container {
   border-bottom: 1px solid #EDEDED;
 }
-body .main .main-info .container .about {
+body .main .content_block .main-info .container .welcome-title {
+  line-height: 120%;
+  opacity: 0.5;
+  margin-bottom: 12px;
+}
+body .main .content_block .main-info .container .about {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -395,7 +435,7 @@ body .main .main-info .container .about {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-body .main .main-info .container .about-title {
+body .main .content_block .main-info .container .about-title {
   width: 694px;
   font-family: "Asimov", sans-serif;
   font-size: 38px;
@@ -404,7 +444,7 @@ body .main .main-info .container .about-title {
   letter-spacing: 0.035em;
   text-transform: uppercase;
 }
-body .main .main-info .container .about-block {
+body .main .content_block .main-info .container .about-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -413,7 +453,7 @@ body .main .main-info .container .about-block {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body .main .main-info .container .about-text {
+body .main .content_block .main-info .container .about-text {
   width: 386px;
   margin-bottom: 40px;
   font-style: normal;
@@ -422,7 +462,7 @@ body .main .main-info .container .about-text {
   line-height: 147%;
   color: #EDEDED;
 }
-body .main .main-info .container .about .primary-button {
+body .main .content_block .main-info .container .about .primary-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,10 +491,12 @@ body .main .main-info .container .about .primary-button {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-body .main .main-info .container .about .primary-button:hover {
+body .main .content_block .main-info .container .about .primary-button:hover {
   cursor: pointer;
+  -webkit-filter: drop-shadow(0px 0px 10px #D6FE43);
+          filter: drop-shadow(0px 0px 10px #D6FE43);
 }
-body .main .main-info .container .hero-section {
+body .main .content_block .main-info .container .hero-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -463,48 +505,47 @@ body .main .main-info .container .hero-section {
           justify-content: space-between;
   margin-bottom: 49px;
 }
-body .main .main-info .container .hero-section .brand-info {
-  width: 380px;
+body .main .content_block .main-info .container .hero-section .brand-info {
+  max-width: 530px;
 }
-body .main .main-info .container .hero-section .brand-info-title {
-  font-family: "Inter-Medium", sans-serif;
-  font-size: 14px;
-  line-height: 120%;
-  color: #EDEDED;
-  opacity: 0.5;
-  margin-bottom: 30px;
-}
-body .main .main-info .container .hero-section .brand-info-about {
+body .main .content_block .main-info .container .hero-section .brand-info .brand {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 34px;
+  max-width: 350px;
 }
-body .main .main-info .container .hero-section .brand-info-about .logo-africa {
-  width: 166px;
-  height: 28px;
-}
-body .main .main-info .container .hero-section .brand-info-text {
-  width: 202px;
-  font-style: normal;
-  font-weight: 400;
+body .main .content_block .main-info .container .hero-section .brand-info-title {
+  font-family: "Inter-Medium", sans-serif;
   font-size: 14px;
-  line-height: 147%;
+  line-height: 120%;
+  opacity: 0.5;
+  margin-bottom: 30px;
   color: #EDEDED;
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-  -ms-flex-positive: 0;
-      flex-grow: 0;
 }
-body .main .main-info .container .hero-section .brand-info .about-clients {
-  width: 380px;
+body .main .content_block .main-info .container .hero-section .brand-info-about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 34px;
+  max-width: 530px;
+}
+body .main .content_block .main-info .container .hero-section .brand-info-about .logo_gaming {
+  width: 290px;
+  height: 27px;
+}
+body .main .content_block .main-info .container .hero-section .brand-info-text {
+  max-width: 198px;
+}
+body .main .content_block .main-info .container .hero-section .brand-info .about-clients {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -513,17 +554,17 @@ body .main .main-info .container .hero-section .brand-info .about-clients {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body .main .main-info .container .hero-section .brand-info .about-clients-list {
+body .main .content_block .main-info .container .hero-section .brand-info .about-clients-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 190px 1fr;
   -webkit-column-gap: 40px;
      -moz-column-gap: 40px;
           column-gap: 40px;
 }
-body .main .main-info .container .hero-section .brand-info .about-clients-list img {
+body .main .content_block .main-info .container .hero-section .brand-info .about-clients-list img {
   margin-right: 10px;
 }
-body .main .main-info .container .hero-section .brand-info .about-clients-text {
+body .main .content_block .main-info .container .hero-section .brand-info .about-clients-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -534,13 +575,12 @@ body .main .main-info .container .hero-section .brand-info .about-clients-text {
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
-  color: #EDEDED;
   margin-bottom: 14px;
 }
-body .main .main-info .container .hero-section .brand-info .about-clients-text:nth-last-child(-n+2) {
+body .main .content_block .main-info .container .hero-section .brand-info .about-clients-text:nth-last-child(-n+2) {
   margin-bottom: 0px;
 }
-body .main .main-info .container .hero-section .contacts-block {
+body .main .content_block .main-info .container .hero-section .contacts-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -548,7 +588,7 @@ body .main .main-info .container .hero-section .contacts-block {
       -ms-flex-align: end;
           align-items: flex-end;
 }
-body .main .main-info .container .hero-section .contacts-block .contacts-info {
+body .main .content_block .main-info .container .hero-section .contacts-block .contacts-info {
   width: 434px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -558,22 +598,14 @@ body .main .main-info .container .hero-section .contacts-block .contacts-info {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body .main .main-info .container .hero-section .contacts-block .contacts-info-title {
-  font-family: "Inter-Medium", sans-serif;
-  font-size: 14px;
-  line-height: 120%;
-  color: #EDEDED;
-  opacity: 0.5;
-  margin-bottom: 30px;
-}
-body .main .main-info .container .hero-section .contacts-block .contacts-info-text {
+body .main .content_block .main-info .container .hero-section .contacts-block .contacts-info-text {
   font-weight: 400;
   font-size: 14px;
   line-height: 147%;
   color: #EDEDED;
   margin-bottom: 30px;
 }
-body .main .main-info .container .hero-section .contacts-block .contacts-info .block-social {
+body .main .content_block .main-info .container .hero-section .contacts-block .contacts-info .block-social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -581,19 +613,23 @@ body .main .main-info .container .hero-section .contacts-block .contacts-info .b
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-body .main .main-info .container .hero-section .contacts-block .contacts-info .block-social .region-name {
+body .main .content_block .main-info .container .hero-section .contacts-block .contacts-info .block-social .region-name {
   font-family: "Inter-Medium", sans-serif;
   font-size: 14px;
   line-height: 140%;
   color: #EDEDED;
   margin-bottom: 18px;
 }
-body .main .main-info .container .hero-section .contacts-block .contacts-info .block-social .social-links-icon {
+body .main .content_block .main-info .container .hero-section .contacts-block .contacts-info .block-social .social-links-icon {
   width: 40px;
   height: 40px;
   margin-right: 16px;
 }
-body .main .company-info {
+body .main .content_block .main-info .container .hero-section .contacts-block .contacts-info .block-social .social-links-icon:hover {
+  width: 45px;
+  height: 45px;
+}
+body .main .content_block .company-info {
   position: relative;
   z-index: 4;
   display: -webkit-box;
@@ -603,18 +639,20 @@ body .main .company-info {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 35px 0 38.5px 0;
-  color: #EDEDED;
+  opacity: 0.5;
 }
-body .main .company-info-blocks {
+body .main .content_block .company-info-blocks {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body .main .company-info-title {
+body .main .content_block .company-info-blocks:not(:last-child) {
+  margin-right: 20px;
+}
+body .main .content_block .company-info-title {
   font-size: 12px;
   line-height: 147%;
-  opacity: 0.5;
 }
 @media screen and (max-width: 1600px) {
   body .main .content_block {
@@ -661,7 +699,7 @@ body .main .company-info-title {
   body .main .content_block .main-info .container .hero-section .brand-info-about {
     width: 340px;
   }
-  body .main .content_block .main-info .container .hero-section .brand-info-about .logo-africa {
+  body .main .content_block .main-info .container .hero-section .brand-info-about .logo_gaming {
     width: 133px;
     height: 23px;
     margin-right: 16px;
@@ -672,6 +710,10 @@ body .main .company-info-title {
   body .main .content_block .main-info .container .hero-section .contacts-block .contacts-info .block-social .social-links-icon {
     width: 23px;
     height: 23px;
+  }
+  body .main .content_block .main-info .container .hero-section .contacts-block .contacts-info .block-social .social-links-icon:hover {
+    width: 25px;
+    height: 25px;
   }
 }
 @media screen and (max-width: 850px) {
@@ -709,11 +751,9 @@ body .main .company-info-title {
             flex-direction: column;
   }
   body .main .content_block .main-info .container .about-title {
-    width: 517px;
     font-size: 35px;
   }
   body .main .content_block .main-info .container .about-text {
-    width: 517px;
     font-size: 20px;
   }
   body .main .content_block .main-info .container .about .primary-button {
@@ -733,62 +773,79 @@ body .main .company-info-title {
             justify-content: flex-start;
   }
   body .main .content_block .main-info .container .hero-section .brand-info {
-    width: 517px;
     margin-bottom: 70px;
   }
-  body .main .content_block .main-info .container .hero-section .brand-info-about {
-    width: 450px;
-    font-size: 20px;
-  }
-  body .main .content_block .main-info .container .hero-section .brand-info-about .logo-africa {
+  body .main .content_block .main-info .container .hero-section .brand-info-about .logo_gaming {
     width: 140px;
     height: 27px;
   }
   body .main .content_block .main-info .container .hero-section .brand-info-title {
     font-size: 18px;
   }
-  body .main .content_block .main-info .container .hero-section .brand-info .about-clients {
-    width: 530px;
-  }
   body .main .content_block .main-info .container .hero-section .brand-info .about-clients-text {
     font-size: 17px;
-  }
-  body .main .content_block .main-info .container .hero-section .contacts-block {
-    width: 530px;
   }
 }
 @media screen and (max-width: 576px) {
   body .main .content_block {
     padding: 0 50px 0 50px;
   }
+  body .main .content_block header .container .logo-block {
+    max-width: 154px;
+  }
+  body .main .content_block header .container .logo-block-img {
+    width: 96px;
+    height: 19px;
+  }
+  body .main .content_block header .container .lang_block {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  body .main .content_block header .container .lang_block .dropdown-lang {
+    margin-right: 0;
+    margin-left: 16px;
+  }
+  body .main .content_block header .container .buttons {
+    display: block;
+  }
+  body .main .content_block header .container .buttons .contact_us {
+    padding: 9.5px 15px;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+  body .main .content_block header .container .buttons .contact_us:last-child {
+    margin: 0;
+  }
   body .main .content_block .main-info {
     max-width: 476px;
   }
-  body .main .content_block .main-info .container .about {
+  body .main .content_block .main-info header .container .about {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  body .main .content_block .main-info .container .about-title {
+  body .main .content_block .main-info header .container .about-title {
     width: 476px;
     font-size: 35px;
   }
-  body .main .content_block .main-info .container .about-text {
+  body .main .content_block .main-info header .container .about-text {
     width: 476px;
     font-size: 20px;
   }
-  body .main .content_block .main-info .container .hero-section .brand-info {
+  body .main .content_block .main-info header .container .hero-section .brand-info {
     width: 476px;
   }
-  body .main .content_block .main-info .container .hero-section .brand-info .about-clients {
+  body .main .content_block .main-info header .container .hero-section .brand-info .about-clients {
     width: 476px;
   }
-  body .main .content_block .main-info .container .hero-section .brand-info .about-clients-text {
+  body .main .content_block .main-info header .container .hero-section .brand-info .about-clients-text {
     font-size: 12px;
     line-height: 140%;
   }
-  body .main .content_block .main-info .container .hero-section .contacts-block {
+  body .main .content_block .main-info header .container .hero-section .contacts-block {
     width: 476px;
   }
   body .main .content_block .company-info {
@@ -799,21 +856,89 @@ body .main .company-info-title {
   }
 }
 @media screen and (max-width: 475px) {
+  body .popup_menu,
+body .popup_menu-gratitude {
+    max-width: 340px;
+    padding: 45px 19px 45px 21px;
+  }
+  body .popup_menu .popup_logo,
+body .popup_menu-gratitude .popup_logo {
+    margin: 0 auto 35px;
+    width: 155px;
+    height: 30px;
+  }
+  body .popup_menu .popup-title,
+body .popup_menu-gratitude .popup-title {
+    font-size: 18px;
+  }
+  body .popup_menu .popup-text,
+body .popup_menu-gratitude .popup-text {
+    text-align: center;
+    color: #EDEDED;
+  }
+  body .popup_menu .btn-close,
+body .popup_menu-gratitude .btn-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  body .popup_menu .btn-close:hover,
+body .popup_menu-gratitude .btn-close:hover {
+    cursor: pointer;
+  }
+  body .popup_menu .download-modal_inputs,
+body .popup_menu-gratitude .download-modal_inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 300px;
+  }
+  body .popup_menu .download-modal_inputs label,
+body .popup_menu-gratitude .download-modal_inputs label {
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 140%;
+    color: #F2F2F2;
+  }
+  body .popup_menu .download-modal_inputs label:last-of-type,
+body .popup_menu-gratitude .download-modal_inputs label:last-of-type {
+    margin-bottom: 0;
+  }
+  body .popup_menu .download-modal_inputs input,
+body .popup_menu-gratitude .download-modal_inputs input {
+    max-width: 300px;
+    padding: 0 20px;
+  }
   body .popup_menu .download-modal_inputs input::-webkit-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-webkit-input-placeholder {
-    font-size: 10px;
+    font-size: 14px;
   }
   body .popup_menu .download-modal_inputs input::-moz-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-moz-placeholder {
-    font-size: 10px;
+    font-size: 14px;
   }
   body .popup_menu .download-modal_inputs input:-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input:-ms-input-placeholder {
-    font-size: 10px;
+    font-size: 14px;
   }
   body .popup_menu .download-modal_inputs input::-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-ms-input-placeholder {
-    font-size: 10px;
+    font-size: 14px;
   }
   body .popup_menu .download-modal_inputs input::placeholder,
 body .popup_menu-gratitude .download-modal_inputs input::placeholder {
-    font-size: 10px;
+    font-size: 14px;
+  }
+  body .popup_menu .download-modal_inputs .download-modal-btn,
+body .popup_menu-gratitude .download-modal_inputs .download-modal-btn {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px;
+  }
+  body .popup_menu .private-info-text,
+body .popup_menu-gratitude .private-info-text {
+    left: 5%;
   }
   body .main .block_video video {
     left: 0;
@@ -858,6 +983,9 @@ body .popup_menu-gratitude .download-modal_inputs input::placeholder {
 @media screen and (max-width: 420px) {
   body .main .content_block {
     padding: 0 17px 0 17px;
+  }
+  body .main .content_block header .container .logo-block {
+    max-width: 140px;
   }
   body .main .content_block .main-info {
     max-width: 380px;
