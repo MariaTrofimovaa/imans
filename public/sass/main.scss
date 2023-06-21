@@ -51,8 +51,12 @@ body {
   .popup_menu-gratitude {
     display: none;
     vertical-align: middle;
-    position: fixed;
-    top: 10%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    max-height: calc(100vh - 50px);
     margin: 0 auto;
     max-width: 590px;
     width: 90%;
@@ -61,12 +65,15 @@ body {
     background-color: $popup-bg-color;
     color: $primary-text-color;
     padding: 73px 30px 77px;
-    overflow: auto;
 
     .popup_logo {
+      display: flex;
+      justify-content: center;
       margin: 0 auto 48px;
-      width: 190px;
-      height: 37px;
+        img {
+            width: 190px;
+            height: 37px;
+        }
     }
 
     .popup-title {
@@ -188,6 +195,7 @@ body {
         height: 100vh;
         position: relative;
         overflow: hidden;
+
         .block_video {
             video {
                 position: absolute;
@@ -253,13 +261,12 @@ body {
                     }
                 }
 
-
                 .lang_block {
                     display: flex;
                     align-items: center;
                     color: $primary-text-color;
                     
-                    ul {
+                    .dropdown-lang {
                         margin-right: 39px;
                     }
 
@@ -272,6 +279,7 @@ body {
                         }
 
                         .lang-title {
+                            color: $primary-text-color;
                             text-transform: uppercase;
                         }
 
@@ -282,10 +290,6 @@ body {
                     
                     .disabled_langs {
                         position: absolute;
-                        top: 100%;
-                        left: 0;
-                        padding: 10px; 
-                        display: none;
 
                         div {
                             margin-top: 5px;
@@ -293,50 +297,51 @@ body {
 
                         a {
                             text-decoration: none;
+                            font-size: 14px;
+                            line-height: 147%;
+                            text-transform: uppercase;
                             color: $primary-text-color;
-                            margin-top: 10px;
                             transition: 0.5s;
                             &:hover {
-                                text-decoration: underline;
-                                cursor: pointer;
+                            text-decoration: underline;
+                            cursor: pointer;
                             }
                         }
-                    
+
                         ul {
                             list-style: none;
                             margin-right: 35px;
                         }
                     }
-                }
 
-                .buttons {
-                    display: flex;
-
-                    .contact_us {
-                        font-family: "'Inter-Medium", sans-serif;
-                        display: block;
-                        padding: 20px 26px 16px 26px;
-                        border: 1px solid $accent-color;
-                        border-radius: 314px;
-                        color: $accent-color;
-                        background: transparent;
-                        text-decoration: none;
-                        font-size: 12px;
-                        line-height: 15px;
-                        letter-spacing: 0.05em;
-                        text-transform: uppercase;
-                        transition: 0.5s;
-                        margin-right: 16px;
-                        &:hover {
-                            cursor: pointer;
-                            filter: drop-shadow(0px 0px 10px #D6FE43);
+                    .buttons {
+                        display: flex;
+    
+                        .contact_us {
+                            font-family: "'Inter-Medium", sans-serif;
+                            display: block;
+                            padding: 20px 26px 16px 26px;
+                            border: 1px solid $accent-color;
+                            border-radius: 314px;
+                            color: $accent-color;
+                            background: transparent;
+                            text-decoration: none;
+                            font-size: 12px;
+                            line-height: 15px;
+                            letter-spacing: 0.05em;
+                            text-transform: uppercase;
+                            transition: 0.5s;
+                            margin-right: 16px;
+                            &:hover {
+                                cursor: pointer;
+                                filter: drop-shadow(0px 0px 10px #D6FE43);
+                            }
+                        }
+                        .contact_us:last-child {
+                            margin-right: 0;
                         }
                     }
-                    .contact_us:last-child {
-                        margin-right: 0;
-                    }
                 }
-
             }                  
         }
 
@@ -364,7 +369,6 @@ body {
                         font-family: 'Asimov', sans-serif;
                         font-size: 38px;
                         line-height: 140%;
-                        // margin-top: 15px;
                         color: $primary-text-color;
                         letter-spacing: 0.035em;
                         text-transform: uppercase;
@@ -412,16 +416,15 @@ body {
                 }
 
                 .hero-section {
-                    display: flex;
-                    justify-content: space-between;
                     margin-bottom: 49px;
 
                     .brand-info {
+                        display: flex;
                         max-width: 530px;
                         .brand {
                             display: flex;
-                            justify-content: space-between;
-                            max-width: 350px;
+                            flex-direction: column;
+                            margin-right: 40px;
                         }
         
                         &-title {
@@ -434,8 +437,7 @@ body {
                         }
                         &-about {
                             display: flex;
-                            justify-content: space-between;
-                            align-items: center;
+                            flex-direction:column;
                             margin-bottom: 34px;
                             max-width: 530px;
         
@@ -447,81 +449,85 @@ body {
                         &-text {
                             max-width: 198px;
                         }
-        
+                    }
+                    
+                    .content-block {
+                        display: flex;
+                        justify-content: space-between;
                         .about-clients {
+                            max-width: 380px;
                             display: flex;
                             flex-direction: column;
-                            
+
                             &-list {
-                                display: grid;
-                                grid-template-columns: 190px 1fr;
-                                column-gap: 40px;
-        
+                            display: grid;
+                            grid-template-columns: 215px 1fr;
+                            column-gap: 40px;
+
                                 img {
                                     margin-right: 10px;
                                 }
                             }
-                            
+
                             &-text {
-                                display: flex;
-                                align-items: center;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 14px;
-                                line-height: 140%;
-                                margin-bottom: 14px;
+                            display: flex;
+                            align-items: center;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 140%;
+                            color: $primary-text-color;
+                            margin-bottom: 14px;
                             }
-                            &-text:nth-last-child(-n+2) {
-                                margin-bottom: 0px;
+                            &-text:nth-last-child(-n + 2) {
+                            margin-bottom: 0px;
                             }
                         }
-                    }
-
-                    .contacts-block {
-                        display: flex;
-                        align-items: flex-end;
-
-                        .contacts-info {
-                            width: 434px;
+                        .contacts-block {
                             display: flex;
-                            flex-direction: column;
-        
-        
-                            &-text {
-                                font-weight: 400;
-                                font-size: 14px;
-                                line-height: 147%;
-                                color: $primary-text-color;
-                                margin-bottom: 30px;
-                            }
-        
-                            .block-social {
-                                display: flex;
-                                justify-content: space-between;
-        
-                                .region-name {
-                                    font-family: 'Inter-Medium', sans-serif;
-                                    font-size: 14px;
-                                    line-height: 140%;
-                                    color: $primary-text-color;
-                                    margin-bottom: 18px;
-                                }
-        
-                            
-                                .social-links-icon {
-                                    width: 40px;
-                                    height: 40px;
-                                    margin-right: 16px;
+                            align-items: flex-end;
 
-                                    &:hover {
-                                        width: 45px;
-                                        height: 45px;
+                            .contacts-info {
+                                width: 434px;
+                                display: flex;
+                                flex-direction: column;
+            
+            
+                                &-text {
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 147%;
+                                    color: $primary-text-color;
+                                    margin-bottom: 30px;
+                                }
+            
+                                .block-social {
+                                    display: flex;
+                                    justify-content: space-between;
+            
+                                    .region-name {
+                                        font-family: 'Inter-Medium', sans-serif;
+                                        font-size: 14px;
+                                        line-height: 140%;
+                                        color: $primary-text-color;
+                                        margin-bottom: 18px;
+                                    }
+            
+                                
+                                    .social-links-icon {
+                                        width: 40px;
+                                        height: 40px;
+                                        margin-right: 16px;
+
+                                        &:hover {
+                                            width: 45px;
+                                            height: 45px;
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                    
+                    }  
                 }
             }
         }
@@ -531,7 +537,7 @@ body {
             z-index: 4;
             display: flex;
             justify-content: space-between;
-            padding: 35px 0 38.5px 0;
+            padding: 31.5px 0 27.5px 0;
             opacity: 0.5;
             
             &-blocks {
@@ -541,10 +547,23 @@ body {
             &-blocks:not(:last-child) {
                 margin-right: 20px;
             }
+
+            .block-owner {
+                max-width: 205px;
+                }
+
+            .block-cooperation {
+                width: 250px;
+            }
             
             &-title {
                 font-size: 12px;
                 line-height: 147%;
+                color: $primary-text-color;
+            }
+            .primary-title{
+                margin-bottom: 12px;
+
             }
         }
     }
@@ -611,7 +630,7 @@ body {
                             max-width: 668px;
     
                             &-about {
-                                width: 340px;
+                                max-width: 340px;
                                 .logo_gaming {
                                     width: 133px;
                                     height: 23px;
@@ -621,9 +640,7 @@ body {
                         }
     
                         .contacts-block {
-                            width: 330px;
                             .contacts-info {
-    
                                 .block-social {                      
                                      .social-links-icon{
                                         width: 23px;
@@ -644,7 +661,7 @@ body {
     }
     }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 912px) {
     .main {
         .block_video{
             video {
@@ -653,48 +670,7 @@ body {
         }
         .content_block {
             .main-info {
-                .container {
-                    max-width: 760px;
-                }
-            }
-        }
-    }
-    }
-
-@media screen and (max-width: 800px) {
-    .main {
-        .block_video{
-            video {
-                left: -130%;
-            }
-        }
-    }
-    }
-
-@media screen and (max-width:768px) {
-    .main {
-        .content_block {
-            .main-info {
-                .container {
-                    max-width: 668px;
-                    .hero-section {                    
-                        .contacts-block{
-                            width: 288px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    }
-
-@media screen and (max-width: 680px) {
-    .main {
-        .content_block {
-            padding: 0 75px 0 75px;
-
-            .main-info {
-                max-width: 530px;
+                max-width: 760px;
                 .container {
                     .about {
                         flex-direction: column;
@@ -738,6 +714,14 @@ body {
                                 }
                             }
                         }
+
+                        .content-block {
+                            flex-direction: column;
+
+                            .about-clients{
+                                margin-bottom: 62px;
+                            }
+                        }
                     }
                 }
 
@@ -746,17 +730,40 @@ body {
     }
     }
 
-@media screen and (max-width:576px) {
+@media screen and (max-width: 800px) {
+    .main {
+        .block_video{
+            video {
+                left: -130%;
+            }
+        }
+    }
+    }
+
+@media screen and (max-width:768px) {
     .main {
         .content_block {
-            padding: 0 50px 0 50px;
+            .main-info {
+                .container {
+                    max-width: 668px;
+                }
+            }
+        }
+    }
+    }
+
+@media screen and (max-width: 680px) {
+    .main {
+        .content_block {
+            padding: 0 75px 0 75px;
+
             header {
                 .container {
                     .logo-block {
                         max-width: 154px;
                         &-img {
                             width: 96px;
-                                height: 19px;
+                            height: 19px;
                         }
                     }
 
@@ -766,23 +773,33 @@ body {
                             margin-right: 0;
                             margin-left: 16px;
                         }
-                    }
-
-                    .buttons {
-                        display: block;
-                        .contact_us {
-                            padding: 9.5px 15px;
-                            margin-bottom: 10px;
-                            margin-right: 0;
-                           
-                           &:last-child {
-                                margin: 0;
-                            }
-                       }
-                    }
-                       
+                        .buttons {
+                            display: block;
+                            .contact_us {
+                                padding: 9.5px 15px;
+                                margin-bottom: 10px;
+                                margin-right: 0;
+                               
+                               &:last-child {
+                                    margin: 0;
+                                }
+                           }
+                        }
+                    }  
                 }
             }
+
+            .main-info {
+                max-width: 530px;
+            }
+        }
+    }
+    }
+
+@media screen and (max-width:576px) {
+    .main {
+        .content_block {
+            padding: 0 50px 0 50px;
             
             .main-info {
                 max-width: 476px;
@@ -840,8 +857,10 @@ body {
 
       .popup_logo {
         margin: 0 auto 35px ;
-        width: 155px;
-        height: 30px;
+        img {
+            width: 155px;
+            height: 30px;
+        }
       }
 
       .popup-title {
@@ -864,37 +883,32 @@ body {
       }
 
       .download-modal_inputs {
-        display: flex;
-        flex-direction: column;
-        max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
 
-        label {
-          margin-bottom: 25px;
-          font-size: 16px;
-          line-height: 140%;
-          color: $popup-color;
-        }
+            label {
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 140%;
+            color: $popup-color;
+            }
 
-        label:last-of-type {
-          margin-bottom: 0;
-        }
+            label:last-of-type {
+            margin-bottom: 0;
+            }
 
-        input {
-          max-width: 300px;
-          padding: 0 20px;
-        }
+            input {
+            max-width: 300px;
+            padding: 0 20px;
+            }
 
-        input::placeholder {
-          font-size: 14px;
-        }
-
-        .download-modal-btn {
-          margin-top: 35px;
-          margin-bottom: 15px;
-          width: 100%;
-          max-width: 300px;
-        }
-
+            .download-modal-btn {
+            margin-top: 35px;
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 300px;
+            }
         }
         .private-info-text {
             left: 5%;
@@ -1021,56 +1035,6 @@ body {
     .main {
         .content_block {
             .main-info {
-                max-width: 341px;
-                .container {
-                    .about {
-                        &-title {
-                            width: 341px;
-                        }
-
-                        &-text {
-                            width: 341px;
-                        }
-                    }
-
-                    .hero-section {
-                        .brand-info {
-                            width: 341px;
-
-                            &-about{
-                                width: 341px;
-                            }
-                            .about-clients {
-                                width: 341px;
-                            }
-
-                        }
-                        .contacts-block{
-                                width: 341px;
-                            }
-                    }
-                }
-            }
-
-            .company-info {
-                    width: 341px;
-            }
-        }
-    }
-    }
-
-@media screen and (max-width: 375px) {
-    .popup_menu,
-    .popup_menu-gratitude {
-        .download-modal_inputs {
-            input::placeholder {
-                font-size: 10px;
-            }
-        }     
-    }
-    .main {
-        .content_block {
-            .main-info {
                 max-width: 340px;
                 .container {
                     .about {
@@ -1094,11 +1058,34 @@ body {
                                     width: 340px;
                                 }
                         }
-    
-                        .contacts-block {
+
+                        .content-block {
+                            .about-clients {
+                                &-list {
+                                    grid-template-columns: 202px 1fr;
+                                    column-gap: 18px;
+                                }
+                            }
+
+                            .contacts-block {
                                 width: 340px;
-    
+                                .contacts-info {
+                                    .block-social {
+                                        .social-links-icon {
+                                            width: 23px;
+                                            height: 23px;
+                                            &:hover {
+                                                width: 25px;
+                                                height: 25px;
+                                            }
+                                        }
+
+                                    }
+                                }
+        
+                            }
                         }
+    
                     }
                 }
             }
@@ -1108,19 +1095,5 @@ body {
                 }
             }
         }
-    }
-    
-@media screen and (max-width: 368px) {
-    .popup_menu,
-    .popup_menu-gratitude {
-        .download-modal_inputs {
-            .input-title {
-                font-size: 10px;
-            }
-            input::placeholder {
-                font-size: 8px;
-                }
-            }     
-        } 
     }
 }
