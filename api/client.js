@@ -173,7 +173,8 @@ async function sendExternalEmail(accessToken, formData) {
   const apiUrl = process.env.GRAPH_API_URL;
 
   const email = formData.email;
-  const indexHtmlPath = path.join(__dirname, "..", "message.html");
+
+  const indexHtmlPath = path.join(__dirname, "..", "letter.html");
 
   const indexHtml = fs.readFileSync(indexHtmlPath, "utf8");
 
@@ -192,7 +193,7 @@ async function sendExternalEmail(accessToken, formData) {
         },
       ],
     },
-    saveToSentItems: true,
+    saveToSentItems: false,
   };
 
   try {
