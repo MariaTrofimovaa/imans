@@ -861,7 +861,7 @@ body .popup_menu-gratitude .private-info-text {
     width: 420px;
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 429px) {
   body .main .content_block {
     padding: 0 17px 0 17px;
   }
