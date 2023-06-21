@@ -67,9 +67,13 @@ body {
     padding: 73px 30px 77px;
 
     .popup_logo {
+      display: flex;
+      justify-content: center;
       margin: 0 auto 48px;
-      width: 190px;
-      height: 37px;
+        img {
+            width: 190px;
+            height: 37px;
+        }
     }
 
     .popup-title {
@@ -853,8 +857,10 @@ body {
 
       .popup_logo {
         margin: 0 auto 35px ;
-        // width: 155px;
-        // height: 30px;
+        img {
+            width: 155px;
+            height: 30px;
+        }
       }
 
       .popup-title {
