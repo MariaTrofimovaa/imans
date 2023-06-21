@@ -1,0 +1,130 @@
+<div class="overlay" onclick="overlayClose()"></div>
+<div class="popup_background">
+  <div class="popup_menu">
+    <div class="popup_logo">
+      <img src="./assets/img/logo-imans.svg" alt="Logo" />
+    </div>
+    <h2 class="popup-title">
+      {{popup_title}}
+    </h2>
+    <form
+      class="form"
+      name="myForm"
+      onSubmit="handleSubmit(event, window.location.href)"
+    >
+      <div class="download-modal_inputs">
+        <label>
+          <span class="input-title">{{name}}</span>
+          <input
+            type="text"
+            name="name"
+            autocomplete="off"
+            placeholder="John"
+            minlength="2"
+            required
+          />
+        </label>
+        <label for="lastName">
+          <span class="input-title">{{last_name}}</span>
+          <input
+            type="text"
+            name="lastName"
+            autocomplete="off"
+            placeholder="Smith"
+          />
+        </label>
+        <label>
+          <span class="input-title">{{email}}</span>
+          <input
+            type="email"
+            name="email"
+            autocomplete="off"
+            placeholder="smith@gmail.com"
+            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}"
+            required
+          />
+        </label>
+        <label>
+          <span class="input-title">{{phone}}</span>
+          <input
+            type="text"
+            name="phone"
+            autocomplete="off"
+            placeholder="7 (999) 99-99-99"
+            pattern="[0-9]*"
+            required
+          />
+        </label>
+        <label>
+          <span class="input-title">{{company}}</span>
+          <input
+            type="text"
+            name="company"
+            autocomplete="off"
+            placeholder="IMANS"
+          />
+        </label>
+        <button class="download-modal-btn" type="submit">{{submit}}</button>
+        <!-- <div></div> -->
+      </div>
+      <div class="private-info-text">
+        *{{by_clicking_submit}}
+        <a href="#" target="_blank"> {{personal_data}}</a>
+      </div>
+    </form>
+    <span class="btn-close" onClick="closePopup()">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="#FEC600"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M25 1L1 25"
+          stroke="#FEC600"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M1 1L25 25"
+          stroke="#FEC600"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+
+<div class="popup_background">
+  <div class="popup_menu-gratitude">
+    <div class="popup_logo">
+      <img src="./assets/img/logo-imans.svg" alt="Logo" />
+    </div>
+    <h2 class="popup-title">{{gratitude_popup_title}}</h2>
+    <p class="popup-text"> {{gratitude_popup_text}}</p>
+    <span class="btn-close" onClick="gratitudeClosePopup()">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="#FEC600"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M25 1L1 25"
+          stroke="#FEC600"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M1 1L25 25"
+          stroke="#FEC600"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
