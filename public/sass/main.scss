@@ -419,16 +419,21 @@ body {
                     margin-bottom: 49px;
 
                     .brand-info {
-                        display: flex;
+                        // display: flex;
                         max-width: 530px;
                         .brand {
                             display: flex;
-                            flex-direction: column;
-                            margin-right: 40px;
+                            // flex-direction: column;
+                            // margin-right: 40px;
+                            .primary-title {
+                                margin-right: 135px;
+                            }
                         }
+
         
                         &-title {
                             font-family: 'Inter-Medium', sans-serif;
+                            font-weight: 500;
                             font-size: 14px;
                             line-height: 120%;
                             opacity: 0.5;
@@ -437,7 +442,7 @@ body {
                         }
                         &-about {
                             display: flex;
-                            flex-direction:column;
+                            // flex-direction:column-reverse;
                             margin-bottom: 34px;
                             max-width: 530px;
         
@@ -512,18 +517,31 @@ body {
                                         color: $primary-text-color;
                                         margin-bottom: 18px;
                                     }
+
+                                    .social-links {
+                                        display: flex;
+                                        align-items: center;
+                                        }
+
+                                    .region-social-links {
+                                        display: flex;
+                                        flex-direction: column;
+                                    }
             
                                 
                                     .social-links-icon {
                                         width: 40px;
                                         height: 40px;
                                         margin-right: 16px;
-
+                                        transition: transform 0.2s ease-in-out;
                                         &:hover {
-                                            width: 45px;
-                                            height: 45px;
+                                             transform: scale(1.125); 
                                         }
                                     }
+                                    .icon-email {
+                                        margin-right: 0;
+                                    }
+                                    
                                 }
                             }
                         }
@@ -573,6 +591,50 @@ body {
     .main {
         .content_block {
             padding: 0 150px 0 150px;
+
+            .main-info {
+                .container {
+                    .hero-section {
+                        .brand-info {
+                        // display: flex;
+                        max-width: 530px;
+                        .brand {
+                            display: flex;
+                            // flex-direction: column;
+                            // margin-right: 40px;
+                            .primary-title {
+                                margin-right: 139px;
+                            }
+                        }
+
+        
+                        // &-title {
+                        //     font-family: 'Inter-Medium', sans-serif;
+                        //     font-size: 14px;
+                        //     line-height: 120%;
+                        //     opacity: 0.5;
+                        //     margin-bottom: 30px;
+                        //     color: $primary-text-color;
+                        // }
+                        // &-about {
+                        //     display: flex;
+                        //     // flex-direction:column-reverse;
+                        //     margin-bottom: 34px;
+                        //     max-width: 530px;
+        
+                        //     .logo_gaming {
+                        //         width: 290px;
+                        //         height: 27px;
+                        //     }
+                        // }
+                        // &-text {
+                        //     max-width: 198px;
+                        // }
+                    }
+                    
+                    }
+                }
+            }
         }
     }
     }
@@ -616,42 +678,13 @@ body {
                         }
 
                         &-text {
-                            width: 340px;
-                            margin-bottom: 44px;
-                        }
+                        width: 340px;
+                        margin-bottom: 30px;
+                    }
 
                         .primary-button {
                             width: 340px;
                             height: 50px;
-                        }
-                    }
-                    .hero-section {                    
-                        .brand-info {
-                            max-width: 668px;
-    
-                            &-about {
-                                max-width: 340px;
-                                .logo_gaming {
-                                    width: 133px;
-                                    height: 23px;
-                                    margin-right: 16px;
-                                } 
-                            }
-                        }
-    
-                        .contacts-block {
-                            .contacts-info {
-                                .block-social {                      
-                                     .social-links-icon{
-                                        width: 23px;
-                                        height: 23px;
-                                        &:hover {
-                                            width: 25px;
-                                            height: 25px;
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -674,13 +707,13 @@ body {
                 .container {
                     .about {
                         flex-direction: column;
-                        &-title {
-                            font-size: 35px;
-                        }
+                        // &-title {
+                        //     font-size: 35px;
+                        // }
 
-                        &-text {
-                            font-size: 20px;
-                        }
+                        // &-text {
+                        //     font-size: 20px;
+                        // }
 
                         .primary-button {
                             margin: 0 auto;
@@ -692,28 +725,28 @@ body {
                         flex-direction: column;
                         justify-content: flex-start;
                         
-                        .brand-info {
-                            margin-bottom: 70px;
+                        // .brand-info {
+                        //     margin-bottom: 70px;
     
-                            &-about {
+                        //     &-about {
 
-                                .logo_gaming {
-                                    width: 140px;
-                                    height: 27px;
-                                } 
-                            }
+                        //         .logo_gaming {
+                        //             width: 140px;
+                        //             height: 27px;
+                        //         } 
+                        //     }
     
-                            &-title{
-                                font-size: 18px;
-                            }
+                        //     &-title{
+                        //         font-size: 18px;
+                        //     }
     
-                            .about-clients {
+                        //     .about-clients {
     
-                                &-text {
-                                    font-size: 17px;
-                                }
-                            }
-                        }
+                        //         &-text {
+                        //             font-size: 17px;
+                        //         }
+                        //     }
+                        // }
 
                         .content-block {
                             flex-direction: column;
@@ -746,6 +779,25 @@ body {
             .main-info {
                 .container {
                     max-width: 668px;
+
+                    .hero-section {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        
+                        .brand-info {
+                            margin-bottom: 70px;
+    
+                            &-about {
+                                flex-direction: column-reverse;
+
+                                .logo_gaming {
+                                    width: 316px;
+                                    height: 79px;
+                                } 
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -761,6 +813,11 @@ body {
                 .container {
                     .logo-block {
                         max-width: 154px;
+
+                        &-title {
+                        font-size: 12px;
+                        }
+                    
                         &-img {
                             width: 96px;
                             height: 19px;
@@ -801,48 +858,78 @@ body {
         .content_block {
             padding: 0 50px 0 50px;
             
-            .main-info {
-                max-width: 476px;
-                header {
-                    .container {
-                        .about {
-                            flex-direction: column;
-                            &-title {
-                                width: 476px;
-                                font-size: 35px;
-                            }
-
-                            &-text {
-                                width: 476px;
-                                font-size: 20px;
-                            }
+            header {
+                .container {
+                    
+                    .about {
+                        flex-direction: column;
+                        &-title {
+                            font-family: "Asimov", sans-serif;
+                            width: 476px;
+                            font-size: 28px;
+                            font-weight: 500;
+                            line-height: 140%;
+                            letter-spacing: 0.98px;
+                            text-transform: uppercase;
                         }
 
-                        .hero-section {
-                            .brand-info {
-                                width: 476px;
-                                .about-clients {
-                                    width: 476px;
+                        &-text {
+                            width: 476px;
+                            // margin-bottom: 35px;
+                            // color: red($color: #000000);
+                            // font-size: 20px;
+                        }
+                    }
+
+                }
+            }
+            .main-info {
+                max-width: 476px;
+
+                .container {
+                    .about {
+                        &-text {
+                            margin-bottom: 44px;
+                        }
+                    }
+                    .hero-section {
+                        .brand-info {
+                            max-width: 425px;
+                            margin-bottom: 62px;
+
+                            &-about {
+                                margin-bottom: 0;
+                            }
         
-                                    &-text {
+                            .brand {
+                                 max-width: 425px;
+                                .primary-title {
+                                    margin-right: 90px;
+                                    margin-bottom: 0;
+                                }
+                            .about-clients {            
+                                &-text {
                                         font-size: 12px;
                                         line-height: 140%;
                                     }
                                 }
                             }
-
-                            .contacts-block{
-                                width: 476px;
                             }
                         }
-                    }
                 }
             }
 
             .company-info {
                 display: block;
+
+                .primary-title {
+                    margin-bottom: 0;
+                }
+                &-blocks {
+                    margin-bottom: 20px;
+                }
                 &-title{
-                    font-size: 18px;
+                font-size: 12px;
                 }
             }
         }
@@ -931,43 +1018,21 @@ body {
             .main-info {
                 max-width: 425px;
                 .container {
-                    .about {
-                        &-title {
-                            width: 425px;
-                            font-size: 28px;
-                        }
-
-                        &-text {
-                            width: 425px;
-                            font-size: 20px;
-                        }
-                    }
 
                     .hero-section {
                         .brand-info {
-                            width: 425px;
-
-                            &-about{
-                                width: 425px;
-                            }
-                            .about-clients {
-                                width: 425px;
-    
+                            .about-clients {    
                                 &-text {
                                     font-size: 12px;
                                 }
                             }
-
                         }
-                        .contacts-block{
-                                width: 425px;
-                            }
                     }
                 }
             }
 
             .company-info {
-                    width: 420px;
+                    max-width: 420px;
             }
         }
     }
@@ -976,9 +1041,9 @@ body {
 @media screen and (max-width: 429px) {
     .main {
         .content_block {
-            padding: 0 17px 0 17px;
+            padding: 0 18px 0 18px;
 
-                        header {
+            header {
                 .container {
                     .logo-block {
                         max-width: 140px;
@@ -992,12 +1057,12 @@ body {
                     .about {
                         &-title {
                             width: 380px;
-                            font-size: 28px;
+                            // font-size: 28px;
                         }
 
                         &-text {
                             width: 380px;
-                            font-size: 20px;
+                            // font-size: 20px;
                         }
                     }
 
@@ -1031,7 +1096,7 @@ body {
     }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 415px) {
     .main {
         .content_block {
             .main-info {
@@ -1064,29 +1129,15 @@ body {
                                 &-list {
                                     grid-template-columns: 202px 1fr;
                                     column-gap: 18px;
+                                    font-size: 13px;
+                                }
+                                &-text {
+                                    font-size: 13px;
                                 }
                             }
 
                             .contacts-block {
                                 width: 340px;
-                                .contacts-info {
-                                    .block-social {
-                                        .social-links-icon {
-                                            width: 23px;
-                                            height: 23px;
-                                            &:hover {
-                                                width: 25px;
-                                                height: 25px;
-                                            }
-                                        }
-
-                                    }
-<<<<<<< HEAD:public/sass/main.scss
-=======
-
->>>>>>> develop:sass/main.scss
-                                }
-        
                             }
                         }
     

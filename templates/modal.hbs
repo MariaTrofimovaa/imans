@@ -1,130 +1,138 @@
-<div class="overlay" onclick="overlayClose()"></div>
-<div class="popup_background">
-  <div class="popup_menu">
-    <div class="popup_logo">
-      <img src="./assets/img/logo-imans.svg" alt="Logo" />
+<main class="main-info container">
+  <div class="container">
+    <p class="welcome-title">{{welcome-title}}</p>
+    <div class="about">
+      <h1 class="about-title" data-translate="title">
+        {{title}}
+      </h1>
+      <div class="about-block">
+        <p class="about-text">
+          {{about_text}}
+        </p>
+        <button type="button" class="primary-button" onClick="popupShow()">
+          {{button_text}}
+        </button>
+      </div>
     </div>
-    <h2 class="popup-title">
-      {{popup_title}}
-    </h2>
-    <form
-      class="form"
-      name="myForm"
-      onSubmit="handleSubmit(event, window.location.href)"
-    >
-      <div class="download-modal_inputs">
-        <label>
-          <span class="input-title">{{name}}</span>
-          <input
-            type="text"
-            name="name"
-            autocomplete="off"
-            placeholder="John"
-            minlength="2"
-            required
-          />
-        </label>
-        <label for="lastName">
-          <span class="input-title">{{last_name}}</span>
-          <input
-            type="text"
-            name="lastName"
-            autocomplete="off"
-            placeholder="Smith"
-          />
-        </label>
-        <label>
-          <span class="input-title">{{email}}</span>
-          <input
-            type="email"
-            name="email"
-            autocomplete="off"
-            placeholder="smith@gmail.com"
-            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}"
-            required
-          />
-        </label>
-        <label>
-          <span class="input-title">{{phone}}</span>
-          <input
-            type="text"
-            name="phone"
-            autocomplete="off"
-            placeholder="7 (999) 99-99-99"
-            pattern="[0-9]*"
-            required
-          />
-        </label>
-        <label>
-          <span class="input-title">{{company}}</span>
-          <input
-            type="text"
-            name="company"
-            autocomplete="off"
-            placeholder="IMANS"
-          />
-        </label>
-        <button class="download-modal-btn" type="submit">{{submit}}</button>
-        <!-- <div></div> -->
-      </div>
-      <div class="private-info-text">
-        *{{by_clicking_submit}}
-        <a href="#" target="_blank"> {{personal_data}}</a>
-      </div>
-    </form>
-    <span class="btn-close" onClick="closePopup()">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="#FEC600"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M25 1L1 25"
-          stroke="#FEC600"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M1 1L25 25"
-          stroke="#FEC600"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </span>
-  </div>
-</div>
 
-<div class="popup_background">
-  <div class="popup_menu-gratitude">
-    <div class="popup_logo">
-      <img src="./assets/img/logo-imans.svg" alt="Logo" />
+    <div class="hero-section">
+      <div class="brand-info">
+        <div class="brand">
+          <h3 class="brand-info-title primary-title ">{{brand}}</h3>
+          <a class="brand-info-title" href="http://www.igamingmanagement.io" target="_blank">
+            igamingmanagement.io
+          </a>
+
+        </div>
+        <div class="brand-info-about">
+          <p class="brand-info-text">{{brand_about}}</p>
+          <a href="http://www.igamingmanagement.io" target="_blank">
+            <img class="logo_gaming" src="./assets/img/logo_IGaming.svg" alt="IGaming logo" />
+          </a>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="about-clients">
+          <h3 class="brand-info-title">{{brand_info_title}}</h3>
+          <ul class="about-clients-list">
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/dollar.svg" />
+              {{banking}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/hospital.svg" />{{medicine}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/shop.svg" />{{trading}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/lightbulb-bolt.svg" />{{energetics}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/translation.svg" />{{information}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/academic-cap.svg" />{{education}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/buildings.svg" />{{real_estate}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/shield-check.svg" />{{insurance}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/car.svg" />{{automotive}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/monitor.svg" />{{it_sector}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/diagram.svg" />{{cryptocurrency}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/dices.svg" />{{gambling}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/home.svg" />{{hospitality}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/confetti.svg" />{{entertainment}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/chef-hat.svg" />{{restaurant}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/suitcase-tag.svg" />{{tourism}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/users.svg" />{{network}}
+            </li>
+            <li class="about-clients-text">
+              <img src="./assets/img/bussines/phone.svg" />{{telecom}}
+            </li>
+          </ul>
+        </div>
+
+        <div class="contacts-block">
+          <div class="contacts-info">
+            <h3 class="brand-info-title">{{contacts}}</h3>
+            <p class="contacts-info-text">{{contacts_info_text}}
+            </p>
+            <div class="block-social">
+              <div class="region-social-links">
+                <p class="region-name">{{Georgia}}:</p>
+                <div class="social-links">
+                  <a href="whatsapp://send?phone=+995558791268">
+                    <img class="social-links-icon" src="./assets/img/whatsapp.svg" alt="whatsapp-icon" />
+                  </a>
+                  <a href="tg://resolve?domain=infoimans">
+                    <img class="social-links-icon " src="./assets/img/telegram.svg" alt="telegram-icon" />
+                  </a>
+                  <a class="email-link" href="mailto:info@imans.io">
+                    <img class="social-links-icon icon-email" src="./assets/img/email.svg" alt="Email" />
+                  </a>
+                </div>
+              </div>
+              <div class="region-social-links">
+                <p class="region-name">{{Kenya}}:</p>
+                <div class="social-links">
+                  <a href="whatsapp://send?phone=+995558791268">
+                    <img class="social-links-icon" src="./assets/img/whatsapp.svg" alt="whatsapp-icon" />
+                  </a>
+                  <a href="tg://resolve?domain=infoimans">
+                    <img class="social-links-icon" src="./assets/img/telegram.svg" alt="telegram-icon" />
+                  </a>
+                  <a class="email-link" href="mailto:info@imans.io">
+                    <img class="social-links-icon icon-email" src="./assets/img/email.svg" alt="Email" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
-    <h2 class="popup-title">{{gratitude_popup_title}}</h2>
-    <p class="popup-text"> {{gratitude_popup_text}}</p>
-    <span class="btn-close" onClick="gratitudeClosePopup()">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="#FEC600"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M25 1L1 25"
-          stroke="#FEC600"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M1 1L25 25"
-          stroke="#FEC600"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </span>
   </div>
-</div>
+</main>
