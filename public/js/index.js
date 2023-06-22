@@ -37,8 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
   if (windowInnerWidth <= 475) {
     let movie = document.querySelector("video");
     // change "#" to video path
-    movie.setAttribute("src", "#");
+    movie.setAttribute("src", "https://imans.io/background-video_mob.mp4");
     document.querySelector("video").play();
+  }
+});
+
+window.addEventListener("load", function () {
+  var screenWidth =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+
+  if (screenWidth <= 600) {
+    var brandInfoAbout = document.querySelector(".brand-info-about");
+    var brandInfoText = document.querySelector(".brand-info-text");
+
+    brandInfoText.parentNode.insertBefore(brandInfoAbout, brandInfoText);
   }
 });
 
