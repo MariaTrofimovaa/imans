@@ -33,17 +33,66 @@
         max-width: 600px;
         background-color: #141414;
         margin: 0 auto;
-        padding: 73.6px 54px 87px 51.5px;
+        padding: 73px 54px 87px 51.5px;
         text-align: center;
       }
 
-      .region-social-links {
-        /* margin-bottom: 25px; */
-        margin-right: 25px;
+      .title {
+        margin-bottom: 80px;
       }
 
-      /* .region-social-links:last-child {
-        margin-bottom: 0;
+      .content-contacts {
+        margin-right: 44px;
+      }
+
+      .contacts-title {
+        text-align: left;
+        margin-bottom: 33px;
+      }
+
+      /* @media only screen and (max-width: 475px) {
+        .email-background {
+          max-width: 320px;
+          height: 511px;
+          padding: 24px 20px 51px 20px;
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
+        .content-contacts {
+          display: flex;
+          align-items: flex-start;
+        }
+
+        .content-text {
+          text-align: left;
+        }
+
+        .title {
+          margin-bottom: 25px;
+        }
+
+        .title-text {
+          margin-bottom: 40px;
+        }
+
+        .contacts-title {
+          margin-bottom: 0;
+        }
+
+        .region-social-links {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          margin-bottom: 25px;
+        }
+
+        .mob-contacts {
+          margin-left: 112px;
+        }
       } */
     </style>
   </head>
@@ -76,10 +125,10 @@
                 <table style="width: 100%">
                   <tr>
                     <td style="text-align: left">
-                      <a href="http://www.imans.io">
+                      <a href="https://www.imans.io">
                         <img
-                          src="../assets/img/logo-imans.svg"
-                          alt="Imans-logo"
+                          src="https://imans.io/logo-imans.png"
+                          alt="Logo"
                           width="81px"
                           height="16px"
                         />
@@ -87,7 +136,7 @@
                     </td>
                     <td style="text-align: right">
                       <a
-                        href="http://www.imans.io"
+                        href="https://www.imans.io"
                         style="opacity: 0.3; color: #ededed"
                         >www.imans.io</a
                       >
@@ -99,12 +148,13 @@
             <tr>
               <td style="display: flex; padding-top: 43px">
                 <table style="width: 100%">
-                  <tr>
+                  <tr class="content">
                     <td style="width: 101px; margin-right: 44px">
                       <h3 style="text-align: left; margin-bottom: 33px">
-                        Contacts
+                        Контакты
                       </h3>
 
+                      <!-- <div class="mob-contacts"> -->
                       <table style="margin-bottom: 15px">
                         <tr>
                           <td
@@ -114,7 +164,7 @@
                               margin-bottom: 18px;
                             "
                           >
-                            Georgia:
+                            Грузия:
                           </td>
                         </tr>
                       </table>
@@ -126,10 +176,14 @@
                           <td>
                             <a
                               href="https://wa.me/995558791268"
-                              style="list-style: none; text-decoration: none"
+                              style="
+                                list-style: none;
+                                text-decoration: none;
+                                margin-right: 10px;
+                              "
                             >
                               <img
-                                src="../assets/img/m-whatsapp.svg"
+                                src="https://imans.io/i-whatsapp.png"
                                 style="width: 27px; height: 27px"
                               />
                             </a>
@@ -137,10 +191,14 @@
                           <td>
                             <a
                               href="https://t.me/infoimans"
-                              style="list-style: none; text-decoration: none"
+                              style="
+                                list-style: none;
+                                text-decoration: none;
+                                margin-right: 10px;
+                              "
                             >
                               <img
-                                src="../assets/img/m-telegram.svg"
+                                src="https://imans.io/i-telegram.png"
                                 style="width: 27px; height: 27px"
                               />
                             </a>
@@ -151,7 +209,7 @@
                               style="list-style: none; text-decoration: none"
                             >
                               <img
-                                src="../assets/img/m-email.svg"
+                                src="https://imans.io/i-email.png"
                                 style="width: 27px; height: 27px"
                               />
                             </a>
@@ -162,7 +220,7 @@
                       <table style="margin-bottom: 15px">
                         <tr>
                           <td style="line-height: 140%; opacity: 0.5">
-                            Kenya:
+                            Кения:
                           </td>
                         </tr>
                       </table>
@@ -172,10 +230,14 @@
                           <td>
                             <a
                               href="https://wa.me/995558791268"
-                              style="list-style: none; text-decoration: none"
+                              style="
+                                list-style: none;
+                                text-decoration: none;
+                                margin-right: 10px;
+                              "
                             >
                               <img
-                                src="../assets/img/m-whatsapp.svg"
+                                src="https://imans.io/i-whatsapp.png"
                                 style="width: 27px; height: 27px"
                               />
                             </a>
@@ -183,10 +245,14 @@
                           <td>
                             <a
                               href="https://t.me/infoimans"
-                              style="list-style: none; text-decoration: none"
+                              style="
+                                list-style: none;
+                                text-decoration: none;
+                                margin-right: 10px;
+                              "
                             >
                               <img
-                                src="../assets/img/m-telegram.svg"
+                                src="https://imans.io/i-telegram.png"
                                 style="width: 27px; height: 27px"
                               />
                             </a>
@@ -197,16 +263,20 @@
                               style="list-style: none; text-decoration: none"
                             >
                               <img
-                                src="../assets/img/m-email.svg"
+                                src="https://imans.io/i-email.png"
                                 style="width: 27px; height: 27px"
                               />
                             </a>
                           </td>
                         </tr>
                       </table>
+                      <!-- </div> -->
                     </td>
 
-                    <td style="width: 352px; text-align: left">
+                    <td
+                      style="width: 352px; text-align: left"
+                      class="content-text"
+                    >
                       <h2
                         style="
                           font-size: 24px;
@@ -216,12 +286,15 @@
                           margin-bottom: 80px;
                         "
                       >
-                        Thank you for contacting IMANS
+                        Благодарим Вас за обращение в компанию IMANS
                       </h2>
-                      <p style="font-size: 14px; line-height: 147%">
-                        Your application has been accepted. Our specialists will
-                        be happy to answer all your questions and provide you
-                        with all the information you need.
+                      <p
+                        style="font-size: 14px; line-height: 147%"
+                        class="title-text"
+                      >
+                        Ваша заявка принята. Наши специалисты будут рады
+                        ответить на все Ваши вопросы, а также предоставят всю
+                        необходимую Вам информацию.
                       </p>
                     </td>
                   </tr>

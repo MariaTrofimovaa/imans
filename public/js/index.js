@@ -42,20 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// window.addEventListener("load", function () {
-//   var screenWidth =
-//     window.innerWidth ||
-//     document.documentElement.clientWidth ||
-//     document.body.clientWidth;
-
-//   if (screenWidth <= 600) {
-//     var brandInfoAbout = document.querySelector(".brand-info-about");
-//     var brandInfoText = document.querySelector(".brand-info-text");
-
-//     brandInfoText.parentNode.insertBefore(brandInfoAbout, brandInfoText);
-//   }
-// });
-
 function popupShow() {
   let popup = document.querySelector(".popup_menu");
   let overlay = document.querySelector(".overlay");
@@ -109,6 +95,7 @@ function handleSubmit(event, url) {
   }
 
   formData["source"] = hostname;
+  formData["url"] = url;
 
   axios
     .post("/api/v1/client", formData)
@@ -126,8 +113,7 @@ function handleSubmit(event, url) {
 function changeLanguage(event, lang) {
   event.preventDefault();
   const hostname = window.location.hostname;
-  // remove "port" for prod
   const port = window.location.port;
-  const newUrl = `http://${hostname}:${port}/${lang}`;
+  const newUrl = `https://${hostname}:${port}/${lang}`;
   window.location.href = newUrl;
 }

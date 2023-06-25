@@ -74,6 +74,14 @@ a, ul {
   font-style: normal;
 }
 
+a:visited {
+  color: #EDEDED;
+}
+
+a:active {
+  color: #EDEDED;
+}
+
 body {
   font-family: "Inter-Regular", sans-serif;
   font-size: 14px;

@@ -162,7 +162,7 @@ async function sendInternalEmail(accessToken, formData) {
       },
     });
 
-    console.log("Email sent successfully:", response.data);
+    console.log("Internal email sent successfully:", response.data);
   } catch (error) {
     console.error("Failed to send email:", error.message);
     throw error;
@@ -173,13 +173,26 @@ async function sendExternalEmail(accessToken, formData) {
   const apiUrl = process.env.GRAPH_API_URL;
 
   const email = formData.email;
-  const indexHtmlPath = path.join(__dirname, "..", "letter.html");
+  const url = formData.url;
 
+  const urlPath = new URL(url);
+  const pathName = urlPath.pathname;
+
+  let indexHtmlPath;
+  let title = "";
+
+  if (pathName === "/ru") {
+    title = "Благодарим за Вашу заявку";
+    indexHtmlPath = path.join(__dirname, "..", "letterRu.html");
+  } else {
+    title = "Thank you for your request";
+    indexHtmlPath = path.join(__dirname, "..", "letterEn.html");
+  }
   const indexHtml = fs.readFileSync(indexHtmlPath, "utf8");
 
   const emailData = {
     message: {
-      subject: "Thank you for your request",
+      subject: title,
       body: {
         contentType: "HTML",
         content: indexHtml,
@@ -201,8 +214,7 @@ async function sendExternalEmail(accessToken, formData) {
         Authorization: `Bearer ${accessToken}`,
       },
     });
-
-    console.log("Email sent successfully:", response.data);
+    console.log("External email sent successfully:", response.data);
   } catch (error) {
     console.error("Failed to send email:", error.message);
     throw error;
