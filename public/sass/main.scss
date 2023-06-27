@@ -72,7 +72,7 @@ body {
     box-sizing: border-box;
     background-color: $popup-bg-color;
     color: $primary-text-color;
-    padding: 73px 30px 77px;
+    padding: 73px 30px 10px;
 
     .popup_logo {
       display: flex;
@@ -175,6 +175,14 @@ body {
         }
       }
     }
+
+    .private-info-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 10px;
+    }
+
     .private-info-text {
         max-width: 250px;
         font-style: normal;
@@ -183,9 +191,6 @@ body {
         line-height: 147%;
         color: $primary-text-color;
         opacity: 0.5;
-        position: absolute;
-        right: 5%;
-        margin-top: 10px;
 
         a {
           text-decoration: underline;
@@ -428,12 +433,10 @@ body {
                     margin-bottom: 49px;
 
                     .brand-info {
-                        // display: flex;
                         max-width: 530px;
                         .brand {
                             display: flex;
-                            // flex-direction: column;
-                            // margin-right: 40px;
+                            
                             .primary-title {
                                 margin-right: 135px;
                             }
@@ -451,7 +454,6 @@ body {
                         }
                         &-about {
                             display: flex;
-                            // flex-direction:column-reverse;
                             margin-bottom: 34px;
                             max-width: 530px;
         
@@ -592,572 +594,522 @@ body {
                 margin-bottom: 12px;
 
             }
+
+            .copy-notification {
+                display: inline-block;
+                margin-left: 5px;
+                padding: 4px 8px;
+                background-color: #f0f0f0;
+                border-radius: 4px;
+                font-size: 12px;
+                color: #555555;
+            }
         }
     }
 }
 
-@media screen and (max-width:1600px) {
-    .main {
-        .content_block {
-            padding: 0 150px 0 150px;
+    @media screen and (max-width:1600px) {
+        .main {
+            .content_block {
+                padding: 0 150px 0 150px;
 
-            .main-info {
+                .main-info {
+                    .container {
+                        .hero-section {
+                            .brand-info {
+                                max-width: 530px;
+                                .brand {
+                                    display: flex;
+
+                                    .primary-title {
+                                        margin-right: 139px;
+                                    }
+                                }
+                            }                         
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:1280px) {
+        .main {
+            .block_video{
+                video {
+                    left: -50%;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .main {
+            .block_video{
+                video {
+                    left: -90%;
+                }
+            }
+            .content_block {
+                padding: 0 50px 0 50px;
+
+                header {
                 .container {
-                    .hero-section {
-                        .brand-info {
-                        // display: flex;
-                        max-width: 530px;
-                        .brand {
-                            display: flex;
-                            // flex-direction: column;
-                            // margin-right: 40px;
-                            .primary-title {
-                                margin-right: 139px;
+                    padding: 48px 0 20px 0;
+                }
+                }
+
+                .main-info {
+                    .container {
+                        max-width: 924px;
+                        .about {
+                            margin-bottom: 30px;
+
+                            &-title {
+                                width: 340px;
+                                font-size: 28px;
+                                margin-bottom: 35px;
+                            }
+
+                            &-text {
+                            width: 340px;
+                            margin-bottom: 30px;
+                        }
+
+                            .primary-button {
+                                width: 340px;
+                                height: 50px;
                             }
                         }
+                    }
 
-        
-                        // &-title {
-                        //     font-family: 'Inter-Medium', sans-serif;
-                        //     font-size: 14px;
-                        //     line-height: 120%;
-                        //     opacity: 0.5;
-                        //     margin-bottom: 30px;
-                        //     color: $primary-text-color;
-                        // }
-                        // &-about {
-                        //     display: flex;
-                        //     // flex-direction:column-reverse;
-                        //     margin-bottom: 34px;
-                        //     max-width: 530px;
-        
-                        //     .logo_gaming {
-                        //         width: 290px;
-                        //         height: 27px;
-                        //     }
-                        // }
-                        // &-text {
-                        //     max-width: 198px;
-                        // }
-                    }
-                    
-                    }
                 }
             }
         }
     }
-    }
 
-@media screen and (max-width:1280px) {
-    .main {
-        .block_video{
-            video {
-                left: -50%;
-            }
-        }
-    }
-    }
-
-@media screen and (max-width: 1024px) {
-    .main {
-        .block_video{
-            video {
-                left: -90%;
-            }
-        }
-        .content_block {
-            padding: 0 50px 0 50px;
-
-            header {
-              .container {
-                padding: 48px 0 20px 0;
-              }
-            }
-
-            .main-info {
-                .container {
-                    max-width: 924px;
-                    .about {
-                        margin-bottom: 30px;
-
-                        &-title {
-                            width: 340px;
-                            font-size: 28px;
-                            margin-bottom: 35px;
-                        }
-
-                        &-text {
-                        width: 340px;
-                        margin-bottom: 30px;
-                    }
-
-                        .primary-button {
-                            width: 340px;
-                            height: 50px;
-                        }
-                    }
+    @media screen and (max-width: 912px) {
+        .main {
+            .block_video{
+                video {
+                    left: -115%;
                 }
-
             }
-        }
-    }
-    }
-
-@media screen and (max-width: 912px) {
-    .main {
-        .block_video{
-            video {
-                left: -115%;
-            }
-        }
-        .content_block {
-            .main-info {
-                max-width: 760px;
-                .container {
-                    .about {
-                        flex-direction: column;
-                        // &-title {
-                        //     font-size: 35px;
-                        // }
-
-                        // &-text {
-                        //     font-size: 20px;
-                        // }
-
-                        .primary-button {
-                            margin: 0 auto;
-                            float: none;
-                        }
-                    }
-                    .hero-section {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-start;
-                        
-                        // .brand-info {
-                        //     margin-bottom: 70px;
-    
-                        //     &-about {
-
-                        //         .logo_gaming {
-                        //             width: 140px;
-                        //             height: 27px;
-                        //         } 
-                        //     }
-    
-                        //     &-title{
-                        //         font-size: 18px;
-                        //     }
-    
-                        //     .about-clients {
-    
-                        //         &-text {
-                        //             font-size: 17px;
-                        //         }
-                        //     }
-                        // }
-
-                        .content-block {
+            .content_block {
+                .main-info {
+                    max-width: 760px;
+                    .container {
+                        .about {
                             flex-direction: column;
 
-                            .about-clients{
-                                margin-bottom: 62px;
+                            .primary-button {
+                                margin: 0 auto;
+                                float: none;
                             }
                         }
-                    }
-                }
+                        .hero-section {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            
+                            .content-block {
+                                flex-direction: column;
 
-            }
-        }
-    }
-    }
-
-@media screen and (max-width: 800px) {
-    .main {
-        .block_video{
-            video {
-                left: -130%;
-            }
-        }
-    }
-    }
-
-@media screen and (max-width:768px) {
-    .main {
-        .content_block {
-            .main-info {
-                .container {
-                    max-width: 668px;
-
-                    .hero-section {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-start;
-                        
-                        .brand-info {
-                            margin-bottom: 70px;
-    
-                            &-about {
-                                flex-direction: column-reverse;
-
-                                .logo_gaming {
-                                    width: 316px;
-                                    height: 79px;
-                                } 
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    }
-
-@media screen and (max-width: 680px) {
-    .main {
-        .content_block {
-            padding: 0 75px 0 75px;
-
-            header {
-                .container {
-                    .logo-block {
-                        max-width: 154px;
-
-                        &-title {
-                        font-size: 12px;
-                        }
-                    
-                        &-img {
-                            width: 96px;
-                            height: 19px;
-                        }
-                    }
-
-                    .lang_block {
-                        flex-direction: row-reverse;
-                        .dropdown-lang {
-                            margin-right: 0;
-                            margin-left: 16px;
-                        }
-                        .buttons {
-                            display: block;
-                            .contact_us {
-                                padding: 9.5px 15px;
-                                margin-bottom: 10px;
-                                margin-right: 0;
-                               
-                               &:last-child {
-                                    margin: 0;
+                                .about-clients{
+                                    margin-bottom: 62px;
                                 }
-                           }
+                            }
                         }
-                    }  
-                }
-            }
+                    }
 
-            .main-info {
-                max-width: 530px;
+                }
             }
         }
     }
-    }
 
-@media screen and (max-width:576px) {
-    .main {
-        .content_block {
-            padding: 0 50px 0 50px;
-            
-            header {
-                .container {
-                    
-                    .about {
-                        flex-direction: column;
-                        &-title {
-                            font-family: "Asimov", sans-serif;
-                            width: 476px;
-                            font-size: 28px;
-                            font-weight: 500;
-                            line-height: 140%;
-                            letter-spacing: 0.98px;
-                            text-transform: uppercase;
-                        }
-
-                        &-text {
-                            width: 476px;
-                            // margin-bottom: 35px;
-                            // color: red($color: #000000);
-                            // font-size: 20px;
-                        }
-                    }
-
+    @media screen and (max-width: 800px) {
+        .main {
+            .block_video{
+                video {
+                    left: -130%;
                 }
             }
-            .main-info {
-                max-width: 476px;
+        }
+    }
 
-                .container {
-                    .about {
-                        &-text {
-                            margin-bottom: 44px;
+    @media screen and (max-width:768px) {
+        .main {
+            .content_block {
+                .main-info {
+                    .container {
+                        max-width: 668px;
+
+                        .hero-section {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            
+                            .brand-info {
+                                margin-bottom: 70px;
+        
+                                &-about {
+                                    flex-direction: column-reverse;
+
+                                    .logo_gaming {
+                                        width: 316px;
+                                        height: 79px;
+                                    } 
+                                }
+                            }
                         }
                     }
-                    .hero-section {
-                        .brand-info {
-                            max-width: 425px;
-                            margin-bottom: 62px;
+                }
+            }
+        }
+    }
 
-                            &-about {
-                                margin-bottom: 0;
+    @media screen and (max-width: 680px) {
+        .main {
+            .content_block {
+                padding: 0 75px 0 75px;
+
+                header {
+                    .container {
+                        .logo-block {
+                            max-width: 154px;
+
+                            &-title {
+                            font-size: 12px;
                             }
-        
-                            .brand {
-                                 max-width: 425px;
-                                .primary-title {
-                                    margin-right: 90px;
+                        
+                            &-img {
+                                width: 96px;
+                                height: 19px;
+                            }
+                        }
+
+                        .lang_block {
+                            flex-direction: row-reverse;
+                            .dropdown-lang {
+                                margin-right: 0;
+                                margin-left: 16px;
+                            }
+                            .buttons {
+                                display: block;
+                                .contact_us {
+                                    padding: 9.5px 15px;
+                                    margin-bottom: 10px;
+                                    margin-right: 0;
+                                
+                                &:last-child {
+                                        margin: 0;
+                                    }
+                            }
+                            }
+                        }  
+                    }
+                }
+
+                .main-info {
+                    max-width: 530px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:576px) {
+        .main {
+            .content_block {
+                padding: 0 50px 0 50px;
+                
+                header {
+                    .container {
+                        
+                        .about {
+                            flex-direction: column;
+                            &-title {
+                                font-family: "Asimov", sans-serif;
+                                width: 476px;
+                                font-size: 28px;
+                                font-weight: 500;
+                                line-height: 140%;
+                                letter-spacing: 0.98px;
+                                text-transform: uppercase;
+                            }
+
+                            &-text {
+                                width: 476px;
+                            }
+                        }
+
+                    }
+                }
+
+                .main-info {
+                    max-width: 476px;
+
+                    .container {
+                        .about {
+                            &-text {
+                                margin-bottom: 44px;
+                            }
+                        }
+                        .hero-section {
+                            .brand-info {
+                                max-width: 425px;
+                                margin-bottom: 62px;
+
+                                &-about {
                                     margin-bottom: 0;
                                 }
-                            .about-clients {            
-                                &-text {
-                                        font-size: 12px;
-                                        line-height: 140%;
+            
+                                .brand {
+                                    max-width: 425px;
+                                    .primary-title {
+                                        margin-right: 90px;
+                                        margin-bottom: 0;
+                                    }
+                                .about-clients {            
+                                    &-text {
+                                            font-size: 12px;
+                                            line-height: 140%;
+                                        }
                                     }
                                 }
                             }
-                            }
                         }
+                    }
                 }
-            }
 
-            .company-info {
-                display: block;
+                .company-info {
+                    display: block;
 
-                .primary-title {
-                    margin-bottom: 0;
-                }
-                &-blocks {
-                    margin-bottom: 20px;
-                }
-                &-title{
-                font-size: 12px;
+                    .primary-title {
+                        margin-bottom: 0;
+                    }
+                    &-blocks {
+                        margin-bottom: 20px;
+                    }
+                    &-title{
+                    font-size: 12px;
+                    }
                 }
             }
         }
     }
-    }
 
-@media screen and (max-width: 475px) {
-    .popup_menu,
-    .popup_menu-gratitude {
-       max-width: 340px;
-       padding: 45px 19px 45px 21px;
+    @media screen and (max-width: 475px) {
+        .popup_menu,
+        .popup_menu-gratitude {
+        max-width: 340px;
+        padding: 45px 19px 45px 21px;
 
-      .popup_logo {
-        margin: 0 auto 35px ;
-        img {
-            width: 155px;
-            height: 30px;
-        }
-      }
-
-      .popup-title {
-        font-size: 18px;
-      }
-
-      .popup-text {
-        text-align: center;
-        color: $primary-text-color;
-      }
-
-      .btn-close {
-        position: absolute;
-        top: 16px;
-        right: 16px;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
-
-      .download-modal_inputs {
-            display: flex;
-            flex-direction: column;
-            max-width: 300px;
-
-            label {
-            margin-bottom: 25px;
-            font-size: 16px;
-            line-height: 140%;
-            color: $popup-color;
-            }
-
-            label:last-of-type {
-            margin-bottom: 0;
-            }
-
-            input {
-            max-width: 300px;
-            padding: 0 20px;
-            }
-
-            .download-modal-btn {
-            margin-top: 35px;
-            margin-bottom: 15px;
-            width: 100%;
-            max-width: 300px;
+        .popup_logo {
+            margin: 0 auto 35px ;
+            img {
+                width: 155px;
+                height: 30px;
             }
         }
-        .private-info-text {
-            left: 5%;
-        }
-    }
 
-    .main {
-        .block_video{
-            video {
-                left: 0;
-                top: 0;
-                min-width: auto;
-                min-height: auto;
-                height: 100%;
+        .popup-title {
+            font-size: 18px;
+        }
+
+        .popup-text {
+            text-align: center;
+            color: $primary-text-color;
+        }
+
+        .btn-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+
+            &:hover {
+            cursor: pointer;
             }
         }
-        .content_block {
-            padding: 0 25px 0 25px;
 
-            .main-info {
-                max-width: 425px;
-                .container {
+        .download-modal_inputs {
+                display: flex;
+                flex-direction: column;
+                max-width: 300px;
 
-                    .hero-section {
-                        .brand-info {
-                            .about-clients {    
-                                &-text {
-                                    font-size: 12px;
+                label {
+                margin-bottom: 25px;
+                font-size: 16px;
+                line-height: 140%;
+                color: $popup-color;
+                }
+
+                label:last-of-type {
+                margin-bottom: 0;
+                }
+
+                input {
+                max-width: 300px;
+                padding: 0 20px;
+                }
+
+                .download-modal-btn {
+                margin-top: 35px;
+                margin-bottom: 15px;
+                width: 100%;
+                max-width: 300px;
+                }
+            }
+
+            .private-info-wrapper {
+                justify-content: flex-start;
+            }
+        }
+
+        .main {
+            .block_video{
+                video {
+                    left: 0;
+                    top: 0;
+                    min-width: auto;
+                    min-height: auto;
+                    height: 100%;
+                }
+            }
+            .content_block {
+                padding: 0 25px 0 25px;
+
+                .main-info {
+                    max-width: 425px;
+                    .container {
+
+                        .hero-section {
+                            .brand-info {
+                                .about-clients {    
+                                    &-text {
+                                        font-size: 12px;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
 
-            .company-info {
-                    max-width: 420px;
+                .company-info {
+                        max-width: 420px;
+                }
             }
         }
     }
-    }
 
-@media screen and (max-width: 429px) {
-    .main {
-        .content_block {
-            padding: 0 18px 0 18px;
+    @media screen and (max-width: 429px) {
+        .main {
+            .content_block {
+                padding: 0 18px 0 18px;
 
-            header {
-                .container {
-                    .logo-block {
-                        max-width: 140px;
-                    }                       
-                }
-            }
-            
-            .main-info {
-                max-width: 380px;
-                .container {
-                    .about {
-                        &-title {
-                            width: 380px;
-                            // font-size: 28px;
-                        }
-
-                        &-text {
-                            width: 380px;
-                            // font-size: 20px;
-                        }
-                    }
-
-                    .hero-section {
-                        .brand-info {
-                            width: 380px;
-
-                            &-about{
-                                width: 380px;
-                            }
-                            .about-clients {
-                                width: 380px;
-    
-                                &-text {
-                                    font-size: 12px;
-                                }
-                            }
-
-                        }
-                        .contacts-block{
-                                width: 380px;
-                            }
+                header {
+                    .container {
+                        .logo-block {
+                            max-width: 140px;
+                        }                       
                     }
                 }
-            }
-
-            .company-info {
-                    width: 380px;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 415px) {
-    .main {
-        .content_block {
-            .main-info {
-                max-width: 340px;
-                .container {
-                    .about {
-                        &-title {
-                            width: 340px;
+                
+                .main-info {
+                    max-width: 380px;
+                    .container {
+                        .about {
+                            &-title {
+                                width: 380px;
                             }
 
-                        &-text {
-                            width: 340px;
+                            &-text {
+                                width: 380px;
                             }
                         }
-                    .hero-section {
-                        .brand-info {
-                                width: 340px;
-    
-                                &-about {
-                                    width: 340px;
-                                }
 
+                        .hero-section {
+                            .brand-info {
+                                width: 380px;
+
+                                &-about{
+                                    width: 380px;
+                                }
                                 .about-clients {
-                                    width: 340px;
+                                    width: 380px;
+        
+                                    &-text {
+                                        font-size: 12px;
+                                    }
+                                }
+
+                            }
+                            .contacts-block{
+                                    width: 380px;
                                 }
                         }
-
-                        .content-block {
-                            .about-clients {
-                                &-list {
-                                    grid-template-columns: 202px 1fr;
-                                    column-gap: 18px;
-                                    font-size: 13px;
-                                }
-                                &-text {
-                                    font-size: 13px;
-                                }
-                            }
-
-                            .contacts-block {
-                                width: 340px;
-                            }
-                        }
-    
                     }
                 }
-            }
 
-            .company-info {
-                    width: 340px;
+                .company-info {
+                        width: 380px;
                 }
             }
         }
+    }
+
+    @media screen and (max-width: 415px) {
+        .main {
+            .content_block {
+                .main-info {
+                    max-width: 340px;
+                    .container {
+                        .about {
+                            &-title {
+                                width: 340px;
+                                }
+
+                            &-text {
+                                width: 340px;
+                                }
+                            }
+                        .hero-section {
+                            .brand-info {
+                                    width: 340px;
+        
+                                    &-about {
+                                        width: 340px;
+                                    }
+
+                                    .about-clients {
+                                        width: 340px;
+                                    }
+                            }
+
+                            .content-block {
+                                .about-clients {
+                                    &-list {
+                                        grid-template-columns: 202px 1fr;
+                                        column-gap: 18px;
+                                        font-size: 13px;
+                                    }
+                                    &-text {
+                                        font-size: 13px;
+                                    }
+                                }
+
+                                .contacts-block {
+                                    width: 340px;
+                                }
+                            }
+        
+                        }
+                    }
+                }
+
+                .company-info {
+                        width: 340px;
+                    }
+                }
+            }
     }
 }

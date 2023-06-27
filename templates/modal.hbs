@@ -31,19 +31,20 @@
           <input type="text" name="company" autocomplete="off" placeholder="IMANS" />
         </label>
         <button class="download-modal-btn" type="submit">{{submit}}</button>
-        <!-- <div></div> -->
-      </div>
-      <div class="private-info-text">
-        *{{by_clicking_submit}}
-        <a href="#" target="_blank"> {{personal_data}}</a>
       </div>
     </form>
-    <span class="btn-close" onClick="closePopup()">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="#D6FE43" xmlns="http://www.w3.org/2000/svg">
-        <path d="M25 1L1 25" stroke="#D6FE43" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M1 1L25 25" stroke="#D6FE43" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
+    <div class="private-info-wrapper">
+      <div class="private-info-text">
+        *{{by_clicking_submit}}
+        <a href="https://hellogeorgia.io/Policy.pdf" target="_blank"> {{personal_data}}</a>
+      </div>
+      <span class="btn-close" onClick="closePopup()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="#D6FE43" xmlns="http://www.w3.org/2000/svg">
+          <path d="M25 1L1 25" stroke="#D6FE43" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M1 1L25 25" stroke="#D6FE43" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+    </div>
   </div>
 </div>
 
