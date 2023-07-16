@@ -2,12 +2,22 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const axios = require("axios");
+const { v4: uuidv4 } = require("uuid");
 require("dotenv").config();
 
 const router = express.Router();
 
 router.post("/", async (req, res) => {
   const formData = req.body;
+
+  // const csrfTokenFromForm = formData._csrf;
+
+  // const savedCsrfToken = req.session.csrfToken;
+
+  // if (csrfTokenFromForm !== savedCsrfToken) {
+  //   res.status(403).send("Invalid CSRF Token");
+  //   return;
+  // }
 
   try {
     const sendMessageResponse = await sendTelegramMessage(formData);
@@ -17,7 +27,7 @@ router.post("/", async (req, res) => {
       accessToken,
       formData
     );
-    // const saveDataResponse = await saveDataToCSV(formData);
+    const saveDataResponse = await saveDataToCSV(formData);
 
     res.json({
       status: "Success",
@@ -27,13 +37,19 @@ router.post("/", async (req, res) => {
         accessToken: accessToken,
         sendEmailResponse: sendEmailResponse,
         sendEmailToClientResponse: sendEmailToClientResponse,
-        // saveDataResponse: saveDataResponse,
+        saveDataResponse: saveDataResponse,
       },
     });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
   }
+
+  // // Generate new csrfToken
+  // const newcsrfToken = uuidv4();
+
+  // // Renew csrfToken in Session
+  // req.session.csrfToken = newcsrfToken;
 });
 
 const propertyNames = {
@@ -45,13 +61,22 @@ const propertyNames = {
   company: "Company",
 };
 
+const propertiesToInclude = [
+  "name",
+  "lastName",
+  "email",
+  "phone",
+  "company",
+  "source",
+];
+
 async function sendTelegramMessage(formData) {
   const botToken = process.env.BOT_TOKEN;
   const groupId = process.env.GROUP_ID;
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
   let message = "";
 
-  for (let prop in formData) {
+  for (let prop of propertiesToInclude) {
     if (formData.hasOwnProperty(prop)) {
       let label = propertyNames[prop] || prop;
       message =
@@ -86,7 +111,6 @@ async function saveDataToCSV(formData) {
 
     const updatedData = existingData + "\n" + csvData;
 
-    // TO FIX. affects page reload :
     fs.writeFile(fileName, updatedData, "utf8", (error) => {
       if (error) {
         console.error("Ошибка при сохранении данных формы:", error);
@@ -130,7 +154,7 @@ async function sendInternalEmail(accessToken, formData) {
   const email = process.env.INTERNAL_EMAIL;
   let message = "";
 
-  for (let prop in formData) {
+  for (let prop of propertiesToInclude) {
     if (formData.hasOwnProperty(prop)) {
       let label = propertyNames[prop] || prop;
       message += "<strong>" + label + "</strong>: " + formData[prop] + "<br/>";

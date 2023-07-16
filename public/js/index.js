@@ -42,6 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+/*
+* Set preloader
+*/
+
+setTimeout(function () {
+  let preloader = document.querySelector(".preloader");
+  preloader.classList.add("hide");
+}, 2000);
+
 function popupShow() {
   let popup = document.querySelector(".popup_menu");
   let overlay = document.querySelector(".overlay");

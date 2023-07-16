@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHQ8DCBK21"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-XHQ8DCBK21');
+  </script>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="assets/img/favicon_imans.ico" sizes="16x16">
+  <link rel="icon" type="image/x-icon" href="https://imans.io/favicon_imans.ico" sizes="16x16">
   <title>IMANS | Marketing Agency</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <link href="/css/main.min.css" rel="stylesheet" />
 </head>
+
 <body>
-  <section class="main">{{> section}}</section>
+  <section class="main">
+    <div class="preloader">
+      <div class="loading">
+        <div class="bounceball"></div>
+        <div  class="loader">
+          <img class="logo-block-img" src="./assets/img/logo-imans.svg" alt="Imans-logo" />
+        </div>
+      </div>
+    </div>
+    {{> section}}
+  </section>
 </body>
 <script src="js/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

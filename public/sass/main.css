@@ -88,6 +88,79 @@ body {
   line-height: 147%;
   color: #EDEDED;
 }
+body .preloader {
+  position: fixed;
+  z-index: 999999;
+  background-color: #111;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+body .preloader.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+body .loader {
+  display: inline-block;
+  margin-left: 5px;
+}
+body .bounceball {
+  position: relative;
+  display: inline-block;
+  height: 37px;
+  width: 15px;
+}
+body .bounceball:before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #D6FE43;
+  transform-origin: 50%;
+  -webkit-animation: bounce 500ms alternate infinite ease;
+          animation: bounce 500ms alternate infinite ease;
+}
+@-webkit-keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 15px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 15px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
 body .overlay {
   position: fixed;
   width: 100%;
@@ -105,15 +178,13 @@ body .popup_background {
   justify-content: center;
   align-items: center;
 }
-body .popup_menu,
-body .popup_menu-gratitude {
+body .popup_menu {
   display: none;
   vertical-align: middle;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  overflow-y: auto;
   max-height: calc(100vh - 50px);
   margin: 0 auto;
   max-width: 590px;
@@ -122,21 +193,19 @@ body .popup_menu-gratitude {
   box-sizing: border-box;
   background-color: #141414;
   color: #EDEDED;
-  padding: 73px 30px 77px;
+  padding: 73px 30px 10px;
+  overflow-y: auto;
 }
-body .popup_menu .popup_logo,
-body .popup_menu-gratitude .popup_logo {
+body .popup_menu .popup_logo {
   display: flex;
   justify-content: center;
   margin: 0 auto 48px;
 }
-body .popup_menu .popup_logo img,
-body .popup_menu-gratitude .popup_logo img {
+body .popup_menu .popup_logo img {
   width: 190px;
   height: 37px;
 }
-body .popup_menu .popup-title,
-body .popup_menu-gratitude .popup-title {
+body .popup_menu .popup-title {
   font-family: "Nunito-ExtraBold", sans-serif;
   text-align: center;
   font-size: 24px;
@@ -144,26 +213,23 @@ body .popup_menu-gratitude .popup-title {
   letter-spacing: 0.035em;
   max-width: 344px;
   margin: 0 auto 56px;
+  text-transform: uppercase;
 }
-body .popup_menu .popup-text,
-body .popup_menu-gratitude .popup-text {
+body .popup_menu .popup-text {
   font-size: 14px;
   line-height: 147%;
   text-align: center;
   color: #EDEDED;
 }
-body .popup_menu .btn-close,
-body .popup_menu-gratitude .btn-close {
+body .popup_menu .btn-close {
   position: absolute;
   top: 16px;
   right: 16px;
 }
-body .popup_menu .btn-close:hover,
-body .popup_menu-gratitude .btn-close:hover {
+body .popup_menu .btn-close:hover {
   cursor: pointer;
 }
-body .popup_menu .download-modal_inputs,
-body .popup_menu-gratitude .download-modal_inputs {
+body .popup_menu .download-modal_inputs {
   margin: auto;
   width: 100%;
   display: grid;
@@ -173,8 +239,7 @@ body .popup_menu-gratitude .download-modal_inputs {
   align-items: center;
   position: relative;
 }
-body .popup_menu .download-modal_inputs label,
-body .popup_menu-gratitude .download-modal_inputs label {
+body .popup_menu .download-modal_inputs label {
   align-self: flex-start;
   margin-bottom: 33px;
   position: relative;
@@ -184,16 +249,13 @@ body .popup_menu-gratitude .download-modal_inputs label {
   font-size: 14px;
   line-height: 147%;
 }
-body .popup_menu .download-modal_inputs label:last-of-type,
-body .popup_menu-gratitude .download-modal_inputs label:last-of-type {
+body .popup_menu .download-modal_inputs label:last-of-type {
   margin-bottom: 0;
 }
-body .popup_menu .download-modal_inputs .input-title,
-body .popup_menu-gratitude .download-modal_inputs .input-title {
+body .popup_menu .download-modal_inputs .input-title {
   color: #F2F2F2;
 }
-body .popup_menu .download-modal_inputs input,
-body .popup_menu-gratitude .download-modal_inputs input {
+body .popup_menu .download-modal_inputs input {
   width: 100%;
   height: 50px;
   color: #F2F2F2;
@@ -203,8 +265,7 @@ body .popup_menu-gratitude .download-modal_inputs input {
   background: transparent;
   margin-top: 5px;
 }
-body .popup_menu .download-modal_inputs .download-modal-btn,
-body .popup_menu-gratitude .download-modal_inputs .download-modal-btn {
+body .popup_menu .download-modal_inputs .download-modal-btn {
   width: 100%;
   max-width: 250px;
   height: 50px;
@@ -223,12 +284,16 @@ body .popup_menu-gratitude .download-modal_inputs .download-modal-btn {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-body .popup_menu .download-modal_inputs .download-modal-btn:hover,
-body .popup_menu-gratitude .download-modal_inputs .download-modal-btn:hover {
+body .popup_menu .download-modal_inputs .download-modal-btn:hover {
   cursor: pointer;
 }
-body .popup_menu .private-info-text,
-body .popup_menu-gratitude .private-info-text {
+body .popup_menu .private-info-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+body .popup_menu .private-info-text {
   max-width: 250px;
   font-style: normal;
   font-weight: 400;
@@ -236,14 +301,63 @@ body .popup_menu-gratitude .private-info-text {
   line-height: 147%;
   color: #EDEDED;
   opacity: 0.5;
-  position: absolute;
-  right: 5%;
-  margin-top: 10px;
 }
-body .popup_menu .private-info-text a,
-body .popup_menu-gratitude .private-info-text a {
+body .popup_menu .private-info-text a {
   text-decoration: underline;
   color: #EDEDED;
+}
+body .popup_menu-gratitude {
+  display: none;
+  vertical-align: middle;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  max-height: calc(100vh - 50px);
+  margin: 0 auto;
+  max-width: 590px;
+  width: 90%;
+  z-index: 25;
+  box-sizing: border-box;
+  background-color: #141414;
+  color: #EDEDED;
+  padding: 77px 31px 77px 29px;
+}
+body .popup_menu-gratitude .popup_logo {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 48px;
+}
+body .popup_menu-gratitude .popup_logo img {
+  width: 190px;
+  height: 37px;
+}
+body .popup_menu-gratitude .popup-title {
+  font-family: "Nunito-ExtraBold", sans-serif;
+  text-align: center;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: 0.035em;
+  max-width: 530px;
+  margin: 0 auto 43px;
+  text-transform: uppercase;
+}
+body .popup_menu-gratitude .popup-text {
+  font-size: 14px;
+  line-height: 147%;
+  text-align: center;
+  max-width: 386px;
+  margin: 0 auto;
+  color: #EDEDED;
+}
+body .popup_menu-gratitude .btn-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+body .popup_menu-gratitude .btn-close:hover {
+  cursor: pointer;
 }
 body .container {
   max-width: 1200px;
@@ -567,6 +681,7 @@ body .main .content_block .company-info {
   justify-content: space-between;
   padding: 31.5px 0 27.5px 0;
   opacity: 0.5;
+  color: #EDEDED;
 }
 body .main .content_block .company-info-blocks {
   flex-direction: column;
@@ -587,6 +702,15 @@ body .main .content_block .company-info-title {
 }
 body .main .content_block .company-info .primary-title {
   margin-bottom: 12px;
+}
+body .main .content_block .company-info .copy-notification {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 4px 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #555555;
 }
 @media screen and (max-width: 1600px) {
   body .main .content_block {
@@ -669,6 +793,9 @@ body .main .content_block .company-info .primary-title {
   }
 }
 @media screen and (max-width: 768px) {
+  body .main {
+    height: auto;
+  }
   body .main .content_block .main-info .container {
     max-width: 668px;
   }
@@ -783,6 +910,7 @@ body .main .content_block .company-info .primary-title {
 @media screen and (max-width: 475px) {
   body .popup_menu,
 body .popup_menu-gratitude {
+    top: 25%;
     max-width: 340px;
     padding: 45px 19px 45px 21px;
   }
@@ -843,9 +971,9 @@ body .popup_menu-gratitude .download-modal_inputs .download-modal-btn {
     width: 100%;
     max-width: 300px;
   }
-  body .popup_menu .private-info-text,
-body .popup_menu-gratitude .private-info-text {
-    left: 5%;
+  body .popup_menu .private-info-wrapper,
+body .popup_menu-gratitude .private-info-wrapper {
+    justify-content: flex-start;
   }
   body .main .block_video video {
     left: 0;
@@ -935,5 +1063,10 @@ body .popup_menu-gratitude .private-info-text {
   }
   body .main .content_block .company-info {
     width: 340px;
+  }
+}
+@media screen and (max-width: 346px) {
+  body .main .content-container .main-info .container .hero-section .brand-info-about-text {
+    max-width: 100px;
   }
 }/*# sourceMappingURL=main.css.map */

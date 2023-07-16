@@ -3,6 +3,7 @@ const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
 const sass = require("sass");
+// const session = require("express-session");
 const api = require("./api");
 
 require("dotenv").config();
@@ -14,6 +15,18 @@ app.use(express.static("./public"));
 
 app.use(cors());
 app.use(express.json());
+
+// // Configure session middleware
+// app.use(
+//   session({
+//     secret: "your-secret",
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {
+//       secure: false, // Set to true if using HTTPS
+//     },
+//   })
+// );
 
 app.listen(PORT, (err) => {
   if (err) {
@@ -35,17 +48,17 @@ const options = {
 
 sass.render(options, (error, result) => {
   if (error) {
-    console.error("Ошибка компиляции Sass:", error);
+    console.error("Sass compilation error:", error);
     return;
   }
 
   fs.writeFile(cssFilePath, result.css.toString(), (error) => {
     if (error) {
-      console.error("Ошибка записи CSS-файла:", error);
+      console.error("Error writing CSS file:", error);
       return;
     }
 
-    console.log("Sass-файл успешно скомпилирован в CSS.");
+    console.log("Sass file successfully compiled to CSS.");
   });
 });
 

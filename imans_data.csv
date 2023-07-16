@@ -1,1 +1,8 @@
-createdAt;name;lastName;email;phone;company
+createdAt;name;lastName;email;phone;company; source; url
+2023-07-04T15:21:36.000Z;e5ee7297-0a11-4aa4-8d15-c1724bf46459;sdsd;sd;trofimovamariaa@gmail.com;0980195243;;localhost;http://localhost:8080/
+2023-07-04T15:23:53.459Z;01ce3adc-6f38-4fd1-873c-8ee570f17b31;srddddd;dddddddddd;trofimovamariaa@gmail.com;0980195243;;localhost;http://localhost:8080/
+2023-07-05T10:15:32.474Z;rerer;erer;trofimovamariaa@gmail.com;0980195243;;localhost;http://localhost:8080/
+2023-07-06T07:12:39.347Z;ae613a74-eab2-4b53-a737-e0ecd5eb94ca;ree;;trofimovamariaa@gmail.com;0980195243;;localhost;http://localhost:8080/
+2023-07-06T07:16:01.423Z;721b690f-aa4d-4f0c-8f78-3c2566a1526c;sds;;trofimovamariaa@gmail.com;0980195243;;localhost;http://localhost:8080/
+2023-07-14T09:17:17.098Z;d49d863d-5a62-4e93-ab92-7b2719a0d4e6;rfs;err;trofimovamariaa@gmail.com;0980195243;;localhost;http://localhost:8080/
+2023-07-16T09:22:03.910Z;test;tesr;trofimovamariaa@gmail.com;111111111;test;localhost;http://localhost:8080/
