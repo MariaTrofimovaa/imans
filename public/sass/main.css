@@ -434,8 +434,17 @@ body .main .content_block header .container .lang_block {
   align-items: center;
   color: #EDEDED;
 }
-body .main .content_block header .container .lang_block .dropdown-lang {
-  margin-right: 39px;
+body .main .content_block header .container .lang_block .header-partners {
+  max-width: 160px;
+  text-align: start;
+  margin-right: 20px;
+}
+body .main .content_block header .container .lang_block .header-partners p {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 147%;
+  color: #EDEDED;
 }
 body .main .content_block header .container .lang_block .active_langs {
   display: flex;
@@ -476,6 +485,7 @@ body .main .content_block header .container .lang_block .disabled_langs ul {
 }
 body .main .content_block header .container .lang_block .buttons {
   display: flex;
+  margin-right: 46px;
 }
 body .main .content_block header .container .lang_block .buttons .contact_us {
   font-family: "'Inter-Medium", sans-serif;
@@ -589,10 +599,6 @@ body .main .content_block .main-info .container .hero-section .brand-info-about 
   margin-bottom: 34px;
   max-width: 530px;
 }
-body .main .content_block .main-info .container .hero-section .brand-info-about .logo_gaming {
-  width: 290px;
-  height: 27px;
-}
 body .main .content_block .main-info .container .hero-section .brand-info-text {
   max-width: 198px;
 }
@@ -601,7 +607,7 @@ body .main .content_block .main-info .container .hero-section .content-block {
   justify-content: space-between;
 }
 body .main .content_block .main-info .container .hero-section .content-block .about-clients {
-  max-width: 380px;
+  max-width: 463px;
   display: flex;
   flex-direction: column;
 }
@@ -610,22 +616,35 @@ body .main .content_block .main-info .container .hero-section .content-block .ab
   grid-template-columns: 215px 1fr;
   -moz-column-gap: 40px;
        column-gap: 40px;
+  margin-bottom: 35px;
 }
-body .main .content_block .main-info .container .hero-section .content-block .about-clients-list img {
-  margin-right: 10px;
+body .main .content_block .main-info .container .hero-section .content-block .about-clients-list .logo_gaming {
+  width: 173px;
+  height: 51.2px;
 }
-body .main .content_block .main-info .container .hero-section .content-block .about-clients-text {
-  display: flex;
-  align-items: center;
+body .main .content_block .main-info .container .hero-section .content-block .about-clients-list .logo_africa {
+  width: 168px;
+  height: 31px;
+}
+body .main .content_block .main-info .container .hero-section .content-block .about-clients-list .logo_georgia {
+  width: 188px;
+  height: 26px;
+}
+body .main .content_block .main-info .container .hero-section .content-block .about-clients-list .logo_bacon {
+  width: 163px;
+  height: 17px;
+}
+body .main .content_block .main-info .container .hero-section .content-block .about-clients-list .logo_puma {
+  width: 63px;
+  height: 15.575px;
+}
+body .main .content_block .main-info .container .hero-section .content-block .about-clients-list p {
+  margin-bottom: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 140%;
-  color: #EDEDED;
-  margin-bottom: 14px;
-}
-body .main .content_block .main-info .container .hero-section .content-block .about-clients-text:nth-last-child(-n+2) {
-  margin-bottom: 0px;
+  line-height: 147%;
+  width: 215px;
 }
 body .main .content_block .main-info .container .hero-section .content-block .contacts-block {
   display: flex;
@@ -730,6 +749,13 @@ body .main .content_block .company-info .copy-notification {
   body .main .block_video video {
     left: -50%;
   }
+  body .main .content_block header .container .logo-block {
+    max-width: 160px;
+  }
+  body .main .content_block .main-info .container .about-title {
+    width: 600px;
+    font-size: 35px;
+  }
 }
 @media screen and (max-width: 1024px) {
   body .main .block_video video {
@@ -745,7 +771,7 @@ body .main .content_block .company-info .copy-notification {
     max-width: 924px;
   }
   body .main .content_block .main-info .container .about {
-    margin-bottom: 30px;
+    margin-bottom: 70px;
   }
   body .main .content_block .main-info .container .about-title {
     width: 340px;
@@ -786,6 +812,33 @@ body .main .content_block .company-info .copy-notification {
   body .main .content_block .main-info .container .hero-section .content-block .about-clients {
     margin-bottom: 62px;
   }
+  body .main .content_block .main-info .container .hero-section .content-block .about-clients-list {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+  }
+  body .main .content_block .main-info .container .hero-section .content-block .about-clients-list .logo_gaming {
+    width: 140px;
+    height: 41.272px;
+  }
+  body .main .content_block .main-info .container .hero-section .content-block .about-clients-list .logo_africa {
+    width: 129.966px;
+    height: 21.22px;
+  }
+  body .main .content_block .main-info .container .hero-section .content-block .about-clients-list .logo_georgia {
+    width: 143px;
+    height: 18.86px;
+  }
+  body .main .content_block .main-info .container .hero-section .content-block .about-clients-list .logo_bacon {
+    width: 115px;
+    height: 11.994px;
+  }
+  body .main .content_block .main-info .container .hero-section .content-block .about-clients-list .logo_puma {
+    width: 48px;
+    height: 12.19px;
+  }
+  body .main .content_block .main-info .container .hero-section .content-block .about-clients-list p {
+    width: 180px;
+  }
 }
 @media screen and (max-width: 800px) {
   body .main .block_video video {
@@ -807,30 +860,38 @@ body .main .content_block .company-info .copy-notification {
   body .main .content_block .main-info .container .hero-section .brand-info {
     margin-bottom: 70px;
   }
-  body .main .content_block .main-info .container .hero-section .brand-info-about {
-    flex-direction: column-reverse;
-  }
-  body .main .content_block .main-info .container .hero-section .brand-info-about .logo_gaming {
-    width: 316px;
-    height: 79px;
-  }
 }
 @media screen and (max-width: 680px) {
   body .main .content_block {
     padding: 0 75px 0 75px;
   }
+  body .main .content_block header .container {
+    flex-direction: column;
+  }
   body .main .content_block header .container .logo-block {
-    max-width: 154px;
+    flex-direction: row;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    max-width: 480px;
+    width: 100%;
   }
   body .main .content_block header .container .logo-block-title {
     font-size: 12px;
+    margin-top: 0;
+    max-width: 154px;
+    margin-left: 19px;
   }
   body .main .content_block header .container .logo-block-img {
     width: 96px;
     height: 19px;
   }
-  body .main .content_block header .container .lang_block {
-    flex-direction: row-reverse;
+  body .main .content_block header .container .mob_block {
+    justify-content: space-between;
+    max-width: 480px;
+    width: 100%;
+  }
+  body .main .content_block header .container .lang_block .header-partners {
+    margin-right: auto;
   }
   body .main .content_block header .container .lang_block .dropdown-lang {
     margin-right: 0;
@@ -838,6 +899,8 @@ body .main .content_block .company-info .copy-notification {
   }
   body .main .content_block header .container .lang_block .buttons {
     display: block;
+    margin-right: 0;
+    margin-left: auto;
   }
   body .main .content_block header .container .lang_block .buttons .contact_us {
     padding: 9.5px 15px;
@@ -999,9 +1062,6 @@ body .popup_menu-gratitude .private-info-wrapper {
   body .main .content_block {
     padding: 0 18px 0 18px;
   }
-  body .main .content_block header .container .logo-block {
-    max-width: 140px;
-  }
   body .main .content_block .main-info {
     max-width: 380px;
   }
@@ -1050,7 +1110,7 @@ body .popup_menu-gratitude .private-info-wrapper {
     width: 340px;
   }
   body .main .content_block .main-info .container .hero-section .content-block .about-clients-list {
-    grid-template-columns: 202px 1fr;
+    grid-template-columns: 141px 1fr;
     -moz-column-gap: 18px;
          column-gap: 18px;
     font-size: 13px;

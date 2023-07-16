@@ -43,13 +43,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /*
-* Set preloader
-*/
+ * Set preloader
+ */
 
 setTimeout(function () {
   let preloader = document.querySelector(".preloader");
   preloader.classList.add("hide");
 }, 2000);
+
+function checkScreenWidth() {
+  const screenWidth = window.innerWidth;
+  const dropdownLang = document.querySelector(".dropdown-lang");
+  const logoLangBlock = document.querySelector(".logo-block");
+  const langBlock = document.querySelector(".lang_block");
+
+  if (screenWidth <= 680) {
+    if (!logoLangBlock.contains(dropdownLang)) {
+      logoLangBlock.appendChild(dropdownLang);
+      dropdownLang.classList.add("lang_block");
+    }
+  } else {
+    if (!langBlock.contains(dropdownLang)) {
+      langBlock.appendChild(dropdownLang);
+    }
+  }
+}
+
+window.addEventListener("DOMContentLoaded", checkScreenWidth);
+window.addEventListener("resize", checkScreenWidth);
 
 function popupShow() {
   let popup = document.querySelector(".popup_menu");

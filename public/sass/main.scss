@@ -397,13 +397,23 @@ body {
                     }
                 }
 
+                
                 .lang_block {
                     display: flex;
                     align-items: center;
                     color: $primary-text-color;
-                    
-                    .dropdown-lang {
-                        margin-right: 39px;
+
+                    .header-partners {
+                        max-width: 160px;
+                        text-align: start;
+                        margin-right: 20px;
+                        p {
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 147%;
+                            color: $primary-text-color;
+                        }
                     }
 
                     .active_langs {
@@ -452,6 +462,7 @@ body {
 
                     .buttons {
                         display: flex;
+                        margin-right: 46px;
     
                         .contact_us {
                             font-family: "'Inter-Medium", sans-serif;
@@ -579,10 +590,7 @@ body {
                             margin-bottom: 34px;
                             max-width: 530px;
         
-                            .logo_gaming {
-                                width: 290px;
-                                height: 27px;
-                            }
+                          
                         }
                         &-text {
                             max-width: 198px;
@@ -593,7 +601,7 @@ body {
                         display: flex;
                         justify-content: space-between;
                         .about-clients {
-                            max-width: 380px;
+                            max-width: 463px;
                             display: flex;
                             flex-direction: column;
 
@@ -601,26 +609,59 @@ body {
                             display: grid;
                             grid-template-columns: 215px 1fr;
                             column-gap: 40px;
+                            // align-items: ;
+                            margin-bottom: 35px;
 
-                                img {
-                                    margin-right: 10px;
+                            .logo_gaming {
+                                width: 173px;
+                                height: 51.2px;
+                            }
+
+                            .logo_africa {
+                                width:168px;
+                                height:31px
+                            }
+
+                            .logo_georgia {
+                                width: 188px;
+                                height: 26px;
+                            }
+
+                            .logo_bacon {
+                                width: 163px;
+                                height: 17px;
+                            }
+
+                            .logo_puma {
+                                width: 63px;
+                                height: 15.575px;
+                            }
+
+                                p {
+                                    margin-bottom: 16px;
+                                    font-size: 14px;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: 147%; 
+                                    width: 215px;
                                 }
                             }
 
-                            &-text {
-                            display: flex;
-                            align-items: center;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 14px;
-                            line-height: 140%;
-                            color: $primary-text-color;
-                            margin-bottom: 14px;
-                            }
-                            &-text:nth-last-child(-n + 2) {
-                            margin-bottom: 0px;
-                            }
+                            // &-text {
+                            // display: flex;
+                            // align-items: center;
+                            // font-style: normal;
+                            // font-weight: 400;
+                            // font-size: 14px;
+                            // line-height: 140%;
+                            // color: $primary-text-color;
+                            // margin-bottom: 14px;
+                            // }
+                            // &-text:nth-last-child(-n + 2) {
+                            // margin-bottom: 0px;
+                            // }
                         }
+                        
                         .contacts-block {
                             display: flex;
                             align-items: flex-end;
@@ -763,6 +804,27 @@ body {
                     left: -50%;
                 }
             }
+
+            .content_block {
+                header {
+                    .container {
+                         .logo-block {
+                        max-width: 160px;
+                        }
+                    }
+                }
+
+                .main-info {
+                    .container {
+                        .about {
+                            &-title {
+                                width: 600px;
+                                font-size: 35px;
+                            }
+                        }
+                    }
+                }
+            } 
         }
     }
 
@@ -779,14 +841,14 @@ body {
                 header {
                 .container {
                     padding: 48px 0 20px 0;
-                }
+                    }
                 }
 
                 .main-info {
                     .container {
                         max-width: 924px;
                         .about {
-                            margin-bottom: 30px;
+                            margin-bottom: 70px;
 
                             &-title {
                                 width: 340px;
@@ -840,6 +902,41 @@ body {
 
                                 .about-clients{
                                     margin-bottom: 62px;
+
+                                      &-list {
+                                        display: grid;
+                                        grid-template-columns: 150px 1fr;
+
+
+                                        .logo_gaming {
+                                            width: 140px;
+                                            height: 41.272px;
+                                        }
+
+                                        .logo_africa {
+                                            width: 129.966px;
+                                            height: 21.22px;
+                                        }
+
+                                        .logo_georgia {
+                                            width: 143px;
+                                            height: 18.86px;
+                                        }
+
+                                        .logo_bacon {
+                                            width: 115px;
+                                            height: 11.994px;
+                                        }
+
+                                        .logo_puma {
+                                            width: 48px;
+                                            height: 12.19px;
+                                        }
+
+                                        p {
+                                             width: 180px;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -875,15 +972,6 @@ body {
                             
                             .brand-info {
                                 margin-bottom: 70px;
-        
-                                &-about {
-                                    flex-direction: column-reverse;
-
-                                    .logo_gaming {
-                                        width: 316px;
-                                        height: 79px;
-                                    } 
-                                }
                             }
                         }
                     }
@@ -899,11 +987,23 @@ body {
 
                 header {
                     .container {
+                        flex-direction: column;
                         .logo-block {
-                            max-width: 154px;
+                            flex-direction: row;
+                            // max-width: 154px;
+                            margin-bottom: 30px;
+                            // margin-right: auto;
+                            // display: inline-flex;
+                            // align-items: flex-start;
+                              justify-content: space-between;
+                            max-width: 480px;
+                            width: 100%;
 
                             &-title {
-                            font-size: 12px;
+                             font-size: 12px;
+                             margin-top: 0;
+                             max-width: 154px;
+                             margin-left: 19px;
                             }
                         
                             &-img {
@@ -912,14 +1012,24 @@ body {
                             }
                         }
 
+                        .mob_block{
+                            justify-content: space-between;
+                            max-width: 480px;
+                            width: 100%;
+                        }
                         .lang_block {
-                            flex-direction: row-reverse;
+                            .header-partners {
+                                margin-right: auto;
+                            }
                             .dropdown-lang {
                                 margin-right: 0;
                                 margin-left: 16px;
                             }
                             .buttons {
                                 display: block;
+                                margin-right: 0;
+                                margin-left: auto;
+                                
                                 .contact_us {
                                     padding: 9.5px 15px;
                                     margin-bottom: 10px;
@@ -928,7 +1038,7 @@ body {
                                 &:last-child {
                                         margin: 0;
                                     }
-                            }
+                                }
                             }
                         }  
                     }
@@ -1131,13 +1241,13 @@ body {
             .content_block {
                 padding: 0 18px 0 18px;
 
-                header {
-                    .container {
-                        .logo-block {
-                            max-width: 140px;
-                        }                       
-                    }
-                }
+                // header {
+                //     .container {
+                //         .logo-block {
+                //             max-width: 140px;
+                //         }                       
+                //     }
+                // }
                 
                 .main-info {
                     max-width: 380px;
@@ -1213,7 +1323,7 @@ body {
                             .content-block {
                                 .about-clients {
                                     &-list {
-                                        grid-template-columns: 202px 1fr;
+                                        grid-template-columns: 141px 1fr;
                                         column-gap: 18px;
                                         font-size: 13px;
                                     }
